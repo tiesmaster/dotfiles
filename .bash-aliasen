@@ -1,0 +1,60 @@
+# .bash-aliasen
+# vim:filetype=sh
+
+# edit config's
+alias eb='gvim -f ~/.bashrc && source ~/.bashrc'
+alias ei='gvim ~/.inputrc'
+
+# sysadmin stuff
+alias ls='ls -hF --color=auto'
+alias ll='ls -l'
+alias d="ls --color"
+alias df='df -h'
+alias du='du -h'
+alias dus='du -s'
+alias du1='du --max-depth=1'
+alias free='free -m'
+alias datum='date +%d-%b-%Y'
+alias cpu='cp -u'
+
+alias man='man -P /usr/bin/less'
+
+# portage stuff
+alias eic='eix -c'
+alias esc='esearch -c'
+alias semerge='emerge -s'
+alias pv='emerge -pv'
+alias tsemerge='time sudo emerge'
+alias tsa='time sudo emerge -av'
+alias sbewr='sudo ~/bin/emerge-wr'
+
+# shortcut's
+alias dvdshrink='wine ~/.wine/drive_c/dvdshrink/DVD\ Shrink\ 3.2.exe'
+alias mfs='mplayer -fs'
+alias browse='opera -backgroundpage'
+#alias doom3='doom3 +set s_driver oss'
+
+# function's
+alias stratum='ntpq -c rv |grep stratum'
+
+alias cputemp='sensors |grep CPU'
+alias wakeupsaikox='wakeonlan 00:30:1B:AF:01:9F'
+alias nautilus='nautilus --no-desktop --browser'
+
+alias listkeys='keychain --noask id_rsa A50D68F5'
+alias addkeys='keychain id_rsa A50D68F5'
+
+alias connectsbs='rdesktop -u t.brobbel qss.dyndns.org&'
+
+alias setdisplay='export DISPLAY=":0.0"'
+alias unsetdisplay='unset DISPLAY'
+
+alias synchronize_irqss_to_home='(cd ~ && rsync -avuz --del --exclude-from=irqss/.exclude lfs:klanten/irqss . )'
+alias synchronize_irqss_to_office='(cd ~ && rsync -avuz --del --exclude-from=irqss/.exclude irqss lfs:klanten )'
+
+# van dalen
+alias enne='wine ~/.wine/drive_c/Van\ Dale/Grote\ woordenboeken/Engels/Programma/vden.exe'
+alias neen='wine ~/.wine/drive_c/Van\ Dale/Grote\ woordenboeken/Engels/Programma/vdne.exe'
+alias ne='wine ~/.wine/drive_c/VanDale/Groot\ woordenboek\ van\ de\ Nederlandse\ taal\ 14/Programma/vdegwn.exe'
+
+alias slrn='slrn -C'
