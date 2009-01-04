@@ -61,3 +61,7 @@ alias neen='wine ~/.wine/drive_c/Van\ Dale/Grote\ woordenboeken/Engels/Programma
 alias ne='wine ~/.wine/drive_c/VanDale/Groot\ woordenboek\ van\ de\ Nederlandse\ taal\ 14/Programma/vdegwn.exe'
 
 alias slrn='slrn -C'
+
+#FIXME: this is a work-around, since svn doesn't "eats" the vimdiff-wrapper
+	#without a full path, which you don't want to have hard-coded
+alias svnvimdiff="svn diff --diff-cmd ~/bin/vimdiff-svn-wrapper.sh"
