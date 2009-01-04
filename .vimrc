@@ -94,17 +94,19 @@ filetype plugin on
 set grepprg=grep\ -nH\ $*
 set winaltkeys=no
 
-function PrintTimeHeader()
-	let s:now = strftime("%a %b %d %Y %X")
-	call append(line('.'), s:now)
-	call cursor(line('.')+1, 0)
-	call append(line('.'), repeat('=', len(s:now)))
-	call cursor(line('.')+1, 0)
-	call append(line('.'), "")
-	call append(line('.'), "")
-	call cursor(line('.')+2, 0)
-	startinsert
-endfunction
+"TODO: fix defining a function and having the possibility to re-source it using
+	"F4
+"function PrintTimeHeader()
+"	let s:now = strftime("%a %b %d %Y %X")
+"	call append(line('.'), s:now)
+"	call cursor(line('.')+1, 0)
+"	call append(line('.'), repeat('=', len(s:now)))
+"	call cursor(line('.')+1, 0)
+"	call append(line('.'), "")
+"	call append(line('.'), "")
+"	call cursor(line('.')+2, 0)
+"	startinsert
+"endfunction
 
 map <f2> :q <cr>
 map <c-f2> :qa <cr>
@@ -127,10 +129,14 @@ nmap <esc>f o> [...]<esc>
 "let g:Tex_Com_fn = "\\footnote{<++>}<++>"
 augroup MyIMAPs
 	au!
-	au VimEnter * call IMAP('EFN', '\footnote{<++>}<++>', '')
-	au VimEnter * call IMAP('ASV', '\texttt{A.S.V.~Thonis}', '')
-	au VimEnter * call IMAP('ftir', '\texttt{FTIR}', '')
-	au VimEnter * call IMAP('soos', 'SooS', '')
+
+"TODO: make this work, even if vimlatex has not been installed
+"RATIONAL: try to get it working, there's no need for it at all, only nice to
+"get hands-on vim syntax
+"	au VimEnter * call IMAP('EFN', '\footnote{<++>}<++>', '')
+"	au VimEnter * call IMAP('ASV', '\texttt{A.S.V.~Thonis}', '')
+"	au VimEnter * call IMAP('ftir', '\texttt{FTIR}', '')
+"	au VimEnter * call IMAP('soos', 'SooS', '')
 "	au VimEnter * let g:Tex_PromptedCommands = g:Tex_PromptedCommands . ",ref"
 augroup END
 

@@ -1,10 +1,20 @@
 # /etc/skel/.bashrc:
 
+#TODO: get this working on all platforms, perhaps make it sense it's already
+#	running within a screen and act on that (don't startup screen?, remap
+#	shortcuts to new "shortcut-ring"?)
+#TODO: perhaps put this in a subscript, if possible (but must be, since you
+#	can source a script and call the potential function RunScreen()
 if [[ $TERM != screen* ]] && [[ $- = *i* ]] ; then
-	exec screen -dRR
-#[[ $TERM = screen || $- != *i* ]] || exec screen -RDD
-#[[ $TERM = screen || $- != *i* || -n $CYGWIN_ROOT ]] || exec screen -RDD
-#
+#	exec screen -dRR
+	echo "****screen temporarily disabled******"
+fi
+
+#TODO: maybe the following is necessary for reference when debugging on other
+#platforms
+	#[[ $TERM = screen || $- != *i* ]] || exec screen -RDD
+	#[[ $TERM = screen || $- != *i* || -n $CYGWIN_ROOT ]] || exec screen -RDD
+
 # This file is sourced by all *interactive* bash shells on startup,
 # including some apparently interactive shells such as scp and rcp
 # that can't tolerate any output.  So make sure this doesn't display
@@ -110,4 +120,4 @@ fortune -e -a -s gentoo-dev gentoo-forums
 
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
-#export PERLLIB="/opt/local/lib/perl5/site_perl/5.8.8/"
+export PERLLIB="/opt/local/lib/perl5/site_perl/5.8.8/"

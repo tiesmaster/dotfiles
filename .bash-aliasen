@@ -2,11 +2,14 @@
 # vim:filetype=sh
 
 # edit config's
-alias eb='gvim -f ~/.bashrc && source ~/.bashrc'
-alias ei='gvim ~/.inputrc'
+# TODO: fix not being able to call gvim if not on the system
+alias eb='vim -f ~/.bashrc && source ~/.bashrc'
+alias ei='vim ~/.inputrc'
 
 # sysadmin stuff
-alias ls='ls -hF --color=auto'
+#TODO: get this in a conditional, perhaps check for ls --version or output of it
+#TODO: perhaps create some sort of LSOPTIONS var (but why?)
+#alias ls='ls -hF --color=auto'
 alias ll='ls -l'
 alias d="ls --color"
 alias df='df -h'
