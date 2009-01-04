@@ -1,0 +1,27 @@
+# edit config's
+# TODO: fix not being able to call gvim if not on the system
+alias eb='vim -f ~/.bashrc && source ~/.bashrc'
+
+# sysadmin stuff
+#TODO: get this in a conditional, perhaps check for ls --version or output of it
+#TODO: perhaps create some sort of LSOPTIONS var (but why?)
+#alias ls='ls -hF --color=auto'
+alias ls='ls -hF'
+alias ll='ls -l'
+alias grep='grep --colour=auto'
+alias df='df -h'
+alias du='du -h'
+alias dus='du -s'
+alias du1='du --max-depth=1'
+alias free='free -m'
+alias print_date='date +%d-%b-%Y'
+#TODO: try whether or not ${PAGER} works
+alias man='man -P /usr/bin/less'
+
+#FIXME: this is a work-around, since svn doesn't "eats" the vimdiff-wrapper
+	#without a full path, which you don't want to have hard-coded
+alias svnvimdiff="svn diff --diff-cmd ~/bin/vimdiff-svn-wrapper.sh"
+
+# keychain
+#alias listkeys='keychain --noask id_rsa A50D68F5'
+#alias addkeys='keychain id_rsa A50D68F5'

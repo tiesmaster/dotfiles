@@ -1,0 +1,2 @@
+alias setdisplay='export DISPLAY=":0.0"'
+alias unsetdisplay='unset DISPLAY'

@@ -1,0 +1,9 @@
+alias dvdshrink='wine ~/.wine/drive_c/dvdshrink/DVD\ Shrink\ 3.2.exe'
+alias mfs='mplayer -fs'
+alias browse='opera -backgroundpage'
+alias doom3='doom3 +set s_driver oss'
+
+# van dalen
+alias enne='wine ~/.wine/drive_c/Van\ Dale/Grote\ woordenboeken/Engels/Programma/vden.exe'
+alias neen='wine ~/.wine/drive_c/Van\ Dale/Grote\ woordenboeken/Engels/Programma/vdne.exe'
+alias ne='wine ~/.wine/drive_c/VanDale/Groot\ woordenboek\ van\ de\ Nederlandse\ taal\ 14/Programma/vdegwn.exe'

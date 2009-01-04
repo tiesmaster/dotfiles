@@ -1,0 +1,26 @@
+# python
+export PYTHONSTARTUP="/home/ties/.python"
+
+# perl
+export PERLLIB="/opt/local/lib/perl5/site_perl/5.8.8/"
+
+# X11
+#export DISPLAY=:0.0
+
+# i18n
+# set papersize to A4
+#export LANG="nl_NL@euro.UTF-8"
+export LANG="nl_NL.UTF-8"
+export LC_MESSAGES="en_US.UTF-8"
+
+# bc
+if [[ -f /usr/bin/bc ]] ; then
+	export BC_ENV_ARGS=" -q"
+fi
+
+# Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
+if [[ -f ~/.dir_colors ]] ; then
+	eval $(dircolors -b ~/.dir_colors)
+elif [[ -f /etc/DIR_COLORS ]] ; then
+	eval $(dircolors -b /etc/DIR_COLORS)
+fi

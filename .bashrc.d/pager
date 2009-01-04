@@ -1,0 +1,25 @@
+# sane less settings
+if [[ -f /usr/bin/less ]] ; then
+    export PAGER=less
+    export LESS="--ignore-case --long-prompt"
+fi
+
+# vimpager
+#TODO: remove code duplication by putting the paths in an array or so
+if [[ -f /usr/bin/vimpager ]] ; then
+    export PAGER=vimpager
+    export MANPAGER=vimmanpager
+elif [[ -f /usr/share/vim/vim72/macros/less.sh ]] ; then
+    export PAGER="/usr/share/vim/vim72/macros/less.sh"
+elif [[ -f /usr/share/vim/vim70/macros/less.sh ]] ; then
+    export PAGER="/usr/share/vim/vim70/macros/less.sh"
+elif [[ -f /usr/share/vim/vim70aa/macros/less.sh ]] ; then
+    export PAGER="/usr/share/vim/vim70aa/macros/less.sh"
+elif [[ -f /usr/share/vim/vim63/macros/less.sh ]] ; then
+    export PAGER="/usr/share/vim/vim63/macros/less.sh"
+else
+	#TODO: remove hardcoded script name
+	echo "~/.bashrc.d/pager: vimpager was not found, please install"
+fi
+
+alias less=${PAGER}

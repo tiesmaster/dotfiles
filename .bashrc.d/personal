@@ -1,0 +1,2 @@
+export MAILHOST='xs4all.nl'
+export MAILUSER='tieze'

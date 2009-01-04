@@ -1,0 +1,4 @@
+# showebuild: show the latest ebuild for a particular package, using eix
+showebuild() {
+	eix ${1} --format "/usr/portage/<category>/<name>/<name>-<best>.ebuild"
+}

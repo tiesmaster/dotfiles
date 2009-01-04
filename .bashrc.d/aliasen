@@ -1,0 +1,8 @@
+[ -f ~/.bashrc.d/aliasen-unix ] && source ~/.bashrc.d/aliasen-unix
+[ -f ~/.bashrc.d/aliasen-tools ] && source ~/.bashrc.d/aliasen-tools
+
+#[ -f ~/.bashrc.d/aliasen-x11 ] && source ~/.bashrc.d/aliasen-x11
+#[ -f ~/.bashrc.d/aliasen-portage ] && source ~/.bashrc.d/aliasen-portage
+#
+#[ -f ~/.bashrc.d/aliasen-synchronize ] && source ~/.bashrc.d/aliasen-synchronize
+#[ -f ~/.bashrc.d/aliasen-programs ] && source ~/.bashrc.d/aliasen-programs

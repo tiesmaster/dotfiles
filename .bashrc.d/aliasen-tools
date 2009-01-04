@@ -1,0 +1,4 @@
+alias stratum='ntpq -c rv |grep stratum'
+alias cputemp='sensors |grep CPU'
+
+#alias wakeupsaikox='wakeonlan 00:30:1B:AF:01:9F'

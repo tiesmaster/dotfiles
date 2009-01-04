@@ -1,0 +1,3 @@
+[ -f ~/.bashrc.d/functions-unix ] && source ~/.bashrc.d/functions-unix
+#[ -f ~/.bashrc.d/functions-portage ] && source ~/.bashrc.d/functions-portage
+#[ -f ~/.bashrc.d/functions-ftd ] && source ~/.bashrc.d/functions-ftd

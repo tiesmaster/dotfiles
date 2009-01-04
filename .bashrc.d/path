@@ -1,0 +1,6 @@
+# personal script location
+export PATH="$PATH:~/bin"
+
+# macport stuff
+#export PATH="/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/texbin:/usr/X11/bin:$PATH"
+
