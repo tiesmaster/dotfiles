@@ -86,7 +86,6 @@ else
 endif " has("autocmd")
 
 set ignorecase
-set guioptions-=T		"remove toolbar
 "set guioptions-=m		"remove menubar
 
 "needed for vim-latex
