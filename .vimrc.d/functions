@@ -1,0 +1,13 @@
+function PrintTimeHeader()
+	let s:now = strftime("%a %b %d %Y %X")
+	call append(line('.'), s:now)
+	call cursor(line('.')+1, 0)
+	call append(line('.'), repeat('=', len(s:now)))
+	call cursor(line('.')+1, 0)
+	call append(line('.'), "")
+	call append(line('.'), "")
+	call cursor(line('.')+2, 0)
+	startinsert
+endfunction
+
+" vim:filetype=vim
