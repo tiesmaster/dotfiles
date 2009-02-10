@@ -3,7 +3,8 @@
 #TODO: make this more flexible (so you only have to comment out one line to
 #	add, move or disable a script
 [ -f ~/.bashrc.d/pre-startup ] && source ~/.bashrc.d/pre-startup
-[ -f ~/.bashrc.d/screen ] && source ~/.bashrc.d/screen
+#[ -f ~/.bashrc.d/screen ] && source ~/.bashrc.d/screen
+echo "****screen temporarily disabled******"
 [ -f ~/.bashrc.d/aliasen ] && source ~/.bashrc.d/aliasen
 [ -f ~/.bashrc.d/functions ] && source ~/.bashrc.d/functions
 [ -f ~/.bashrc.d/path ] && source ~/.bashrc.d/path

@@ -4,8 +4,7 @@
 #TODO: perhaps put this in a subscript, if possible (but must be, since you
 #	can source a script and call the potential function RunScreen()
 if [[ $TERM != screen* ]] && [[ $- = *i* ]] ; then
-#	exec screen -dRR
-	echo "****screen temporarily disabled******"
+	exec screen -dRR
 fi
 
 #TODO: maybe the following is necessary for reference when debugging on other

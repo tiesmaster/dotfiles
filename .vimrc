@@ -5,9 +5,9 @@ if v:progname =~? "evim"
   finish
 endif
 
-source ~\.vimrc.d\keymap
-source ~\.vimrc.d\settings
-source ~\.vimrc.d\statusbar
+source ~/.vimrc.d/keymap
+source ~/.vimrc.d/settings
+source ~/.vimrc.d/statusbar
 " source ~\.vimrc.d\vimlatex
 "TODO: fix defining a function and having the possibility to re-source it using
 "	F4
