@@ -2,6 +2,8 @@
 
 #TODO: make this more flexible (so you only have to comment out one line to
 #	add, move or disable a script
+#FIXME: putting the interactive handling in a subscript (pre-startup) probably
+#	won't work, check it
 [ -f ~/.bashrc.d/pre-startup ] && source ~/.bashrc.d/pre-startup
 #[ -f ~/.bashrc.d/screen ] && source ~/.bashrc.d/screen
 echo "****screen temporarily disabled******"
