@@ -6,17 +6,20 @@ _.sw?
 .subversion
 ?viminfo
 .zshhistory
-_ipython
 auto-save-list
 known_hosts
 
+_ipython
+gis_aliases
 dotfiles
 Werkmap
 Zooi
+tmp
+
 sw_user_custom
 RECYCLER
-old
 Downloads
 My Pictures*
+Mijn Google Gadgets
 Default.rdp
 desktop.ini

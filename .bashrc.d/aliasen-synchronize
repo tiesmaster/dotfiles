@@ -2,3 +2,5 @@
 #alias synchronize_irqss_to_office='(cd ~ && rsync -avuz --del --exclude-from=irqss/.exclude irqss lfs:klanten )'
 
 alias synchronize_dotfiles='(cd ~ && rsync -av --exclude-from=.rsync-rules . dotfiles)'
+
+alias synchronize_realmacs='rsync -auv --del /cygdrive/s/realmacs/ /cygdrive/d/Ties/realmacs/'
