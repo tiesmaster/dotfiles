@@ -13,6 +13,10 @@ known_hosts
 dotfiles
 Werkmap
 Zooi
-*.rar
-Log*
 sw_user_custom
+RECYCLER
+old
+Downloads
+My Pictures*
+Default.rdp
+desktop.ini

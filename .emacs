@@ -18,14 +18,10 @@
 ;; )
 
 (custom-set-variables
- '(roos-custom-sw-gis-alias-pathes (quote ("s:/GIS400/product/config/gis_aliases")))
+ '(roos-custom-sw-gis-alias-pathes (quote ("Z:/gis_aliases")))
  )
 
-(custom-set-variables
- '(roos-custom-sw-gis-alias-pathes (quote ("c:\\SmallworldTraining\\product\\config\\gis_aliases")))
- )
-
-;; adding the product path doesn't seems to be required, since adding the
+(custom-set-variables '(roos-custom-sw-gis-alias-pathes (quote ("c:\\SmallworldTraining\\product\\config\\gis_aliases"))) );; adding the product path doesn't seems to be required, since adding the
 ;; gis_alias is proficient
 ;;(custom-set-variables
 ;; '(roos-custom-sw-product-pathes (quote ("c:\\SmallworldTraining\\product")))
@@ -39,8 +35,7 @@
   (message "Running myInit")
 
   (ecb-deactivate)
-  (roos-set-sw-gis-alias-command-s:-GIS400-product-config-gis_aliases-swaf)
-;;  (roos-set-sw-gis-alias-command-c:-SmallworldTraining-product-config-gis_aliases-swaf)
-)
+  (roos-set-sw-gis-alias-start-Z:-gis_aliases-orca_custom_dev_open)
+;;  (roos-set-sw-gis-alias-command-c:-SmallworldTraining-product-config-gis_aliases-swaf))
 
 (global-set-key (kbd "C-M-z") 'myInit)
