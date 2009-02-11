@@ -24,3 +24,5 @@ if [[ -f ~/.dir_colors ]] ; then
 elif [[ -f /etc/DIR_COLORS ]] ; then
 	eval $(dircolors -b /etc/DIR_COLORS)
 fi
+
+export EDITOR=vim
