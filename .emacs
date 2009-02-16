@@ -1,3 +1,5 @@
+(message "Hoi")
+
 (defun my-init ()
 	"Custom initialization, maximizing active frame, and so on."
 	(interactive)
@@ -46,9 +48,8 @@
 	)
 	(roos-install-shortcuts)
 	(roos-revert-emacs-shortcuts)
-	;;(roos-add-gis-aliases-old)
-	(roos-add-gis-aliases-new "Z:/gis_aliases")
-	(roos-add-gis-aliases-new "c:/SmallworldTraining/product/config/gis_aliases")
+	(roos-add-gis-aliases "Z:/gis_aliases")
+	(roos-add-gis-aliases "c:/SmallworldTraining/product/config/gis_aliases")
 )
 
 (add-hook 'window-setup-hook 'roos-my-init t)
@@ -76,20 +77,9 @@
 	(global-set-key (kbd "M-f") 'forward-word)
 )
 
-(defun roos-add-gis-aliases-old()
-  	;;TODO: move hard-coded filenames to a different file (~/.emacs.d/gis-aliases
+(defun roos-add-gis-aliases(gis-alias)
 	(custom-set-variables
-		'(roos-custom-sw-gis-alias-pathes (quote ("Z:/gis_aliases")))
-	 )
-
-	(custom-set-variables
-		'(roos-custom-sw-gis-alias-pathes (quote ("c:/SmallworldTraining/product/config/gis_aliases")))
-	)
-)
-
-(defun roos-add-gis-aliases-new(gis-alias)
-	(custom-set-variables
-		'(roos-custom-sw-gis-alias-pathes (quote (gis-alias)))
+		'(roos-custom-sw-gis-alias-pathes (list gis-alias))
 	 )
 )
 
