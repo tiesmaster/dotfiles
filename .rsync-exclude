@@ -1,3 +1,4 @@
+# UNIX stuff
 *~
 _.sw?
 .*.sw?
@@ -7,21 +8,28 @@ _.sw?
 ?viminfo
 .zshhistory
 auto-save-list
-known_hosts
 .svn
 .lesshst
 
-_ipython
-gis_aliases
+# generic
 dotfiles
-Werkmap
-Zooi
 tmp
-
-sw_user_custom
 RECYCLER
-Downloads
-My Pictures*
-Mijn Google Gadgets
-Default.rdp
-desktop.ini
+
+# smallworld
+gis_aliases
+sw_user_custom
+
+# temp
+_ipython
+
+# will go to .rsync-exclude-custom, when time is ready
+#Downloads
+#My Pictures*
+#Mijn Google Gadgets
+#Default.rdp
+#desktop.ini
+
+#known_hosts
+#Werkmap
+#Zooi

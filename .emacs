@@ -50,6 +50,7 @@
 	(roos-revert-emacs-shortcuts)
 	(roos-add-gis-aliases "Z:/gis_aliases")
 	(roos-add-gis-aliases "c:/SmallworldTraining/product/config/gis_aliases")
+	(roos-add-product-path "c:/SmallworldTraining/product")
 )
 
 (add-hook 'window-setup-hook 'roos-my-init t)
@@ -80,6 +81,13 @@
 (defun roos-add-gis-aliases(gis-alias)
 	(custom-set-variables
 		'(roos-custom-sw-gis-alias-pathes (list gis-alias))
+	 )
+)
+
+(defun roos-add-product-path(product-path)
+	(custom-set-variables
+;;		'(roos-custom-sw-gis-alias-pathes (list product-path))
+		'(roos-custom-sw-product-pathes (quote ("c:/SmallworldTraining/product")))
 	 )
 )
 
