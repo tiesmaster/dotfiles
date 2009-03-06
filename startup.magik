@@ -1,0 +1,53 @@
+#% text_encoding = iso8859_1
+##
+## File            : startup.magik
+##
+## Copyright       : Realworld Systems
+##                   e-mail  : support@realworldwide.com
+##                   address : Venusstraat 17, 4105 JH Culemborg, The Netherlands
+##                   tel     : +31(0)345 614319
+##                   fax     : +31(0)345 614406
+##
+## Contains        : 
+##
+##
+## Date written    : Mar/2009
+## Date changed    : Mar/2009
+##
+## `Source contents (Starts with evt. Shared Cons/vars, Automatically maintained):'
+##
+## '|Methods (Public)|:`
+##                  sync_manager.ties_run()
+##                  sync_manager.ties_run2()
+## `Source Code'
+#&&
+#
+_package user
+
+_pragma(classify_level=restricted, topic={roos,!!!_roos_comp_name_not_found_insert_1_!!!})
+_method sync_manager.ties_run(p_args)
+	# Author         : Realworld Systems (Thijs Brobbel); Date: Mar/2009
+	## Parameters    : P_ARGS: pass trough to sync's run
+	## Returns       : 
+	## Function      : 
+	## Revision      :
+	_global !sync_timestamp_format!
+	!sync_timestamp_format! << p_args + "_#Y.#m.#d_#H.#M"
+	_self.run(p_args)
+_endmethod
+$
+
+_pragma(classify_level=restricted, topic={roos,!!!_roos_comp_name_not_found_insert_1_!!!})
+_method sync_manager.ties_run2(p_args)
+	# Author         : Realworld Systems (Thijs Brobbel); Date: Mar/2009
+	## Parameters    : P_ARGS: pass trough to sync's run
+	## Returns       : 
+	## Function      : 
+	## Revision      :
+	p_args << "configuration_" + p_args
+	_global !sync_timestamp_format!
+	!sync_timestamp_format! << p_args + "_#Y.#m.#d_#H.#M"
+	_self.run(p_args)
+_endmethod
+$
+

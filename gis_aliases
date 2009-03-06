@@ -1,0 +1,256 @@
+#
+# Smallworld Core 3.3 Windows Platforms Standard Core Product Aliases
+#
+# The Smallworld Product's standard aliases file should not be edited
+# by hand.  A user can have personal aliases by placing them in a file
+# named `gis_aliases' in his/her home directory, but the alias names
+# must be chosen not to clash with those in the standard aliases file.
+#
+# An alias file should contain one or more stanzas of the form
+#
+#     <alias>:
+#           title      = <title>
+#           directory  = <directory>
+#           program    = <program>
+#           image      = <image>
+#           args       = <args>
+#           log_file   = <file>
+#           timeout    = <seconds>
+#           wait_line  = <text>
+#           icon_file  = <file>
+#           icon_index = <index>
+#           product    = <product>
+#           interactive = <interactive_or_not>
+#           <other>    = <value>
+#
+# where the meaning of each item is
+#
+#     alias       The alias name for the command represented by this
+#                 stanza.  The name should start with a letter and
+#                 contain only letters, digits, `-' and `_'.  Lower-
+#                 and uppercase letters are not distinguished.
+#
+#     title       An arbitrary line of unquoted text, specifying a
+#                 title associated with the command alias.  This
+#                 simply causes the environment variable
+#
+#                       SW_GIS_CONSOLE_TITLE
+#
+#                 to be set to the supplied string: it is up to
+#                 the run program whether to notice this and to
+#                 display it in some way.  It is also used to
+#                 set the title displayed for the command in a
+#                 Program Manager Group item.
+#
+#     directory   The working directory in which to run the program.
+#                 If not specified, the current directory is used.
+#
+#     program     The name of the executable program to run.
+#                 Assuming the program can be found in the PATH
+#                 (e.g. as set by the environment file), it is
+#                 not necessary to specify the directory part of
+#                 the program name (nor normally its suffix).
+#                 If the program name is not specified, the default
+#                 is `sw_magik_win32' unless the image file specified
+#		  has the extension ".mi". In that case the default
+#		  program name is `gis_magik_win32'.
+#
+#     image       The name of a Magik image file to pass as argument
+#                 to the program.  This item is optional, and should
+#                 be specified if and only if <program> expects an
+#                 image argument.
+#
+#     args        This item is optional, and may comprise any
+#                 additional arguments to pass to <program>.
+#
+#     log_file    This item is optional.  It specifies a log file
+#                 for standard output and standard error.
+#
+#     timeout     This item is optional.  It specifies a timeout
+#                 for waiting for the application to start.  Only
+#                 relevant if a log file is used: a window will
+#                 be displayed for timeout seconds saying that the
+#                 application is being started.
+#
+#     wait_line   This item is optional.  It specifies the start
+#                 of a line in the log file to wait for on starting
+#                 the application: a window will be displayed saying
+#                 that the application is being started, until a
+#                 matching line appears in the log file.
+# 
+#     icon_file   This item is optional.  If specified, it should
+#                 be the name of a file whose icon is to be used
+#                 to identify this command for a Program Manager
+#                 Group item.  If not specified, it defaults to
+#                 the icon in the GIS launcher program itself.
+#
+#     icon_index  This item is optional.  If specified, it should
+#                 be the index of the icon to use in an icon_file
+#                 which contains more than one icon.  If not
+#                 specified, it defaults to 1.
+#
+#     product     This item is optional.  It is intended to be used
+#                 to assert that a command is associated with a
+#                 particular product (e.g. `base', `view' or `gis').
+#
+#     interactive This item is optional and only has an effect when 
+#                 a log file has been specified. 
+#                 If its value is TRUE or T (case insensitive) then
+#                 the program runs interactively i.e. standard input
+#                 and standard output are connected to a console.
+#                 Any other value is taken as false. The wait_line and
+#                 timeout items are specified as well as this option,
+#                 they will be ignored.
+#
+#     <other>     Any unrecognised item is taken to be the name of
+#                 an environment variable which is to be set to
+#                 <value> prior to running the command.
+
+#
+# The "install" alias is only used for initial installation from the
+# distribution medium: it is not relevant for an installed product.
+#
+
+gis:
+	title		= Smallworld Core
+	image		= %SMALLWORLD_GIS%\images\gis.msf
+	product		= gis
+
+cmd:
+	title		= Smallworld Command Prompt
+	program		= %COMSPEC%
+	args		= /E:4096 /K %SMALLWORLD_GIS%\config\cmd.bat %SMALLWORLD_GIS% %SW_LANGUAGE%
+	icon_file	= %SMALLWORLD_GIS%\resources\base\bitmaps\ms-dos.ico
+	product		= base
+
+orca_swaf:
+	title		= ORCA Swaf
+	image		= %ORCA_ROOT%\images\orca_swaf.msf
+	product		= gis
+	log_file	= %ORCA_ROOT%\log\orca_swaf_%USERNAME%_%TIMESTAMP_STRING%.log
+	args		= -Mextdir %TEMP%
+
+orca_closed:
+	title		= ORCA Closed
+	image		= %ORCA_ROOT%\images\orca_closed.msf
+	product		= gis
+	log_file	= %ORCA_ROOT%\log\orca_closed_%USERNAME%_%TIMESTAMP_STRING%.log
+	args		= -Mextdir %TEMP%
+
+orca_custom_closed:
+	title		= ORCA Custom Closed
+	image		= %ORCA_ROOT%\images\orca_custom_closed.msf
+	product		= gis
+	log_file	= %ORCA_ROOT%\log\orca_custom_closed_%USERNAME%_%TIMESTAMP_STRING%.log
+	args		= -Mnew 16M -Mold 8M -Mpage 32M -Mext 64M -Mextdir %TEMP%
+
+orca_custom_dev_closed:
+	title		= ORCA Custom Dev Closed
+	image		= %ORCA_ROOT%\images\orca_custom_dev_closed.msf
+	product		= gis
+	log_file	= %ORCA_ROOT%\log\orca_custom_dev_closed_%USERNAME%_%TIMESTAMP_STRING%.log
+	args		= -Mnew 16M -Mold 8M -Mpage 32M -Mext 64M -Mextdir %TEMP%
+
+orca_custom_open:
+	title		= ORCA Custom Open
+	image		= %ORCA_ROOT%\images\orca_custom_open.msf
+	product		= gis
+	log_file	= %ORCA_ROOT%\log\orca_custom_open_%USERNAME%_%TIMESTAMP_STRING%.log
+        # This open image is to be opened by a short cut, hence we cannot add '-cli'
+	args		= -Mnew 16M -Mold 8M -Mpage 32M -Mext 128M -Mextdir %TEMP%
+
+orca_custom_dev_open:
+	title		= ORCA Custom Dev Open
+	image		= %ORCA_ROOT%\images\orca_custom_dev_open.msf
+	product		= gis
+	directory	= %TEMP%
+	log_file	= %ORCA_ROOT%\log\orca_custom_dev_open_%USERNAME%_%TIMESTAMP_STRING%.log
+        # This open image is not to be opened by a short cut, hence we can add '-cli'
+	args		= -Mnew 192M -Mold 32M -Mpage 128M -Mext 512M -Mextdir %TEMP% -cli
+
+orca_custom_batch_open:
+	title		= ORCA Custom GS Batch Gen Open
+	image		= %ORCA_ROOT%\images\orca_custom_dev_open.msf
+	product		= gis
+	directory	= %TEMP%
+	log_file	= %ORCA_ROOT%\log\orca_custom_dev_open_%USERNAME%_%TIMESTAMP_STRING%.log
+        # This open image is not to be opened by a short cut, hence we can add '-cli'
+	args		= -Mnew 64M -Mold 32M -Mpage 32M -Mext 512M -Mextdir %TEMP% -cli
+
+orca TestRunner:
+	title		= ORCA TestRunner Open
+	image		= %ORCA_ROOT%\images\orca_custom_dev_testrunner_open.msf
+	product		= gis
+	directory	= %TEMP%
+	log_file	= %ORCA_ROOT%\log\orca_custom_dev_open_%USERNAME%_%TIMESTAMP_STRING%.log
+        # This open image is not to be opened by a short cut, hence we can add '-cli'
+	args		= -Mnew 16M -Mold 8M -Mpage 32M -Mext 128M -Mextdir %TEMP% -cli
+
+orca_tools:
+	title		= ORCA Tools
+	image		= %ORCA_ROOT%\images\orca_tools.msf
+	product		= gis
+	log_file	= %ORCA_ROOT%\log\orca_tools_%USERNAME%_%TIMESTAMP_STRING%.log
+	args		= -Mnew 16M -Mold 8M -Mpage 32M -Mext 128M -Mextdir %TEMP%
+
+orca_sync_man_open:
+	title		= ORCA Sync Man open
+	image		= %ORCA_ROOT%\images\orca_sync_man_open.msf
+	product		= gis
+	log_file	= %ORCA_ROOT%\log\orca_sync_man_open_%USERNAME%_%TIMESTAMP_STRING%_%SYNC_MAPPING%.log
+	args		= -Mnew 16M -Mold 8M -Mpage 32M -Mext 128M -Mextdir %TEMP%
+
+orca_sts:
+	title		= ORCA Short Transation Server
+	image		= %ORCA_ROOT%\images\orca_sts_open.msf
+	product		= gis
+	log_file	= %ORCA_ROOT%\log\orca_sts_open_%COMPUTERNAME%_%TIMESTAMP_STRING%.log
+	args		= -Mextdir %TEMP% -sts_port_no %ORCA_STS_PORT%
+	program		= sw_magik
+-
+Orca Migratie Applicatie (Base closed for building):
+	title		= ORCA Mig Base closed for building
+	image		= \\Realworld3\PrdAtHome\images\main\orca_custom_closed.msf
+	product		= gis
+	log_file	= %ORCA_ROOT%\log\orca_custom_mig_open_test_%USERNAME%_%TIMESTAMP_STRING%.log
+        # This open image is not to be opened by a short cut, hence we can add '-cli'
+	args		= -Mnew 16M -Mold 16M -Mpage 32M -Mext 1280M -Mextdir %TEMP% -cli
+	SW_ACE_DB_DIR   = %SNA_DB_ROOT%\admin_migration
+	MIGRATION_PRODUCT_PATH=\\realworld\data\projects\UT\orca\devenv\app\MigrationNorth
+	SW_PRODUCTS_PATH= %SW_PRODUCTS_PATH%;%MIGRATION_PRODUCT_PATH%
+
+Orca Migratie Applicatie (Ontw):
+	title		= ORCA Custom Mig Open
+	image		= %ORCA_ROOT%\images\orca_custom_mig_open.msf
+	product		= gis
+	log_file	= %ORCA_ROOT%\log\orca_custom_mig_open_%USERNAME%_%TIMESTAMP_STRING%.log
+        # This open image is not to be opened by a short cut, hence we can add '-cli'
+	args		= -Mnew 16M -Mold 16M -Mpage 32M -Mext 1280M -Mextdir %TEMP% -cli
+	SW_ACE_DB_DIR   = %SNA_DB_ROOT%\admin_migration
+	MIGRATION_PRODUCT_PATH=\\realworld\data\projects\UT\orca\devenv\app\MigrationNorth
+	SW_PRODUCTS_PATH= %SW_PRODUCTS_PATH%;%MIGRATION_PRODUCT_PATH%
+
+-
+orca_report_server_open:
+	title		= ORCA Report Server Open
+	image		= %ORCA_ROOT%\images\orca_report_server_open.msf
+	product		= gis
+	log_file	= %ORCA_ROOT%\log\orca_report_server_open_%USERNAME%_%TIMESTAMP_STRING%.log
+        # This open image is not to be opened by a short cut, hence we can add '-cli'
+	args		= -Mnew 16M -Mold 8M -Mpage 32M -Mext 128M -Mextdir %TEMP% -cli
+
+orca_custom_open_merge_post:
+	title		= ORCA Custom Open Merge Post
+	image		= %ORCA_ROOT%\images\orca_custom_open_merge_post.msf
+	product		= gis
+	log_file	= %ORCA_ROOT%\log\orca_custom_open_merge_post_%USERNAME%_%TIMESTAMP_STRING%.log
+        # This open image is to be opened by a short cut, hence we cannot add '-cli'
+	args		= -Mnew 64M -Mold 32M -Mpage 32M -Mext 512M -Mextdir %TEMP%
+
+orca_custom_open_merge_post_ploud:
+	title		= ORCA Custom Open Merge Post Planning Oud
+	image		= %ORCA_ROOT%\images\orca_custom_open_merge_post_ploud.msf
+	product		= gis
+	log_file	= %ORCA_ROOT%\log\orca_custom_open_merge_post_ploud_%USERNAME%_%TIMESTAMP_STRING%.log
+        # This open image is to be opened by a short cut, hence we cannot add '-cli'
+	args		= -Mnew 64M -Mold 32M -Mpage 32M -Mext 512M -Mextdir %TEMP%
