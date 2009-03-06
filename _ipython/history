@@ -1,4 +1,0 @@
-n
-def hoi(): print "hoi"
-def hoi(foo, bar): print foo, bar
-hoi()
