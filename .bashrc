@@ -1,12 +1,23 @@
 #.bashrc: Ties' own bash startup
 
+# This file is sourced by all *interactive* bash shells on startup,
+# including some apparently interactive shells such as scp and rcp
+# that can't tolerate any output.  So make sure this doesn't display
+# anything or bad things will happen !
+
+# Test for an interactive shell.  There is no need to set anything
+# past this point for scp and rcp, and it's important to refrain from
+# outputting anything in those cases.
+if [[ $- != *i* ]] ; then
+	# Shell is non-interactive.  Be done now!
+	return
+fi
+
 #TODO: make this more flexible (so you only have to comment out one line to
 #	add, move or disable a script
-#FIXME: putting the interactive handling in a subscript (pre-startup) probably
-#	won't work, check it
-[ -f ~/.bashrc.d/pre-startup ] && source ~/.bashrc.d/pre-startup
-#[ -f ~/.bashrc.d/screen ] && source ~/.bashrc.d/screen
+
 echo "****screen temporarily disabled******"
+#[ -f ~/.bashrc.d/screen ] && source ~/.bashrc.d/screen
 [ -f ~/.bashrc.d/aliasen ] && source ~/.bashrc.d/aliasen
 [ -f ~/.bashrc.d/functions ] && source ~/.bashrc.d/functions
 [ -f ~/.bashrc.d/path ] && source ~/.bashrc.d/path
