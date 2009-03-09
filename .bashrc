@@ -31,4 +31,4 @@ echo "****screen temporarily disabled******"
 #[ -f ~/.bashrc.d/external/ciaranm ] && source ~/.bashrc.d/external/ciaranm
 
 #FIXME: following include needs to get merged with normal infrastructure
-source .profile
+[ -f ~/.profile ] && source ~/.profile

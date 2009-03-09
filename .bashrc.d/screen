@@ -1,8 +1,6 @@
 #TODO: get this working on all platforms, perhaps make it sense it's already
 #	running within a screen and act on that (don't startup screen?, remap
 #	shortcuts to new "shortcut-ring"?)
-#TODO: perhaps put this in a subscript, if possible (but must be, since you
-#	can source a script and call the potential function RunScreen()
 if [[ $TERM != screen* ]] && [[ $- = *i* ]] ; then
 	exec screen -dRR
 fi
