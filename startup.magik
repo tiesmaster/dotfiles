@@ -40,5 +40,5 @@ magik_rep.prompt_generator <<
 
 _if !current_package![:sync_manager] _isnt _unset
 _then
-	load_file("startup_sm.magik")
+	load_file(system.home + "startup_sm.magik")
 _endif
