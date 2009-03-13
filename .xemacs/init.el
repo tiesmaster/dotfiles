@@ -49,8 +49,8 @@
 	(roos-install-shortcuts)
 	(roos-revert-emacs-shortcuts)
 	(roos-add-gis-aliases "Z:/gis_aliases")
-	(roos-add-gis-aliases "c:/SmallworldTraining/product/config/gis_aliases")
-	(roos-add-product-path "c:/SmallworldTraining/product")
+	(roos-add-gis-aliases "d:/SmallworldTraining/product/config/gis_aliases")
+	(roos-add-product-path "d:/SmallworldTraining/product")
 )
 
 (add-hook 'window-setup-hook 'roos-my-init t)
@@ -86,8 +86,8 @@
 
 (defun roos-add-product-path(product-path)
 	(custom-set-variables
-;;		'(roos-custom-sw-gis-alias-pathes (list product-path))
-		'(roos-custom-sw-product-pathes (quote ("c:/SmallworldTraining/product")))
+		'(roos-custom-sw-product-pathes (list product-path))
+;;		'(roos-custom-sw-product-pathes (quote ("d:/SmallworldTraining/product")))
 	 )
 )
 
@@ -102,7 +102,7 @@
 	(interactive)
 	(message "Starting Smallworld for training")
 
-	(roos-set-sw-gis-alias-start-c:-SmallworldTraining-product-config-gis_aliases-swaf)
+	(roos-set-sw-gis-alias-start-d:-SmallworldTraining-product-config-gis_aliases-swaf)
 )
 
 ;; SCRATCH
