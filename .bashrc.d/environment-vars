@@ -10,8 +10,11 @@ export PERLLIB="/opt/local/lib/perl5/site_perl/5.8.8/"
 # i18n
 # set papersize to A4
 #export LANG="nl_NL@euro.UTF-8"
-export LANG="nl_NL.UTF-8"
-export LC_MESSAGES="en_US.UTF-8"
+
+# these breaks man pages (see issue #6) and it doesn't seems to be required,
+# let's not use them for now
+#export LANG="nl_NL.UTF-8"
+#export LC_MESSAGES="en_US.UTF-8"
 
 # bc
 if [[ -f /usr/bin/bc ]] ; then
