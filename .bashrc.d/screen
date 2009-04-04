@@ -1,11 +1,15 @@
 #TODO: get this working on all platforms, perhaps make it sense it's already
 #	running within a screen and act on that (don't startup screen?, remap
 #	shortcuts to new "shortcut-ring"?)
-if [[ $TERM != screen* ]] && [[ $- = *i* ]] ; then
-	exec screen -dRR
-fi
 
-#TODO: maybe the following is necessary for reference when debugging on other
-#platforms
-	#[[ $TERM = screen || $- != *i* ]] || exec screen -RDD
-	#[[ $TERM = screen || $- != *i* || -n $CYGWIN_ROOT ]] || exec screen -RDD
+case "`uname`" in
+	CYGWIN*) 
+esac
+
+if [[ $TERM != screen* ]] && [[ $- = *i* ]] ; then
+
+	# make sure screen starts up with the SHELL opt in cygwin (issue #1)
+	[[ "`uname`" = CYGWIN* ]] && SCREEN_OPTS="-s $SHELL"
+
+	exec screen -dRR $SCREEN_OPTS
+fi
