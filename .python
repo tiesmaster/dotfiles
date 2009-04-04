@@ -1,2 +1,5 @@
-import IPython
-IPython.Shell.IPShell().mainloop(sys_exit=1)
+try:
+	import IPython
+	IPython.Shell.IPShell().mainloop(sys_exit=1)
+except ImportError:
+	print "Warning: IPython is not available"
