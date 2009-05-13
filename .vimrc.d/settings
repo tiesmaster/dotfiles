@@ -44,7 +44,11 @@ if has("autocmd")
 
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=78
+
+  " Some makeprg's
   autocmd FileType perl setlocal makeprg=perl\ %
+  autocmd FileType xslt setlocal makeprg=java\ -jar\ d:\\ties\\bin\\jar\\xalan.jar\ -XSL\ %\ -in\ %<_input.xml\ -out\ %<_output.xml
+  autocmd FileType xslt set autowrite
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler

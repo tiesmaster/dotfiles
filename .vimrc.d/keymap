@@ -20,7 +20,7 @@ imap <f6> <C-o> :SpellSetLanguage nl <cr>
 
 vmap <f5> c> [...]<esc>
 vmap <esc>f c > [...] <esc>
-nmap <f5> :w\|make<esc>
+nmap <f5> :make<esc>
 nmap <esc>f o> [...]<esc>
 
 " nohighlight action
