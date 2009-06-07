@@ -12,4 +12,4 @@ RunScreen() {
 	fi
 }
 
-[ -f `which screen` ] && RunScreen
+[ `which screen` ] && RunScreen
