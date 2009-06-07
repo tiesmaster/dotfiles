@@ -2,14 +2,14 @@
 #	running within a screen and act on that (don't startup screen?, remap
 #	shortcuts to new "shortcut-ring"?)
 
-case "`uname`" in
-	CYGWIN*) 
-esac
+RunScreen() {
+	if [[ $TERM != screen* ]] && [[ $- = *i* ]] ; then
 
-if [[ $TERM != screen* ]] && [[ $- = *i* ]] ; then
+		# make sure screen starts up with the SHELL opt in cygwin (issue #1)
+		[[ "`uname`" = CYGWIN* ]] && SCREEN_OPTS="-s $SHELL"
 
-	# make sure screen starts up with the SHELL opt in cygwin (issue #1)
-	[[ "`uname`" = CYGWIN* ]] && SCREEN_OPTS="-s $SHELL"
+		exec screen -dRR $SCREEN_OPTS
+	fi
+}
 
-	exec screen -dRR $SCREEN_OPTS
-fi
+[ -f `which screen` ] && RunScreen
