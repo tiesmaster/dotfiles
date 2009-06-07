@@ -32,3 +32,9 @@ fi
 
 #FIXME: following include needs to get merged with normal infrastructure
 [ -f ~/.profile ] && source ~/.profile
+
+echo '***'
+echo '$Id$'
+echo 'Welkom to dotfiles version 0.1'
+echo "Don't forget to update your version: $ svn update"
+echo '***'
