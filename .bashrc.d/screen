@@ -12,4 +12,8 @@ RunScreen() {
 	fi
 }
 
-[ `which screen` ] && RunScreen
+if [ `which screen 2>/dev/null` ] ; then
+	RunScreen
+else
+	echo "screen: screen was not found, please install"
+fi

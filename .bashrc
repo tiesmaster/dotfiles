@@ -1,4 +1,5 @@
 #.bashrc: Ties' own bash startup
+# $Id$
 
 # This file is sourced by all *interactive* bash shells on startup,
 # including some apparently interactive shells such as scp and rcp
@@ -34,7 +35,6 @@ fi
 [ -f ~/.profile ] && source ~/.profile
 
 echo '***'
-echo '$Id$'
-echo 'Welkom to dotfiles version 0.1'
-echo "Don't forget to update your version: $ svn update"
+echo 'Welkom to dotfiles version 0.1 ($Revision$)'
+echo "Don't forget to update your version on a regular basis, eg: $ svn update"
 echo '***'
