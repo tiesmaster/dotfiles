@@ -3,4 +3,4 @@ alias cputemp='sensors |grep CPU'
 
 #alias wakeupsaikox='wakeonlan 00:30:1B:AF:01:9F'
 
-alias xalan="java -jar 'd:\\bin\\jar\\xalan.jar'"
+alias xalan="java -jar 'c:\\bin\\jar\\xalan.jar'"
