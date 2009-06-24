@@ -32,4 +32,10 @@ map ,. ,h
 " logical Y action
 map Y y$
 
+" clipboard shortcuts, using F9 instead of F10, since F10 is menubar
+vmap <f9> "+x
+vmap <f11> "+y
+nmap <f12> "+gP
+imap <f12> +
+
 " vim:filetype=vim
