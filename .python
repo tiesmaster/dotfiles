@@ -2,4 +2,6 @@ try:
 	import IPython
 	IPython.Shell.IPShell().mainloop(sys_exit=1)
 except ImportError:
-	print "Warning: IPython is not available"
+	import sys
+	# make sure py3k won't bork on me
+	sys.stdout.write("Warning: IPython is not available")
