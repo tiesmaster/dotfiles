@@ -1,6 +1,6 @@
 # Set PATH so it includes user's private bin if it exists
 if [ -d "~/bin" ] ; then
-	export PATH="$PATH:~/bin"
+	export PATH="$PATH:~/bin/bash:~/bin/python"
 fi
 
 # macport stuff
