@@ -73,9 +73,21 @@ _method sm_controller.run(p_args)
 	_endif
 	
 	_protect
+		# ----------
+		# Flush the buffer every second (in a different thread, of course)
+		# ----------
+		flush_buffer_thread <<
+			_proc @flush_buffer_periodic()
+				_loop
+					!output!.flush()
+					_thisthread.sleep(1000)
+				_endloop
+			_endproc.fork()
 		_super.run(p_args)
+		
 	_protection
 		!output!.close()
+		flush_buffer_thread.kill()
 	_endprotect
 	
 _endmethod
