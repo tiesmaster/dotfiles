@@ -1,0 +1,93 @@
+#% text_encoding = iso8859_1
+##
+## File            : sync_manager.magik
+##
+## Copyright       : Realworld Systems
+##                   e-mail  : support@realworldwide.com
+##                   address : Venusstraat 17, 4105 JH Culemborg, The Netherlands
+##                   tel     : +31(0)345 614319
+##                   fax     : +31(0)345 614406
+##
+## Contains        : 
+##
+##
+## Date written    : Mar/2009
+## Date changed    : Jul/2009
+##
+## `Source contents (Starts with evt. Shared Cons/vars, Automatically maintained):'
+##
+## '|Class Defs|:`
+##                  sm_controller
+## '|Methods (Public)|:`
+##                  sm_controller.run()
+##                  sm_controller.module_name
+## `Source Code'
+#&&
+#
+_package user
+
+_pragma(classify_level=advanced, topic={SyncManager})
+# Author         : Realworld Systems (Thijs Brobbel); Date: Jul/2009
+## Class Purpose :  extended syncmanager
+## Revision      : 
+def_slotted_exemplar(:sm_controller,
+		     {{:override_logfile_format, _true},
+		      {:redirect_output_to_logfile, _true},
+		      {:mapping_prefix, "configuration_"}
+		     },
+		     {:sync_manager})
+$
+
+_method sm_controller.run(p_args)
+	# Author         : Realworld Systems (Thijs Brobbel); Date: Mar/2009
+	## Parameters    : P_ARGS: pass trough to sync's run
+	## Returns       : 
+	## Function      : 
+	## Revision      :
+	_dynamic !output!
+	
+	p_args << .mapping_prefix + p_args
+	
+	_if .override_logfile_format
+	_then
+		_global !sync_timestamp_format!
+		!sync_timestamp_format! << p_args + "_#Y.#m.#d_#H.#M"
+	_endif
+	_if .redirect_output_to_logfile
+	_then
+		_local l_logspath << _self.sync_get_setting(:logs_repository_path) + system.pathname_separator
+		
+		# ----------
+		# copied from sync_manager.magik: sync_manager.sync_open_data_channel()
+		# ----------
+		_global !sync_timestamp_format!
+		_local l_timestamp_format << !sync_timestamp_format!.default("#Y.#m.#d_#H.#M").substitute_character(% , %.)
+		_local l_int!stream << string_output_stream.new()
+		!date_time_environ!.format_date_time(l_int!stream, l_timestamp_format, date_time.now())
+		_local l_timestamp << l_int!stream.string
+		# ----------
+		# end of copy
+		# ----------
+		l_logfile << l_logspath + "synchronisation_gis-buffer_" + l_timestamp + ".log"
+		!output! << external_text_output_stream.new(l_logfile)
+	_endif
+	
+	_protect
+		_super.run(p_args)
+	_protection
+		!output!.close()
+	_endprotect
+	
+_endmethod
+$
+
+_method sm_controller.module_name
+	# Author         : Realworld Systems (Thijs Brobbel); Date: Jul/2009
+	## Parameters    : 
+	## Returns       : 
+	## Function      : 
+	## Revision      : 
+	>> :roos_sync_manager_src
+_endmethod
+$
+

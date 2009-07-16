@@ -12,7 +12,7 @@
 ##
 ##
 ## Date written    : Mar/2009
-## Date changed    : Mar/2009
+## Date changed    : Jul/2009
 ##
 ## `Source contents (Starts with evt. Shared Cons/vars, Automatically maintained):'
 ##
@@ -21,24 +21,16 @@
 
 _package user
 
-magik_rep.prompt_generator << 
-	_if char16_vector.responds_to?(:replace_all|()|)
-	_then >>
-		_proc(prompt) >>
-			write_string(%(,ds_time.now().write_string.replace_all(" ","-"),%),prompt)
-		_endproc
-	_elif char16_vector.responds_to?(:roos_find_and_replace_all|()|)
-	_then >>
-		_proc(prompt)>>
-			write_string(%(,ds_time.now().write_string.roos_find_and_replace_all(" ","-"),%),prompt)
-		_endproc
-	_else >>
-		_proc(prompt)>>
-			write_string(%(,ds_time.now().write_string, %[, !current_package!.name, "]) ", prompt)
-		_endproc
-	_endif
+!global_auto_declare?! << _true
+$
+
+_global startup_dir << system.home + "startup.magik.d" + system.pathname_separator
+
+load_file(startup_dir + "prompt.magik")
+load_file(startup_dir + "list_of_tables.magik")
+#load_file(startup_dir + "run_sync_redirect_output.magik")
 
 _if !current_package![:sync_manager] _isnt _unset
 _then
-	load_file(system.home + "startup_sm.magik")
+	load_file(startup_dir + "sync_manager.magik")
 _endif
