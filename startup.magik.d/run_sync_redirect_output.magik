@@ -16,50 +16,27 @@
 ##
 ## `Source contents (Starts with evt. Shared Cons/vars, Automatically maintained):'
 ##
-## '|Substituted Methods|:`
-##                  external_text_output_stream.write
 ## '|Methods (Public)|:`
-##                  external_text_output_stream.write()
+##                  terminal.put_charvec()
+##                  terminal.put()
+##                  terminal.move_to_col()
 ## `Source Code'
 #&&
 #
 _package user
 
-redirect_output <<
-	_proc @redirect_output(n)
-		!output! << external_text_output_stream.new("c:\test_output.txt")
-		#output << external_text_output_stream.new("c:\test_output.txt")
-		_for i _over range(1, n)
-		_loop
-			#output.write(i)
-			!output!.write(i)
-			#i.write_on(!output!)
-			#_thisthread.sleep(1000)
-		_endloop
-		#output.close()
-		!output!.close()
-		!output! << the_terminal
-_endproc
-$
-
-# ----------
-# NON WORKING: some sort of recursion problem...
-# ----------
-external_text_output_stream.roos_substitute_method(:|write()|)
-$
-
-_method external_text_output_stream.write(_gather args)
-#	_global the_terminal
-#	_for i _over args.fast_elements()
-#	_loop
-#		i.write_on(the_terminal)
-#		i.write_on(_self)
-#	_endloop
-	the_terminal.write(args)
-	_self.write_sworg(args)
-_endmethod
-$
-
-# ----------
-# ====================================================
-# ----------
+#redirect_output <<
+#	_proc @redirect_output(n)
+#		!output! << external_text_output_stream.new("c:\test_output.txt")
+#		#output << external_text_output_stream.new("c:\test_output.txt")
+#		_for i _over range(1, n)
+#		_loop
+#			#output.write(i)
+#			!output!.write(i)
+#			#i.write_on(!output!)
+#			#_thisthread.sleep(1000)
+#		_endloop
+#		#output.close()
+#		!output!.close()
+#		!output! << the_terminal
+#_endproc

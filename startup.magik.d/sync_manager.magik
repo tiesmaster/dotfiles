@@ -21,6 +21,8 @@
 ## '|Methods (Public)|:`
 ##                  sm_controller.run()
 ##                  sm_controller.module_name
+##                  sm_controller.output_file
+##                  sm_controller.output_file<<
 ## `Source Code'
 #&&
 #
@@ -32,8 +34,8 @@ _pragma(classify_level=advanced, topic={SyncManager})
 ## Revision      : 
 def_slotted_exemplar(:sm_controller,
 		     {{:override_logfile_format, _true},
-		      {:redirect_output_to_logfile, _true},
-		      {:mapping_prefix, "configuration_"}
+		      {:mapping_prefix, "configuration_"},
+		      {:output_file, _unset}
 		     },
 		     {:sync_manager})
 $
@@ -45,51 +47,39 @@ _method sm_controller.run(p_args)
 	## Function      : 
 	## Revision      :
 	_dynamic !output!
-	
+
 	p_args << .mapping_prefix + p_args
-	
+
 	_if .override_logfile_format
 	_then
 		_global !sync_timestamp_format!
 		!sync_timestamp_format! << p_args + "_#Y.#m.#d_#H.#M"
 	_endif
-	_if .redirect_output_to_logfile
-	_then
-		_local l_logspath << _self.sync_get_setting(:logs_repository_path) + system.pathname_separator
-		
-		# ----------
-		# copied from sync_manager.magik: sync_manager.sync_open_data_channel()
-		# ----------
-		_global !sync_timestamp_format!
-		_local l_timestamp_format << !sync_timestamp_format!.default("#Y.#m.#d_#H.#M").substitute_character(% , %.)
-		_local l_int!stream << string_output_stream.new()
-		!date_time_environ!.format_date_time(l_int!stream, l_timestamp_format, date_time.now())
-		_local l_timestamp << l_int!stream.string
-		# ----------
-		# end of copy
-		# ----------
-		l_logfile << l_logspath + "synchronisation_gis-buffer_" + l_timestamp + ".log"
-		!output! << external_text_output_stream.new(l_logfile)
-	_endif
+
+	_local l_logspath << _self.sync_get_setting(:logs_repository_path) + system.pathname_separator
 	
+	# ----------
+	# copied from sync_manager.magik: sync_manager.sync_open_data_channel()
+	# ----------
+	_global !sync_timestamp_format!
+	_local l_timestamp_format << !sync_timestamp_format!.default("#Y.#m.#d_#H.#M").substitute_character(% , %.)
+	_local l_int!stream << string_output_stream.new()
+	!date_time_environ!.format_date_time(l_int!stream, l_timestamp_format, date_time.now())
+	_local l_timestamp << l_int!stream.string
+	# ----------
+	# end of copy
+	# ----------
+	l_logfile << l_logspath + "synchronisation_gis-buffer_" + l_timestamp + ".log"
+	sm_controller.output_file << external_text_output_stream.new(l_logfile)
+
 	_protect
-		# ----------
-		# Flush the buffer every second (in a different thread, of course)
-		# ----------
-		flush_buffer_thread <<
-			_proc @flush_buffer_periodic()
-				_loop
-					!output!.flush()
-					_thisthread.sleep(1000)
-				_endloop
-			_endproc.fork()
 		_super.run(p_args)
 		
 	_protection
-		!output!.close()
-		flush_buffer_thread.kill()
+		sm_controller.output_file.close()
+
 	_endprotect
-	
+
 _endmethod
 $
 
@@ -103,3 +93,69 @@ _method sm_controller.module_name
 _endmethod
 $
 
+_method sm_controller.output_file
+	>> .output_file
+_endmethod
+$
+
+_method sm_controller.output_file<< f
+	.output_file << f
+_endmethod
+$
+
+# ----------
+# overloaded output methods
+# ----------
+_method terminal.put_charvec(_gather args)
+
+	_super.put_charvec(_scatter args)
+
+	_try 
+		sm_controller.output_file.put_charvec(_scatter args)
+		sm_controller.output_file.flush()
+	_when stream_is_closed
+	_when does_not_understand
+	_endtry	
+
+_endmethod
+$
+
+_method terminal.put(c)
+
+	_super.put(c)
+
+	_try 
+		sm_controller.output_file.put(c)
+		sm_controller.output_file.flush()
+	_when stream_is_closed
+	_when does_not_understand
+	_endtry	
+
+_endmethod
+$
+
+_method terminal.move_to_col(_gather args)
+
+	_super.move_to_col(_scatter args)
+
+	_try 
+		sm_controller.output_file.move_to_col(_scatter args)
+		sm_controller.output_file.flush()
+	_when stream_is_closed
+	_when does_not_understand
+	_endtry	
+
+_endmethod
+$
+
+
+# ----------
+# failsafe method to remove the 'tee' methods in terminal
+# ----------
+remove_tee_methods <<
+_proc @remove_tee_methods()
+	terminal.remove_method(:|put_charvec()|)
+	terminal.remove_method(:|put()|)
+	terminal.remove_method(:|move_to_col()|)
+_endproc
+$
