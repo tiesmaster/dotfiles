@@ -23,6 +23,9 @@
 ##                  sm_controller.module_name
 ##                  sm_controller.output_file
 ##                  sm_controller.output_file<<
+##                  terminal.put_charvec()
+##                  terminal.put()
+##                  terminal.move_to_col()
 ## `Source Code'
 #&&
 #
@@ -47,16 +50,13 @@ _method sm_controller.run(p_args)
 	## Function      : 
 	## Revision      :
 	_dynamic !output!
-
 	p_args << .mapping_prefix + p_args
-
 	_if .override_logfile_format
 	_then
 		_global !sync_timestamp_format!
 		!sync_timestamp_format! << p_args + "_#Y.#m.#d_#H.#M"
 	_endif
-
-	_local l_logspath << _self.sync_get_setting(:logs_repository_path) + system.pathname_separator
+	_local l_logspath << _self.get_property(:logs_repository_path) + system.pathname_separator
 	
 	# ----------
 	# copied from sync_manager.magik: sync_manager.sync_open_data_channel()
@@ -71,13 +71,11 @@ _method sm_controller.run(p_args)
 	# ----------
 	l_logfile << l_logspath + "synchronisation_gis-buffer_" + l_timestamp + ".log"
 	sm_controller.output_file << external_text_output_stream.new(l_logfile)
-
 	_protect
 		_super.run(p_args)
 		
 	_protection
 		sm_controller.output_file.close()
-
 	_endprotect
 
 _endmethod
@@ -107,9 +105,7 @@ $
 # overloaded output methods
 # ----------
 _method terminal.put_charvec(_gather args)
-
 	_super.put_charvec(_scatter args)
-
 	_try 
 		sm_controller.output_file.put_charvec(_scatter args)
 		sm_controller.output_file.flush()
@@ -121,9 +117,7 @@ _endmethod
 $
 
 _method terminal.put(c)
-
 	_super.put(c)
-
 	_try 
 		sm_controller.output_file.put(c)
 		sm_controller.output_file.flush()
@@ -135,9 +129,7 @@ _endmethod
 $
 
 _method terminal.move_to_col(_gather args)
-
 	_super.move_to_col(_scatter args)
-
 	_try 
 		sm_controller.output_file.move_to_col(_scatter args)
 		sm_controller.output_file.flush()
@@ -147,7 +139,6 @@ _method terminal.move_to_col(_gather args)
 
 _endmethod
 $
-
 
 # ----------
 # failsafe method to remove the 'tee' methods in terminal
@@ -159,3 +150,4 @@ _proc @remove_tee_methods()
 	terminal.remove_method(:|move_to_col()|)
 _endproc
 $
+
