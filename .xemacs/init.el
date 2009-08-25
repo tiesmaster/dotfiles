@@ -49,8 +49,7 @@
 	(roos-install-shortcuts)
 	(roos-revert-emacs-shortcuts)
 	(roos-add-gis-aliases "Z:/gis_aliases")
-	(roos-add-gis-aliases "d:/SmallworldTraining/product/config/gis_aliases")
-	(roos-add-product-path "d:/SmallworldTraining/product")
+	(roos-add-product-path "C:/Smallworld/product")
 )
 
 (add-hook 'window-setup-hook 'roos-my-init t)
@@ -60,7 +59,7 @@
 	(interactive)
 
 	(global-set-key (kbd "<f6> o") 'start-orca)
-	(global-set-key (kbd "<f6> t") 'start-training)
+	(global-set-key (kbd "<f6> c") 'start-cambridge)
 )
 
 (defun roos-revert-emacs-shortcuts()
@@ -98,11 +97,11 @@
 	(roos-set-sw-gis-alias-start-Z:-gis_aliases-orca_custom_dev_open)
 )
 
-(defun start-training()
+(defun start-cambridge()
 	(interactive)
-	(message "Starting Smallworld for training")
+	(message "Starting Cambridge")
 
-	(roos-set-sw-gis-alias-start-d:-SmallworldTraining-product-config-gis_aliases-swaf)
+	(roos-set-sw-gis-alias-start-c:-Smallworld-product-config-gis_aliases-cambridge)
 )
 
 ;; SCRATCH
