@@ -32,5 +32,5 @@ load_file(startup_dir + "list_of_tables.magik")
 
 _if !current_package![:sync_manager] _isnt _unset
 _then
-	load_file(startup_dir + "sync_manager.magik")
+	load_file(startup_dir + "sm_controller" + system.pathname_separator + "sm_controller.magik")
 _endif
