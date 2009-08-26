@@ -12,7 +12,7 @@
 ##
 ##
 ## Date written    : Mar/2009
-## Date changed    : Jul/2009
+## Date changed    : Aug/2009
 ##
 ## `Source contents (Starts with evt. Shared Cons/vars, Automatically maintained):'
 ##
@@ -28,6 +28,7 @@ _global startup_dir << system.home + "startup.magik.d" + system.pathname_separat
 
 load_file(startup_dir + "prompt.magik")
 load_file(startup_dir + "list_of_tables.magik")
+load_file(startup_dir + "aliases.magik")
 #load_file(startup_dir + "run_sync_redirect_output.magik")
 
 _if !current_package![:sync_manager] _isnt _unset
