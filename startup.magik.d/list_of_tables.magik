@@ -34,7 +34,8 @@ _global compare_table_name_func <<
 
 _global exclude_patterns << rope.new_from({
 			    "*dd!*",
-			    "sw_gis!*"
+			    "sw_gis!*",
+				"int!*"
 		    })
 
 _global list_of_tables <<
