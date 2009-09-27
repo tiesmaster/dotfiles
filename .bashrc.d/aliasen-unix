@@ -20,7 +20,7 @@ alias man='man -P /usr/bin/less'
 
 #FIXME: this is a work-around, since svn doesn't "eats" the vimdiff-wrapper
 	#without a full path, which you don't want to have hard-coded
-alias svnvimdiff="svn diff --diff-cmd ~/bin/vimdiff-svn-wrapper.sh"
+alias svnvimdiff="svn diff --diff-cmd ~/bin/bash/vimdiff-svn-wrapper.sh"
 
 # keychain
 #alias listkeys='keychain --noask id_rsa A50D68F5'
