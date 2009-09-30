@@ -60,6 +60,7 @@
 
 	(global-set-key (kbd "<f6> o") 'start-orca)
 	(global-set-key (kbd "<f6> c") 'start-cambridge)
+	(global-set-key (kbd "<f6> s") 'start-syncmanager)
 )
 
 (defun roos-revert-emacs-shortcuts()
@@ -102,6 +103,13 @@
 	(message "Starting Cambridge")
 
 	(roos-set-sw-gis-alias-start-c:-Smallworld-product-config-gis_aliases-cambridge)
+)
+
+(defun start-syncmanager()
+	(interactive)
+	(message "Starting Cambridge (with SYNC_HOME set)")
+
+	(roos-set-sw-gis-alias-start-c:-Smallworld-product-config-gis_aliases-cambridge_sync)
 )
 
 ;; SCRATCH

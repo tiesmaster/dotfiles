@@ -157,7 +157,7 @@ orca_custom_open:
 	product		= gis
 	log_file	= %ORCA_ROOT%\log\orca_custom_open_%USERNAME%_%TIMESTAMP_STRING%.log
         # This open image is to be opened by a short cut, hence we cannot add '-cli'
-	args		= -Mnew 16M -Mold 8M -Mpage 32M -Mext 128M -Mextdir %TEMP%
+	args		= -Mnew 16M -Mold 8M -Mpage 32M -Mext 128M -Mextdir %TEMP% -cli
 
 orca_custom_dev_open:
 	title		= ORCA Custom Dev Open

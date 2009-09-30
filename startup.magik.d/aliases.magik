@@ -22,8 +22,12 @@
 _package user
 
 load_syncmanager <<
-	_proc @load_syncmanager()
-		smallworld_product.add_product(system.getenv(:sync_home) + system.pathname_separator + "..")
+	_proc @load_syncmanager(_optional p_add_product?)
+		_if p_add_product?.default(_true)
+		_then
+			smallworld_product.add_product(system.getenv(:sync_home) + system.pathname_separator + "..")
+
+		_endif
 		sw_module_manager.load_module(:roos_sync_manager)
 	_endproc
 
