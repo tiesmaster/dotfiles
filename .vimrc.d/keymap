@@ -37,5 +37,6 @@ vmap <f9> "+x
 vmap <f11> "+y
 nmap <f12> "+gP
 imap <f12> +
+vmap <f12> "+p
 
 " vim:filetype=vim
