@@ -27,11 +27,12 @@ $
 _global startup_dir << system.home + "startup.magik.d" + system.pathname_separator
 
 load_file(startup_dir + "prompt.magik")
-load_file(startup_dir + "list_of_tables.magik")
 load_file(startup_dir + "aliases.magik")
 #load_file(startup_dir + "run_sync_redirect_output.magik")
 
+load_file(startup_dir + "SyncManagerSupportScripts" + system.pathname_separator + "list_of_tables.magik")
+
 _if !current_package![:sync_manager] _isnt _unset
 _then
-	load_file(startup_dir + "sm_controller" + system.pathname_separator + "sm_controller.magik")
+	load_file(startup_dir + "SyncManagerSupportScripts" + system.pathname_separator + "sm_controller" + system.pathname_separator + "sm_controller.magik")
 _endif
