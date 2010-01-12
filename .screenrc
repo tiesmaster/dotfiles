@@ -15,5 +15,10 @@ bindkey -k k7 focus
 bindkey -k k8 prev
 
 bindkey -k k9 next
+#F10
+bindkey -k k; screen -t MC mc
+#F11 (disabled)
+# bindkey -k F1 screen -t ARROW /home/ties/bin/radio arrow
+
 #F12
 bindkey -k F2 screen -t messages tail -n40 -f /var/log/messages
