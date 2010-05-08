@@ -5,6 +5,7 @@ map Q gq
 " text is lost and it only works for putting the current register.
 "vnoremap p "_dp
 
+map <s-f1> :e $HOME/Dropbox/course_vim.txt <cr>
 map <f2> :q <cr>
 map <c-f2> :qa <cr>
 nmap <f3> :sp $HOME/.vimrc <cr>
