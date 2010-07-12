@@ -48,8 +48,8 @@
 	)
 	(roos-install-shortcuts)
 	(roos-revert-emacs-shortcuts)
-	(roos-add-gis-aliases "Z:/gis_aliases")
-	(roos-add-product-path "C:/Smallworld/product")
+	;(roos-add-gis-aliases "Z:/gis_aliases")
+	;(roos-add-product-path "C:/Smallworld/product")
 )
 
 (add-hook 'window-setup-hook 'roos-my-init t)
@@ -130,3 +130,5 @@
 
 ;; TODO: give this a shortcut
 ;; roos-set-sw-gis-alias-command-m:-smallworld-config-gis_aliases-Heath-(more-power)
+
+;;; init.el ends here
