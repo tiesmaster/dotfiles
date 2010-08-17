@@ -60,7 +60,7 @@
 
 	(global-set-key (kbd "<f6> o") 'start-orca)
 	(global-set-key (kbd "<f6> c") 'start-cambridge)
-	(global-set-key (kbd "<f6> s") 'start-syncmanager)
+	(global-set-key (kbd "<f6> r") 'start-orca-sync-replica)
 )
 
 (defun roos-revert-emacs-shortcuts()
@@ -93,9 +93,9 @@
 
 (defun start-orca()
 	(interactive)
-	(message "Starting ORCA")
+	(message "Starting ORCA (image: orca_custom_open)")
 
-	(roos-set-sw-gis-alias-start-Z:-gis_aliases-orca_custom_dev_open)
+	(roos-set-sw-gis-alias-start-m:-rel16_env-config-gis_aliases-ORCA)
 )
 
 (defun start-cambridge()
@@ -105,11 +105,11 @@
 	(roos-set-sw-gis-alias-start-c:-Smallworld-product-config-gis_aliases-cambridge)
 )
 
-(defun start-syncmanager()
+(defun start-orca-sync-replica()
 	(interactive)
-	(message "Starting Cambridge (with SYNC_HOME set)")
+	(message "Starting ORCA (image: orca_custom_sync_replica_open)")
 
-	(roos-set-sw-gis-alias-start-c:-Smallworld-product-config-gis_aliases-cambridge_sync)
+	(roos-set-sw-gis-alias-start-m:-rel16_env-config-gis_aliases-orca_custom_sync_replica_open)
 )
 
 ;; SCRATCH
