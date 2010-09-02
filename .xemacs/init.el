@@ -61,6 +61,7 @@
 	(global-set-key (kbd "<f6> o") 'start-orca)
 	(global-set-key (kbd "<f6> c") 'start-cambridge)
 	(global-set-key (kbd "<f6> r") 'start-orca-sync-replica)
+	(global-set-key (kbd "<f6> d") 'start-orca-sync-dev)
 )
 
 (defun roos-revert-emacs-shortcuts()
@@ -110,6 +111,13 @@
 	(message "Starting ORCA (image: orca_custom_sync_replica_open)")
 
 	(roos-set-sw-gis-alias-start-m:-rel16_env-config-gis_aliases-orca_custom_sync_replica_open)
+)
+
+(defun start-orca-sync-dev()
+	(interactive)
+	(message "Starting ORCA (image: orca_custom_sync_dev_open)")
+
+	(roos-set-sw-gis-alias-start-d:-orca-config-gis_aliases-orca_custom_sync_dev_open)
 )
 
 ;; SCRATCH
