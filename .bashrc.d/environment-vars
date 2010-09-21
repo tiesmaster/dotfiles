@@ -29,3 +29,6 @@ elif [[ -f /etc/DIR_COLORS ]] ; then
 fi
 
 export EDITOR=vim
+
+# for KeePass 2.x
+export MONO_MWF_MAC_FORCE_X11=
