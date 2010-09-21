@@ -117,8 +117,7 @@
 	(roos-set-sw-gis-alias-tag-start "orca_custom_sync_dev_open")
 )
 
-;; reload function roos-find-sw-gis-alias-file-for-tag, it gets corrupted
-;; somehow
-(load "c:/realmacs/Realworld/lisp/sw-uk/sw!gis-extras.el")
+;; reload function 'roos-find-sw-gis-alias-file-for-tag', it gets corrupted somehow
+(load (expand-file-name "Realworld/lisp/sw-uk/sw!gis-extras.el"))
 
 ;;; init.el ends here
