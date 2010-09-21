@@ -48,8 +48,6 @@
 	)
 	(roos-install-shortcuts)
 	(roos-revert-emacs-shortcuts)
-	;(roos-add-gis-aliases "Z:/gis_aliases")
-	;(roos-add-product-path "C:/Smallworld/product")
 )
 
 (add-hook 'window-setup-hook 'roos-my-init t)
@@ -88,55 +86,39 @@
 (defun roos-add-product-path(product-path)
 	(custom-set-variables
 		'(roos-custom-sw-product-pathes (list product-path))
-;;		'(roos-custom-sw-product-pathes (quote ("d:/SmallworldTraining/product")))
 	 )
 )
 
 (defun start-orca()
 	(interactive)
-	(message "Starting ORCA (image: orca_custom_open)")
+	(message "Starting ORCA [image tag: ORCA]")
 
-	(roos-set-sw-gis-alias-start-m:-rel16_env-config-gis_aliases-ORCA)
+	(roos-set-sw-gis-alias-tag-start "ORCA")
 )
 
 (defun start-cambridge()
 	(interactive)
-	(message "Starting Cambridge")
+	(message "Starting Cambridge [image tag: cambridge_open]")
 
-	(roos-set-sw-gis-alias-start-c:-Smallworld-product-config-gis_aliases-cambridge)
+	(roos-set-sw-gis-alias-tag-start "cambridge_open")
 )
 
 (defun start-orca-sync-replica()
 	(interactive)
-	(message "Starting ORCA (image: orca_custom_sync_replica_open)")
+	(message "Starting ORCA (SyncManager replica) [image tag: orca_custom_sync_replica_open]")
 
-	(roos-set-sw-gis-alias-start-m:-rel16_env-config-gis_aliases-orca_custom_sync_replica_open)
+	(roos-set-sw-gis-alias-tag-start "orca_custom_sync_replica_open")
 )
 
 (defun start-orca-sync-dev()
 	(interactive)
-	(message "Starting ORCA (image: orca_custom_sync_dev_open)")
+	(message "Starting ORCA (SyncManager dev) [image tag: orca_custom_sync_dev_open]")
 
-	(roos-set-sw-gis-alias-start-d:-orca-config-gis_aliases-orca_custom_sync_dev_open)
+	(roos-set-sw-gis-alias-tag-start "orca_custom_sync_dev_open")
 )
 
-;; SCRATCH
-;; ***************************************************************************
-;; TODO: I guess this function will also set the given path, if given, I just
-;; don't know how to call it...
-;;roos-ask-sw-gis-alias-path
-
-;;(custom-set-variables
-;; '(roos-custom-sw-gis-alias-pathes (quote ("m:\\smallworld\\config\\gis_aliases")))
-;; )
-
-;; adding the product path doesn't seems to be required, since adding the
-;; gis_alias is proficient
-;;(custom-set-variables
-;; '(roos-custom-sw-product-pathes (quote ("c:\\SmallworldTraining\\product")))
-;; )
-
-;; TODO: give this a shortcut
-;; roos-set-sw-gis-alias-command-m:-smallworld-config-gis_aliases-Heath-(more-power)
+;; reload function roos-find-sw-gis-alias-file-for-tag, it gets corrupted
+;; somehow
+(load "c:/realmacs/Realworld/lisp/sw-uk/sw!gis-extras.el")
 
 ;;; init.el ends here
