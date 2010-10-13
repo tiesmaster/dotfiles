@@ -12,7 +12,7 @@
 ##
 ##
 ## Date written    : Aug/2009
-## Date changed    : Aug/2009
+## Date changed    : Oct/2010
 ##
 ## `Source contents (Starts with evt. Shared Cons/vars, Automatically maintained):'
 ##
@@ -20,14 +20,41 @@
 #&&
 #
 _package user
+$
+
+!global_auto_declare?! << _true
+$
 
 load_syncmanager <<
-	_proc @load_syncmanager(_optional p_add_product?)
-		_if p_add_product?.default(_true)
-		_then
-			smallworld_product.add_product(system.getenv(:sync_home) + system.pathname_separator + "..")
+_proc @load_syncmanager(_optional p_add_product?)
+	_if p_add_product?.default(_true)
+	_then
+		smallworld_product.add_product(system.getenv(:sync_home) + system.pathname_separator + "..")
+		
+	_endif
+	sw_module_manager.load_module(:roos_sync_manager)
+_endproc
+$
 
-		_endif
-		sw_module_manager.load_module(:roos_sync_manager)
-	_endproc
+reload <<
+reload_spatial_replica <<
+_proc @reload_spatial_replica()
+	load_file_list("d:\orca\app\Patches\source\release_files\f5022_01tb\orca_spatial_replication\")
+_endproc
+$
+
+reload_spatial_replica()
+$
+
+remove_sr <<
+remove_spatial_replica <<
+_proc @remove_spatial_replica()
+	l_rm << replication_manager.new(:gis)
+	l_rm.delete_replica(:working)
+	l_gv << gis_program_manager.cached_dataset(:gis)
+	l_gv.goto_top_alternative()
+	l_gv.go_to_alternative(:spatial_replica)
+	l_gv.remove_alternative(:working)
+_endproc
+$
 

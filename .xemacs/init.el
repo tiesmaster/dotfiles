@@ -59,6 +59,7 @@
 	(global-set-key (kbd "<f6> o") 'start-orca)
 	(global-set-key (kbd "<f6> c") 'start-cambridge)
 	(global-set-key (kbd "<f6> r") 'start-orca-sync-replica)
+	(global-set-key (kbd "<f6> b") 'start-orca-sync-replica-baseline)
 	(global-set-key (kbd "<f6> d") 'start-orca-sync-dev)
 )
 
@@ -108,6 +109,13 @@
 	(message "Starting ORCA (SyncManager replica) [image tag: orca_custom_sync_replica_open]")
 
 	(roos-set-sw-gis-alias-tag-start "orca_custom_sync_replica_open")
+)
+
+(defun start-orca-sync-replica-baseline()
+	(interactive)
+	(message "Starting ORCA (SyncManager replica <base_line>) [image tag: orca_custom_sync_replica_open_baseline]")
+
+	(roos-set-sw-gis-alias-tag-start "orca_custom_sync_replica_open_baseline")
 )
 
 (defun start-orca-sync-dev()
