@@ -25,6 +25,7 @@ fi
 [ -f ~/.bashrc.d/bash ] && source ~/.bashrc.d/bash
 [ -f ~/.bashrc.d/pager ] && source ~/.bashrc.d/pager
 [ -f ~/.bashrc.d/environment-vars ] && source ~/.bashrc.d/environment-vars
+[ -f ~/.bashrc.d/git-completion ] && source ~/.bashrc.d/git-completion
 #[ -f ~/.bashrc.d/gentoo ] && source ~/.bashrc.d/gentoo
 #[ -f ~/.bashrc.d/motd ] && source ~/.bashrc.d/motd
 #[ -f ~/.bashrc.d/personal ] && source ~/.bashrc.d/personal
