@@ -1,0 +1,11 @@
+[user]
+	name = Thijs Brobbel
+	email = thijsbrobbel@gmail.com
+[color]
+	ui = true
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	lol = log --pretty=oneline --abbrev-commit --graph --decorate
