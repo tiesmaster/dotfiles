@@ -1,0 +1,136 @@
+# generic stuff
+*~
+/workspace
+# *nix specific stuff
+/.lesshst
+/.history
+/.bash_history
+/.zshhistory
+/_viminfo
+/.viminfo
+/.Xauthority
+/.mc
+# standard in linux home
+/.spumux
+/.grisbirc
+/.filezilla
+/.recently-used.xbel
+/.dropbox
+/.gnome2_private
+/.gconf.path
+/.gnucash
+/.fontconfig
+/.gconf
+/.qt
+/.macports
+/.wireshark
+/.svk
+/.CFUserTextEncoding
+/.wireshark-etc
+/.cups
+/.dvdcss
+/.gnome2
+/.mplayer
+/.argouml
+# standard in OSX home
+/Sites
+/Documents
+/Movies
+/Library
+/Public
+/Music
+/Pictures
+/Desktop
+/.Trash
+/.config
+/.cache
+/.ProperoSecureTunnel
+/.ipython
+/.sh_history
+/.org.eclipse.epp.usagedata.recording.userId
+/.eclipse_keyring
+/.thumbnails
+/.local
+# standard in win32 home
+/RECYCLER
+/desktop.ini
+/Downloads
+/Default.rdp
+/My Pictures
+/My Music
+/My Pictures.lnk
+/My Videos
+/My Data Sources
+/Mijn Google Gadgets
+/Google Talk Received Files
+# my home specific stuff (OSX)
+/.belastingdienst.nl
+/Dropbox
+# my home specific stuff (win32)
+/Werkmap
+/Zooi
+/tmp
+/Templates
+/.gconfd
+/Application Data
+/Favorites
+/Local Settings
+/My Documents
+/Recent
+/NetHood
+/PrintHood
+/SendTo
+/Start Menu
+/ntuser.dat.LOG
+/NTUSER.DAT.LOG
+/ntuser.ini
+/NTUSER.DAT
+/Cookies
+/Visual Studio 2008
+/My Shapes
+/treeinfo.wc
+/UserData
+/IETldCache
+/PrivacIE
+/My Dropbox
+
+# /.emacs.d/
+/.emacs.d/auto-save-list
+
+# /.eshell/
+/.eshell/history
+
+# /.ssh/
+/.ssh/id_rsa*
+/.ssh/known_hosts
+/.ssh/authorized_keys
+
+# /.subversion/
+/.subversion/auth
+
+# /.vim/
+/.vim/.netrwhist
+
+# /_ipython/
+/_ipython/db
+/_ipython/history
+
+# added to silence GIT, might need more attention
+.gem
+.jget*
+.JxBrowser/
+.avidemux/
+.gitk
+.google/
+.hermes/
+.inkscape-etc/
+.m2/
+.mono/
+.recently-used
+.rnd
+.slocdata/
+.smb/
+.spring_roo_pgp.bpg
+.sqlite_history
+.xbmc/
+log.roo
