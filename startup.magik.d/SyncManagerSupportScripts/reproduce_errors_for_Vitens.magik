@@ -1,0 +1,119 @@
+#% text_encoding = iso8859_1
+##
+## File            : reproduce_errors.magik
+##
+## Copyright       : Realworld Systems
+##                   e-mail  : support@realworldwide.com
+##                   address : Venusstraat 17, 4105 JH Culemborg, The Netherlands
+##                   tel     : +31(0)345 614319
+##                   fax     : +31(0)345 614406
+##
+## Contains        : 
+##
+##
+## Date written    : Jul/2010
+## Date changed    : Jul/2010
+##
+## `Source contents (Starts with evt. Shared Cons/vars, Automatically maintained):'
+##
+## '|Procs|:`
+##                  read_ids
+##                  determine_error
+## `Source Code'
+#&&
+#
+_package user
+
+chain_col << gis_program_manager.databases[:water].collections[:sw_gis!chain]
+
+ids << {{12814998,863921875,91050059}, {12807758,966015625,100910719}, {12815143,419828125,101757997}, {12815143,419765625,101758000}, {12815108,876562500,101770579}, {12815083,868515625,102213978}}
+
+_global read_ids << _proc(p_fnam)
+	write("reading from ", p_fnam)
+	_local r << rope.new()
+	_local s << external_text_input_stream.new(p_fnam)
+	
+	_loop 
+		_if (l << s.get_line()) _isnt _unset
+		_then
+			_local nmbrs_prt << l.subseq(7) # remove "chain "
+			_local idx1 << nmbrs_prt.index_of(%,)
+			_local idx2 << nmbrs_prt.index_of(%,,idx1+1)
+			_local geom_id << { nmbrs_prt.slice(1,idx1).as_integer(),
+					    nmbrs_prt.slice(idx1+1,idx2).as_integer(),
+					    nmbrs_prt.slice_to_end(idx2+1).as_integer()}
+			
+			r.add(geom_id)
+		_else
+			_leave 
+		_endif
+	_endloop
+	_return r.as_simple_vector()
+_endproc
+$
+
+_global determine_error << _proc(p_bad_geom)
+	_try _with cond
+	     _if p_bad_geom.sectors.size <> p_bad_geom.links.size
+	     _then
+		     _return "Incorrect amount of links compared to sectors"
+	     _endif
+	_when error
+	      _return write_string(cond)
+	_endtry
+
+	_return "No detectable error"
+_endproc
+$
+
+# ----------
+# sync with 6 geom failures
+# ----------
+ids << read_ids("P:\Vitens\SyncManager2\roos_sync_manager\log\geometry_failures_2010.07.08_09.06.log")
+# ----------
+# sync with 3379 geom failures
+# ----------
+#ids << read_ids("P:\Vitens\SyncManager2\roos_sync_manager\log\geometry_failures_2010.07.02_13.28.log")
+
+b << equality_bag.new()
+u << equality_bag.new()
+o << equality_bag.new()
+_for i _over ids.fast_elements()
+_loop
+	_local bad_geom << chain_col.at(i)
+#	write(bad_geom)
+	_local cat
+	_if bad_geom = bad_geom.rwo.b_position
+	_then
+#		write("B Position")
+		cat << b
+	_elif bad_geom = bad_geom.rwo.u_position
+	_then
+#		write("U Position")
+		cat << u
+	_else
+#		write("neither B or U Position")
+		cat << o
+	_endif
+	_local e << determine_error(bad_geom)
+#	write(bad_geom.rwo, ": ", e)
+	cat.add(e)
+_endloop
+
+write(newline_char,"Summary << B Position >>")
+_for i_e, i_c _over b.elements_and_occurrences()
+_loop
+	write("Error '", i_e,"' occurred ", i_c, " time(s)")
+_endloop
+
+write(newline_char, "Summary << U Position >>")
+_for i_e, i_c _over u.elements_and_occurrences()
+_loop
+	write("Error '", i_e,"' occurred ", i_c, " time(s)")
+_endloop
+
+write(newline_char, "Summary << Other >>")
+_for i_e, i_c _over o.elements_and_occurrences()
+_loop
+	write("Error '", i_e,"' occurred ", i_c, " time(s)")
+_endloop
