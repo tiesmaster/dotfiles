@@ -1,0 +1,11 @@
+#!/bin/sh
+
+LINK=$1
+FILE=/etc/init.d/$(basename $1)
+DIR=$(dirname $1)
+
+echo $LINK => FILE
+
+if [ -f $FILE ]; then
+rm $LINK && ln -s $FILE $DIR
+fi

@@ -1,0 +1,6 @@
+#!/bin/bash
+fortune -s
+exit 0
+echo '---
+Gentoo 2005.0'
+uname -snrmo
