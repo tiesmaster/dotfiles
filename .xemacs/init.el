@@ -56,11 +56,14 @@
   	"Install personal shortcuts"
 	(interactive)
 
+	(global-set-key (kbd "<f6> s") 'start-swaf)
+	(global-set-key (kbd "<f6> u") 'start-utrm)
 	(global-set-key (kbd "<f6> o") 'start-orca)
 	(global-set-key (kbd "<f6> c") 'start-cambridge)
 	(global-set-key (kbd "<f6> r") 'start-orca-sync-replica)
 	(global-set-key (kbd "<f6> b") 'start-orca-sync-replica-baseline)
 	(global-set-key (kbd "<f6> d") 'start-orca-sync-dev)
+	(roos-add-gis-aliases "c:/temp/utrm/general build/gis_aliases.txt")
 )
 
 (defun roos-revert-emacs-shortcuts()
@@ -88,6 +91,20 @@
 	(custom-set-variables
 		'(roos-custom-sw-product-pathes (list product-path))
 	 )
+)
+
+(defun start-swaf()
+	(interactive)
+	(message "Starting SWAF [image tag: SWAF]")
+
+	(roos-set-sw-gis-alias-tag-start "swaf")
+)
+
+(defun start-utrm()
+	(interactive)
+	(message "Starting UTRM [image tag: utrm_open]")
+
+	(roos-set-sw-gis-alias-tag-start "utrm_open")
 )
 
 (defun start-orca()
