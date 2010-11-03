@@ -63,7 +63,7 @@
 	(global-set-key (kbd "<f6> c") 'start-cambridge)
 	(global-set-key (kbd "<f6> r") 'start-orca-sync-replica)
 	(global-set-key (kbd "<f6> d") 'start-orca-sync-dev)
-	(roos-add-gis-aliases "c:/temp/utrm/utrm_env/build/general build/gis_aliases.txt")
+	(roos-add-gis-aliases "c:/temp/utrm/utrm_env/build/config/gis_aliases.txt")
 )
 
 (defun roos-revert-emacs-shortcuts()
@@ -102,10 +102,10 @@
 
 (defun start-utrm()
 	(interactive)
-	(message "Starting UTRM Open [image tag: Cambridge Open 420 RW Swaf]")
+	(message "Starting UTRM Open [image tag: Cambridge Open Trunk 4.2.0 [SW: 420] RW Development]")
 
 	;;(roos-set-sw-gis-alias-tag-start "utrm_open")
-	(roos-set-sw-gis-alias-tag-start "Cambridge Open 420 RW Swaf")
+	(roos-set-sw-gis-alias-tag-start "Cambridge Open Trunk 4.2.0 [SW: 420] RW Development")
 )
 
 (defun start-utrm-closed()
