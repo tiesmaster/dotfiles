@@ -12,7 +12,7 @@
 ##
 ##
 ## Date written    : Aug/2009
-## Date changed    : Oct/2010
+## Date changed    : Nov/2010
 ##
 ## `Source contents (Starts with evt. Shared Cons/vars, Automatically maintained):'
 ##
@@ -41,9 +41,6 @@ reload_spatial_replica <<
 _proc @reload_spatial_replica()
 	load_file_list("d:\orca\app\Patches\source\release_files\f5022_01tb\orca_spatial_replication\")
 _endproc
-$
-
-reload_spatial_replica()
 $
 
 remove_sr <<
