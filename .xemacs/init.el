@@ -58,12 +58,12 @@
 
 	(global-set-key (kbd "<f6> s") 'start-swaf)
 	(global-set-key (kbd "<f6> u") 'start-utrm)
+	;;(global-set-key (kbd "<f6> u") 'start-utrm-closed)
 	(global-set-key (kbd "<f6> o") 'start-orca)
 	(global-set-key (kbd "<f6> c") 'start-cambridge)
 	(global-set-key (kbd "<f6> r") 'start-orca-sync-replica)
-	(global-set-key (kbd "<f6> b") 'start-orca-sync-replica-baseline)
 	(global-set-key (kbd "<f6> d") 'start-orca-sync-dev)
-	(roos-add-gis-aliases "c:/temp/utrm/general build/gis_aliases.txt")
+	(roos-add-gis-aliases "c:/temp/utrm/utrm_env/build/general build/gis_aliases.txt")
 )
 
 (defun roos-revert-emacs-shortcuts()
@@ -102,9 +102,18 @@
 
 (defun start-utrm()
 	(interactive)
-	(message "Starting UTRM [image tag: utrm_open]")
+	(message "Starting UTRM Open [image tag: Cambridge Open 420 RW Swaf]")
 
-	(roos-set-sw-gis-alias-tag-start "utrm_open")
+	;;(roos-set-sw-gis-alias-tag-start "utrm_open")
+	(roos-set-sw-gis-alias-tag-start "Cambridge Open 420 RW Swaf")
+)
+
+(defun start-utrm-closed()
+	(interactive)
+	(message "Starting UTRM Closed [image tag: Cambridge Closed 420 RW Swaf]")
+
+	;;(roos-set-sw-gis-alias-tag-start "utrm_open")
+	(roos-set-sw-gis-alias-tag-start "Cambridge Closed 420 RW Swaf")
 )
 
 (defun start-orca()
@@ -126,13 +135,6 @@
 	(message "Starting ORCA (SyncManager replica) [image tag: orca_custom_sync_replica_open]")
 
 	(roos-set-sw-gis-alias-tag-start "orca_custom_sync_replica_open")
-)
-
-(defun start-orca-sync-replica-baseline()
-	(interactive)
-	(message "Starting ORCA (SyncManager replica <base_line>) [image tag: orca_custom_sync_replica_open_baseline]")
-
-	(roos-set-sw-gis-alias-tag-start "orca_custom_sync_replica_open_baseline")
 )
 
 (defun start-orca-sync-dev()
