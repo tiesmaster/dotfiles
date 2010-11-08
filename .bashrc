@@ -39,12 +39,3 @@ echo '***'
 echo 'Welkom to dotfiles version 0.1 ($Revision$)'
 echo "Don't forget to update your version on a regular basis, eg: $ svn update"
 echo '***'
-
-echo
-echo
-echo
-echo '********************************************************************************'
-echo 'Fixing $LESS (REMEMBER: this is a workaround!!!!!)'
-echo '********************************************************************************'
-
-export LESS="$LESS --raw-control-chars"

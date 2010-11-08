@@ -1,7 +1,7 @@
 # sane less settings
 if [[ -f /usr/bin/less ]] ; then
     export PAGER=less
-    export LESS="${LESS} --ignore-case --long-prompt"
+    export LESS="${LESS} --ignore-case --long-prompt --raw-control-chars"
 fi
 
 # vimpager
