@@ -4,6 +4,7 @@ set output-meta on
 set show-all-if-ambiguous on
 set visible-stats on
 set completion-ignore-case on
+set prefer-visible-bell
 
 # F1
 "\eOP": " --help\C-j"
