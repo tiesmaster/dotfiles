@@ -63,7 +63,6 @@
 	(global-set-key (kbd "<f6> c") 'start-cambridge)
 	(global-set-key (kbd "<f6> r") 'start-orca-sync-replica)
 	(global-set-key (kbd "<f6> d") 'start-orca-sync-dev)
-	(roos-add-gis-aliases "c:/temp/utrm/utrm_env/build/config/gis_aliases.txt")
 )
 
 (defun roos-revert-emacs-shortcuts()
