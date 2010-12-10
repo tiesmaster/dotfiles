@@ -1,4 +1,6 @@
 " Custom .vimrc file, Thijs Brobbel
+" TODO: get the detection working without manually sourcing the plugin
+source ~/.vim/ftplugin/magik.vim
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
