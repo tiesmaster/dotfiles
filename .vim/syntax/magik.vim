@@ -43,31 +43,31 @@ syn match   magikCommentTag	/Date\s\w*/ contained
 syn keyword magikCommentTagCode	Function Methodology Parameters Returns Revision Purpose Usage contained
 syn match   magikChar		/%\k*/
 
-command -nargs=+ HiLink hi def link <args>
-HiLink magikStatement		Statement
-HiLink magikIdentifier		Function
-HiLink magikConditional		Conditional
-HiLink magikRepeat		Repeat
-HiLink magikString		String
-HiLink magikOperator		Operator
-HiLink magikPreCondit		PreCondit
-HiLink magikComment		Comment
-HiLink magikTodo		Todo
-HiLink magikPrama		Define
-HiLink magikNumber		Number
-HiLink magikBuiltin		Function
-HiLink magikException		Exception
-HiLink magikSpaceError		Error
+hi def link magikStatement		Statement
+hi def link magikIdentifier		Function
+hi def link magikConditional		Conditional
+hi def link magikRepeat		Repeat
+hi def link magikString		String
+hi def link magikOperator		Operator
+hi def link magikPreCondit		PreCondit
+hi def link magikComment		Comment
+hi def link magikTodo		Todo
+hi def link magikPrama		Define
+hi def link magikNumber		Number
+hi def link magikBuiltin		Function
+hi def link magikException		Exception
+hi def link magikSpaceError		Error
 
-HiLink magikSymbol		Special
-HiLink magikBool		Boolean
-HiLink magikSpecialComment	SpecialComment
-HiLink magikLabel		Label
-HiLink magikType		Type
-HiLink magikDef			Typedef
-HiLink magikCommentTag		Underlined
-HiLink magikCommentTagCode	Underlined
-HiLink magikChar		Character
+hi def link magikSymbol		Special
+hi def link magikBool		Boolean
+hi def link magikSpecialComment	SpecialComment
+hi def link magikLabel		Label
+hi def link magikType		Type
+hi def link magikDef			Typedef
+hi def link magikCommentTag		Underlined
+hi def link magikCommentTagCode	Underlined
+hi def link magikChar		Character
 
 let b:current_syntax = "magik"
-finish
+
+" vim: ts=8
