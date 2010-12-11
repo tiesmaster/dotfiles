@@ -5,6 +5,10 @@ if v:progname =~? "evim"
   finish
 endif
 
+if has("win32")
+	set runtimepath+=~/.vim
+endif
+
 source ~/.vimrc.d/keymap
 source ~/.vimrc.d/settings
 source ~/.vimrc.d/statusbar
