@@ -82,10 +82,10 @@
 /PrintHood
 /SendTo
 /Start Menu
-/ntuser.dat.LOG
+/ntuser.dat.LOG*
 /NTUSER.DAT.LOG
 /ntuser.ini
-/NTUSER.DAT
+/NTUSER.DAT*
 /Cookies
 /Visual Studio 2008
 /My Shapes
@@ -136,3 +136,11 @@
 .xbmc/
 log.roo
 $RECYCLE.BIN/
+
+# Windows 7 stuff
+AppData
+Contacts
+Links
+Saved Games
+Searches
+Videos

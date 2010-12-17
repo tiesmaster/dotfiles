@@ -25,3 +25,5 @@ alias svnvimdiff="svn diff --diff-cmd ~/bin/bash/vimdiff-svn-wrapper.sh"
 # keychain
 #alias listkeys='keychain --noask id_rsa A50D68F5'
 #alias addkeys='keychain id_rsa A50D68F5'
+
+alias grepe="grep --exclude='*.svn*' --exclude='*~'"
