@@ -12,3 +12,5 @@ source ~/.vimrc.d/statusbar
 "TODO: fix defining a function and having the possibility to re-source it using
 "	F4
 "source ~\.vimrc.d\functions
+
+source ~/.vimrc.d/course_vim
