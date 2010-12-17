@@ -5,30 +5,24 @@ map Q gq
 " text is lost and it only works for putting the current register.
 "vnoremap p "_dp
 
-map <s-f1> :e $HOME/Dropbox/course_vim.txt <cr>
-map <f2> :q <cr>
 map <c-f2> :qa <cr>
-nmap <f3> :sp $HOME/.vimrc <cr>
-nmap <c-f3> :sp /home/ties/tmp/ciaranm/vimrc <cr>
-nmap <f4> :w\|source $HOME/.vimrc <cr>
-nmap <f6> :SpellSetLanguage nl <cr>
-nmap <f7> :call PrintTimeHeader()<cr>
-nmap <f8> :w\|call RunLaTeX() <cr>
+map <f4> :q <cr>
 
-imap <f2> <cr>\item 
-imap <f5> Thijs Brobbel (0761401)
-imap <f6> <C-o> :SpellSetLanguage nl <cr>
+" VIMRC stuff
+"nmap <c-f3> :sp /home/ties/tmp/ciaranm/vimrc <cr>
+" TODO: move to a seperate fileplugin script
+nmap <f3> :sp $HOME/.vimrc <cr>
+nmap <f4> :w\|source $HOME/.vimrc <cr>
 
 vmap <f5> c> [...]<esc>
 vmap <esc>f c > [...] <esc>
-nmap <f5> :make<esc>
 nmap <esc>f o> [...]<esc>
 
 " nohighlight action
-map <silent> ,h :nohl<CR>
-map <silent> <F9> ,h
-imap <silent> <F9> <C-O>,h
-map ,. ,h
+"map <silent> ,h :nohl<CR>
+"map <silent> <F9> ,h
+"imap <silent> <F9> <C-O>,h
+"map ,. ,h
 
 " logical Y action
 map Y y$
@@ -41,5 +35,8 @@ nmap <f12> "+gP
 imap <f12> +
 cmap <f12> +
 vmap <f12> "+p
+
+" temporarily shortcut to open the course file for VIM
+map <s-f1> :e $HOME/Dropbox/course_vim.txt <cr>
 
 " vim:filetype=vim
