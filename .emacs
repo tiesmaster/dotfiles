@@ -5,6 +5,10 @@
 (setq custom-file
       (expand-file-name "custom.el"
 			(expand-file-name ".xemacs" "~")))
+(setq bartO-file
+      (expand-file-name "bartO.el"
+			(expand-file-name ".xemacs" "~")))
 
 (load-file user-init-file)
 (load-file custom-file)
+(load-file bartO-file)
