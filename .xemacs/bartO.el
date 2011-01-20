@@ -17,7 +17,7 @@
 ;("/swdev/build/core/420/Beta1Beta/windows/" "S:/Gis420Beta/product")
      )))
  '(roos-prefix "roos")
- '(roos-user-name    "BArtO")
+ '(roos-user-name    "thijs.brobbel")
  '(uniquify-buffer-name-style (quote post-forward-angle-brackets) nil (uniquify))
  '(default-input-method "latin-1-prefix")
  '(current-language-environment "Latin-1")
