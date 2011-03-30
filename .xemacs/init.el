@@ -63,6 +63,7 @@
 	(global-set-key (kbd "<f6> c") 'start-cambridge)
 	(global-set-key (kbd "<f6> r") 'start-orca-sync-replica)
 	(global-set-key (kbd "<f6> d") 'start-orca-sync-dev)
+	(global-set-key (kbd "<f6> w") 'start-wml)
 )
 
 (defun roos-revert-emacs-shortcuts()
@@ -141,6 +142,13 @@
 	(message "Starting ORCA (SyncManager dev) [image tag: orca_custom_sync_dev_open]")
 
 	(roos-set-sw-gis-alias-tag-start "orca_custom_sync_dev_open")
+)
+
+(defun start-wml()
+	(interactive)
+	(message "Starting WML [image tag: WML]")
+
+	(roos-set-sw-gis-alias-tag-start "WML")
 )
 
 ;; reload function 'roos-find-sw-gis-alias-file-for-tag', it gets corrupted somehow
