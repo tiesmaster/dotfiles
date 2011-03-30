@@ -22,10 +22,6 @@
  '(default-input-method "latin-1-prefix")
  '(current-language-environment "Latin-1")
  '(global-font-lock-mode t nil (font-lock))
-  '(roos-custom-sw-gis-alias-pathes	'("P:/UT/smallworld/420/utrm/tags/trunk/build/config/gis_aliases.txt"
-					  "Z:/source/support/upgrade420/gis_aliases.txt"))
-; '(roos-custom-sw-product-pathes	'("P:/UT/smallworld/420/utrm/Gis420/product"))
- '(roos-custom-sw-message-db-pathes	'("//files3/Software/smallworld/Gis420/product/data"))
 '(roos-windows-keys-p nil)
  '(current-language-environment "Dutch")
  '(transient-mark-mode t)
