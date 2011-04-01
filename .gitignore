@@ -3,6 +3,8 @@
 .*.sw?
 /workspace
 # *nix specific stuff
+/.ssh
+/.subversion
 /.lesshst
 /.history
 /.bash_history
