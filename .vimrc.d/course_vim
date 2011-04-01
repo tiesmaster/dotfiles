@@ -1,5 +1,0 @@
-" .vimrc.d/course_vim: temporarily shortcut to open the course file for VIM
-
-map <s-f1> :e $HOME/Dropbox/course_vim.txt <cr>
-
-" vim:filetype=vim
