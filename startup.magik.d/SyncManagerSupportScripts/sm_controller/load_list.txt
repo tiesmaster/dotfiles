@@ -1,2 +1,0 @@
-sm_controller
-redirect_output
