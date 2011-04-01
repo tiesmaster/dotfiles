@@ -7,14 +7,17 @@ if has("win32")
 	set runtimepath+=~/.vim
 endif
 
-set textwidth=120
-set autoindent		" always set autoindenting on
+" nice options, don't want to live without it ;)
 set ignorecase
-set tabstop=4
-set shiftwidth=4
 set diffopt+=iwhite
 
-" Nice statusbar
+" these has been disabled to facilitate moving them to the appropriate filetype plugins
+"set autoindent
+"set textwidth=120
+"set tabstop=4
+"set shiftwidth=4
+
+" nice statusbar
 set laststatus=2
 set statusline=
 set statusline+=%-3.3n\                      " buffer number
