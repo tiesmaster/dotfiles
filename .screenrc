@@ -7,18 +7,8 @@ defhstatus "screen: ^E (^Et)"
 
 hardstatus alwayslastline " %d-%m-%y %c %{= dd}%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<"
 
-
-bindkey -k k5 screen -t Mutt mutt
-bindkey -k k6 screen
-#bindkey -k k7 screen -t emerge-wrapper sudo /home/ties/bin/emerge-wr
-bindkey -k k7 focus
-bindkey -k k8 prev
-
-bindkey -k k9 next
-#F10
-bindkey -k k; screen -t MC mc
-#F11 (disabled)
-# bindkey -k F1 screen -t ARROW /home/ties/bin/radio arrow
-
-#F12
-bindkey -k F2 screen -t messages tail -n40 -f /var/log/messages
+bindkey -k k6 screen		# F6
+bindkey -k k7 focus		# F7
+bindkey -k k8 prev		# F8
+bindkey -k k9 next		# F9
+bindkey -k k; screen -t MC mc	# F10
