@@ -1,3 +1,1 @@
-augroup filetypedetect
-	au BufNewFile,BufRead *.magik	set filetype=magik
-augroup END
+au BufNewFile,BufRead *.magik		set filetype=magik

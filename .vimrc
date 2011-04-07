@@ -54,4 +54,8 @@ vmap <f12> "+p
 " temporarily shortcut to open the course file for VIM
 map <s-f1> :e $HOME/Dropbox/course_vim.txt <cr>
 
+" hard coding ~/.vim/ftdetect/*, otherwise the files won't be recognized
+au BufNewFile,BufRead *.magik		set filetype=magik
+au BufNewFile,BufRead dvfindstd.ini	set filetype=rc
+
 " vim:filetype=vim
