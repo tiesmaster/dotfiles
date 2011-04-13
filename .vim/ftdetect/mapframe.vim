@@ -1,2 +1,2 @@
 " mapframe resource files
-au BufNewFile,BufRead DVFINDSTD.IN	set filetype=rc
+au BufNewFile,BufRead dvfind*.ini	set filetype=rc
