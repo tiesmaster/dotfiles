@@ -41,7 +41,8 @@ set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 
 nmap <f3> :sp $HOME/.vimrc <cr>
 
-" make Y behave like D and C
+" map Y to behave like it's counterparts (C, D, etc.), see the VIM docs for
+" more info (type :h Y)
 map Y y$
 
 " TextMate simulated keystroke's for shifting width with a single keystroke
