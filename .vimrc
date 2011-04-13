@@ -44,6 +44,12 @@ nmap <f3> :sp $HOME/.vimrc <cr>
 " make Y behave like D and C
 map Y y$
 
+" TextMate simulated keystroke's for shifting width with a single keystroke
+nmap <D-[> <<
+nmap <D-]> >>
+vmap <D-[> <gv
+vmap <D-]> >gv
+
 " clipboard shortcuts
 " F9 : cut
 " F11: copy
