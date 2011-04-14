@@ -5,7 +5,7 @@ if has("win32")
 	set runtimepath+=~/.vim
 endif
 
-source $VIMRUNTIME/vimrc_example.vim
+runtime vimrc_example.vim
 
 " nice options, don't want to live without it ;)
 set ignorecase
