@@ -10,11 +10,13 @@ source $VIMRUNTIME/vimrc_example.vim
 " nice options, don't want to live without it ;)
 set ignorecase
 set diffopt+=iwhite
-" Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
-"Invisible character colors
-highlight NonText guifg=#7a7a79
-highlight SpecialKey guifg=#7a7a79
+if !has("win32")
+	" Use the same symbols as TextMate for tabstops and EOLs
+	set listchars=tab:â¸\ ,eol:Â¬
+	"Invisible character colors
+	highlight NonText guifg=#7a7a79
+	highlight SpecialKey guifg=#7a7a79
+endif
 
 
 " these has been disabled to facilitate moving them to the appropriate filetype plugins
