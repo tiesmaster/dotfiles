@@ -12,7 +12,7 @@ set ignorecase
 set diffopt+=iwhite
 if !has("win32")
 	" Use the same symbols as TextMate for tabstops and EOLs
-	set listchars=tab:â¸\ ,eol:Â¬
+	set listchars=tab:▸\ ,eol:¬
 	"Invisible character colors
 	highlight NonText guifg=#7a7a79
 	highlight SpecialKey guifg=#7a7a79
