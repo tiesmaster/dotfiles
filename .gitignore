@@ -1,6 +1,6 @@
 # generic stuff
 *~
-.*.sw?
+.*sw?
 /workspace
 # *nix specific stuff
 /.ssh
@@ -55,6 +55,7 @@
 /.eclipse_keyring
 /.thumbnails
 /.local
+/.MacOSX
 # standard in win32 home
 /RECYCLER
 /desktop.ini
@@ -71,6 +72,7 @@
 /.belastingdienst.nl
 /Dropbox
 Wine Files
+/VirtualBox VMs
 # my home specific stuff (win32)
 /Werkmap
 /Zooi
