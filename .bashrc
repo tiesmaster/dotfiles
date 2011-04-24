@@ -14,8 +14,9 @@ fi
 
 [ -f ~/.bashrc.d/git-completion ] && source ~/.bashrc.d/git-completion
 
-echo '***'
-echo "Welkom to dotfiles version 0.0 (`git rev-parse --short HEAD`)"
-echo "Don't forget to update your version on a regular basis, eg: $ git pull"
-echo '***'
+echo "**************************************************************************"
+echo "* Welkom to dotfiles version `git describe`"
+echo "* Don't forget to update your version on a regular basis, eg: $ git pull *"
+echo "**************************************************************************"
+
 export DOTFILES_RUN=true
