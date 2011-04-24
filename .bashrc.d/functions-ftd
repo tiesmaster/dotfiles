@@ -1,7 +1,0 @@
-grepftd () {
-	ftd4linux_console -l |awk -F'\t' "BEGIN{IGNORECASE=1} \$8 ~ /$1/ {print \$0}"
-}
-
-grepftdalles () {
-	ftd4linux_console -a0 -l |awk -F'\t' "BEGIN{IGNORECASE=1} \$8 ~ /$1/ {print \$0}"
-}
