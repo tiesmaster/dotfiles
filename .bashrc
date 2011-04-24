@@ -36,6 +36,6 @@ fi
 [ -f ~/.profile ] && source ~/.profile
 
 echo '***'
-echo 'Welkom to dotfiles version 0.1 ($Revision$)'
-echo "Don't forget to update your version on a regular basis, eg: $ svn update"
+echo "Welkom to dotfiles version 0.0 (`git rev-parse --short HEAD`)"
+echo "Don't forget to update your version on a regular basis, eg: $ git pull"
 echo '***'
