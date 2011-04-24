@@ -37,3 +37,5 @@ export CDPATH=".:~:/usr:/usr/portage:~/media"
 # READLINE
 
 #[ -f ~/.inputrc ] && INPUTRC="~/.inputrc"
+
+export PATH=${PATH}:$HOME/bin
