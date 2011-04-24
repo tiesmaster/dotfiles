@@ -1,5 +1,4 @@
 #.bashrc: Ties' own bash startup
-# $Id$
 
 # This file is sourced by all *interactive* bash shells on startup,
 # including some apparently interactive shells such as scp and rcp
@@ -14,9 +13,6 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
-#TODO: make this more flexible (so you only have to comment out one line to
-#	add, move or disable a script
-
 #echo "****screen temporarily disabled******"
 [ -f ~/.bashrc.d/screen ] && source ~/.bashrc.d/screen
 [ -f ~/.bashrc.d/aliasen ] && source ~/.bashrc.d/aliasen
@@ -26,14 +22,6 @@ fi
 [ -f ~/.bashrc.d/pager ] && source ~/.bashrc.d/pager
 [ -f ~/.bashrc.d/environment-vars ] && source ~/.bashrc.d/environment-vars
 [ -f ~/.bashrc.d/git-completion ] && source ~/.bashrc.d/git-completion
-#[ -f ~/.bashrc.d/gentoo ] && source ~/.bashrc.d/gentoo
-#[ -f ~/.bashrc.d/motd ] && source ~/.bashrc.d/motd
-#[ -f ~/.bashrc.d/personal ] && source ~/.bashrc.d/personal
-#[ -f ~/.bashrc.d/keychain ] && source ~/.bashrc.d/keychain
-#[ -f ~/.bashrc.d/external/ciaranm ] && source ~/.bashrc.d/external/ciaranm
-
-#FIXME: following include needs to get merged with normal infrastructure
-[ -f ~/.profile ] && source ~/.profile
 
 echo '***'
 echo "Welkom to dotfiles version 0.0 (`git rev-parse --short HEAD`)"

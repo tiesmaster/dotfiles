@@ -1,7 +1,0 @@
-alias eic='eix -c'
-alias esc='esearch -c'
-alias semerge='emerge -s'
-alias pv='emerge -pv'
-alias tsemerge='time sudo emerge'
-alias tsa='time sudo emerge -av'
-alias sbewr='sudo ~/bin/emerge-wr'
