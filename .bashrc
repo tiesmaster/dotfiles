@@ -13,8 +13,6 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
-#echo "****screen temporarily disabled******"
-[ -f ~/.bashrc.d/screen ] && source ~/.bashrc.d/screen
 [ -f ~/.bashrc.d/aliasen ] && source ~/.bashrc.d/aliasen
 [ -f ~/.bashrc.d/functions ] && source ~/.bashrc.d/functions
 [ -f ~/.bashrc.d/path ] && source ~/.bashrc.d/path
