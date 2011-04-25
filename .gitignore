@@ -142,6 +142,7 @@ Wine Files
 .xbmc/
 log.roo
 $RECYCLE.BIN/
+janus
 
 # Windows 7 stuff
 AppData
