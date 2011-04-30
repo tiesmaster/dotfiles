@@ -10,14 +10,7 @@ runtime vimrc_example.vim
 " nice options, don't want to live without it ;)
 set ignorecase
 set diffopt+=iwhite
-if !has("win32")
-	" Use the same symbols as TextMate for tabstops and EOLs
-	set listchars=tab:▸\ ,eol:¬
-	"Invisible character colors
-	highlight NonText guifg=#7a7a79
-	highlight SpecialKey guifg=#7a7a79
-endif
-
+set list listchars=tab:\ \ ,trail:·
 
 " these has been disabled to facilitate moving them to the appropriate filetype plugins
 "set autoindent
@@ -75,5 +68,8 @@ map <s-f1> :e $HOME/Dropbox/course_vim.txt <cr>
 " Directories for swp files
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
+
+set number
+set ruler
 
 " vim:filetype=vim
