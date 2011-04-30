@@ -62,6 +62,7 @@ vmap <f12> "+p
 
 " temporarily shortcut to open the course file for VIM
 map <s-f1> :e $HOME/Dropbox/course_vim.txt <cr>
+map <f2> :h quickref<cr>
 
 " janus insprired options
 
