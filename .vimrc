@@ -70,4 +70,10 @@ vmap <f12> "+p
 " temporarily shortcut to open the course file for VIM
 map <s-f1> :e $HOME/Dropbox/course_vim.txt <cr>
 
+" janus insprired options
+
+" Directories for swp files
+set backupdir=~/.vim/backup
+set directory=~/.vim/backup
+
 " vim:filetype=vim
