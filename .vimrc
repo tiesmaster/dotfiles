@@ -66,9 +66,9 @@ vmap <f12> "+p
 " temporarily shortcut to open the course file for VIM
 " FIXME: refactor this to set a variable and set the keymap using that one
 if filereadable(expand("$HOME/Dropbox/course_vim.txt"))
-	map <s-f1> :e $HOME/Dropbox/course_vim.txt <cr>
+	map <s-f1> :sp $HOME/Dropbox/course_vim.txt <cr>
 else
-	map <s-f1> :e c:/worksource/Ties/Dropbox/course_vim.txt <cr>
+	map <s-f1> :sp c:/worksource/Ties/Dropbox/course_vim.txt <cr>
 endif
 map <f2> :h quickref<cr>
 
