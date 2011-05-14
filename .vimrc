@@ -82,7 +82,9 @@ map <f2> :h quickref<cr>
 " janus insprired options
 
 " Directories for swp files
-set backupdir=~/.vim/backup
+if isdirectory("~/.vim/backup")
+	set backupdir=~/.vim/backup
+endif
 
 set number
 set ruler
