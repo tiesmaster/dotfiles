@@ -38,3 +38,29 @@ skip_vim_plugin "arduino"
 skip_vim_plugin "vwilight"
 
 skip_vim_plugin "link_vimrc"
+
+subdirs = VIM::Dirs
+
+name = "fugitive"
+cwd = File.expand_path("../.vim", __FILE__)
+dir = File.expand_path("tmp/#{name}")
+
+namespace(name) do
+task :install => [:pull] + subdirs do
+Dir.chdir dir do
+	if File.exists?("Rakefile") and `rake -T` =~ /^rake install/
+		sh "rake install"
+	elsif File.exists?("install.sh")
+		sh "sh install.sh"
+	else
+		subdirs.each do |subdir|
+			if File.exists?(subdir)
+				sh "cp -RfL #{subdir}/* #{cwd}/#{subdir}/"
+			end
+		end
+	end
+end
+
+yield if block_given?
+end
+end
