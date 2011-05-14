@@ -35,11 +35,8 @@ set statusline+=%h%m%r%w                     " flags
 set statusline+=\[%{strlen(&ft)?&ft:'none'}, " filetype
 set statusline+=%{&encoding},                " encoding
 set statusline+=%{&fileformat}]              " file format
-if filereadable(expand("$VIM/vimfiles/plugin/fugitive.vim"))
+if filereadable(expand("$HOME/.vim/plugin/fugitive.vim"))
 	set statusline+=%{fugitive#statusline()}     " git branch}
-endif
-if filereadable(expand("$VIM/vimfiles/plugin/vimbuddy.vim"))
-	set statusline+=\ %{VimBuddy()}          " vim buddy
 endif
 set statusline+=%=                           " right align
 set statusline+=0x%-8B\                      " current char
