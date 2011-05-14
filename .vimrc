@@ -10,7 +10,6 @@ runtime vimrc_example.vim
 " nice options, don't want to live without it ;)
 set ignorecase
 set diffopt+=iwhite
-set list
 " FIXME: make this working on win32
 if !has("win32")
 	set listchars=tab:▸·,trail:·
