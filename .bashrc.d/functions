@@ -29,3 +29,14 @@ isgrep() {
 	shift 1
 	sed -n "s/$PATTERN/&/pi" $@
 }
+
+install_janus() {
+	rm -rf .vimrc .gvimrc .vim
+	curl https://github.com/carlhuda/janus/raw/master/bootstrap.sh -o - | sh
+}
+
+remove_janus() {
+	rm -rf .vimrc .gvimrc .vim
+	git checkout .vimrc .gvimrc .vim
+	mkdir .vim/backup
+}
