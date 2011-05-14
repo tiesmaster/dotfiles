@@ -6,7 +6,8 @@
 [alias]
 	co = checkout
 	br = branch
-	ci = commit
+	ci = commit -v
+	ca = commit -va
 	st = status
 	lol = log --pretty=oneline --abbrev-commit --graph --decorate
 	unstage = reset HEAD --
