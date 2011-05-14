@@ -27,4 +27,3 @@ alias svnvimdiff="svn diff --diff-cmd ~/bin/bash/vimdiff-svn-wrapper.sh"
 #alias addkeys='keychain id_rsa A50D68F5'
 
 alias grepe="grep --exclude='*.svn*' --exclude='*~'"
-alias janus='mvim -u ~/janus/vimrc -U ~/janus/gvimrc'

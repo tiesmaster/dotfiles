@@ -30,13 +30,17 @@ isgrep() {
 	sed -n "s/$PATTERN/&/pi" $@
 }
 
-install_janus() {
-	rm -rf .vimrc .gvimrc .vim
+install-janus() {
+	mkdir ~/janus
+	cd ~/janus
+	HOME=`pwd`
+
 	curl https://github.com/carlhuda/janus/raw/master/bootstrap.sh -o - | sh
 }
 
-remove_janus() {
-	rm -rf .vimrc .gvimrc .vim
-	git checkout .vimrc .gvimrc .vim
-	mkdir .vim/backup
+janus-shell() {
+	cd ~/janus
+	HOME=`pwd`
+	PROMPT_COMMAND='echo -ne "\033]0;JANUS_PROMPT:${PWD/$HOME/~}\007"'
+	PS1=JANUS_PROMPT\$\ 
 }
