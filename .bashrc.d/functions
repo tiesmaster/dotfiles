@@ -31,14 +31,14 @@ isgrep() {
 }
 
 install-janus() {
-	mkdir ~/janus
+	mkdir ~/janus-ref
 	janus-shell
 
 	curl https://github.com/carlhuda/janus/raw/master/bootstrap.sh -o - | sh
 }
 
 janus-shell() {
-	cd ~/janus
+	cd ~/janus-ref
 	HOME=`pwd`
 	PS1=JANUS_PROMPT\$\ 
 }
