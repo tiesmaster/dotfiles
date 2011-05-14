@@ -82,7 +82,6 @@ map <f2> :h quickref<cr>
 
 " Directories for swp files
 set backupdir=~/.vim/backup
-set directory=~/.vim/backup
 
 set number
 set ruler
