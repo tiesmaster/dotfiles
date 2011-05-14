@@ -20,3 +20,4 @@ echo "* Don't forget to update your version on a regular basis, eg: $ git pull *
 echo "**************************************************************************"
 
 export DOTFILES_RUN=true
+export PATH=/usr/local/bin:${PATH}
