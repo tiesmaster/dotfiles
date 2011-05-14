@@ -32,8 +32,7 @@ isgrep() {
 
 install-janus() {
 	mkdir ~/janus
-	cd ~/janus
-	HOME=`pwd`
+	janus-shell
 
 	curl https://github.com/carlhuda/janus/raw/master/bootstrap.sh -o - | sh
 }
@@ -41,6 +40,5 @@ install-janus() {
 janus-shell() {
 	cd ~/janus
 	HOME=`pwd`
-	PROMPT_COMMAND='echo -ne "\033]0;JANUS_PROMPT:${PWD/$HOME/~}\007"'
 	PS1=JANUS_PROMPT\$\ 
 }
