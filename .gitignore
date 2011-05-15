@@ -51,6 +51,7 @@
 /.cache
 /.ProperoSecureTunnel
 /.ipython
+/.irb_history
 /.sh_history
 /.org.eclipse.epp.usagedata.recording.userId
 /.eclipse_keyring
