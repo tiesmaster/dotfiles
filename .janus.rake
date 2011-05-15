@@ -40,6 +40,7 @@ skip_vim_plugin "vwilight"
 skip_vim_plugin "link_vimrc"
 
 def override_install_task(task_name)
+	Rake::Task["#{task_name}:install"].actions.clear
 	subdirs = VIM::Dirs
 
 	name = task_name
@@ -71,3 +72,7 @@ def override_install_task(task_name)
 end
 
 override_install_task "fugitive"
+
+#require 'irb'
+#ARGV.clear
+#IRB.start
