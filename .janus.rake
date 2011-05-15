@@ -44,6 +44,9 @@ def override_install_task(task_name)
 
 	name = task_name
 	cwd = File.expand_path("../.vim", __FILE__)
+	if RUBY_PLATFORM =~ /(win|w)32$/
+		cwd = File.expand_path("../vimfiles", __FILE__)
+	end
 	dir = File.expand_path("tmp/#{name}")
 
 	namespace(name) do
