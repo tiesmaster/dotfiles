@@ -30,11 +30,6 @@ isgrep() {
 	sed -n "s/$PATTERN/&/pi" $@
 }
 
-install-janus() {
-	git clone https://github.com/carlhuda/janus.git
-	(cd janus; rake)
-}
-
 install-janus-ref() {
 	mkdir ~/janus-ref
 	janus-shell
