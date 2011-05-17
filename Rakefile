@@ -1,3 +1,5 @@
+directory ".vim/backup"
+
 file "janus" do
 	system "git clone https://github.com/carlhuda/janus.git"
 end
@@ -9,4 +11,4 @@ task :build_janus => :deploy_janus do
 	system 'rake'
 end
 
-task :default => :build_janus
+task :default => [".vim/backup", :build_janus]
