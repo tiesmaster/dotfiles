@@ -80,7 +80,7 @@ map <f2> :h quickref<cr>
 " janus insprired options
 
 " Directories for swp files
-if isdirectory("~/.vim/backup")
+if isdirectory(expand("~/.vim/backup"))
 	set backupdir=~/.vim/backup
 endif
 
