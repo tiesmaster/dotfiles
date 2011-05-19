@@ -40,35 +40,35 @@ skip_vim_plugin "vwilight"
 skip_vim_plugin "link_vimrc"
 
 def override_install_task(task_name)
-	Rake::Task["#{task_name}:install"].actions.clear
-	subdirs = VIM::Dirs
+   Rake::Task["#{task_name}:install"].actions.clear
+   subdirs = VIM::Dirs
 
-	name = task_name
-	cwd = File.expand_path("../.vim", __FILE__)
-	if RUBY_PLATFORM =~ /(win|w)32$/
-		cwd = File.expand_path("../vimfiles", __FILE__)
-	end
-	dir = File.expand_path("tmp/#{name}")
+   name = task_name
+   cwd = File.expand_path("../.vim", __FILE__)
+   if RUBY_PLATFORM =~ /(win|w)32$/
+      cwd = File.expand_path("../vimfiles", __FILE__)
+   end
+   dir = File.expand_path("tmp/#{name}")
 
-	namespace(name) do
-	task :install => [:pull] + subdirs do
-	Dir.chdir dir do
-		if File.exists?("Rakefile") and `rake -T` =~ /^rake install/
-			sh "rake install"
-		elsif File.exists?("install.sh")
-			sh "sh install.sh"
-		else
-			subdirs.each do |subdir|
-				if File.exists?(subdir)
-					sh "cp -RfL #{subdir}/* #{cwd}/#{subdir}/"
-				end
-			end
-		end
-	end
+   namespace(name) do
+      task :install => [:pull] + subdirs do
+         Dir.chdir dir do
+            if File.exists?("Rakefile") and `rake -T` =~ /^rake install/
+               sh "rake install"
+            elsif File.exists?("install.sh")
+               sh "sh install.sh"
+            else
+               subdirs.each do |subdir|
+                  if File.exists?(subdir)
+                     sh "cp -RfL #{subdir}/* #{cwd}/#{subdir}/"
+                  end
+               end
+            end
+         end
 
-	yield if block_given?
-	end
-	end
+         yield if block_given?
+      end
+   end
 end
 
 override_install_task "fugitive"
