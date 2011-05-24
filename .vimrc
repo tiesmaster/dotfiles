@@ -55,7 +55,7 @@ nmap <D-]> >>
 vmap <D-[> <gv
 vmap <D-]> >gv
 
-map <f5> :%!xmllint --format - <cr>
+map <f5> :%!xmllint --format --recover - <cr>
 
 " clipboard shortcuts
 " F9 : cut
