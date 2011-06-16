@@ -57,10 +57,11 @@
 	(interactive)
 
 	(global-set-key (kbd "<f6> s") 'start-swaf)
+	(global-set-key (kbd "<f6> c") 'start-closed)
+	(global-set-key (kbd "<f6> o") 'start-open)
+	(global-set-key (kbd "<f6> a") 'start-sab)
 	(global-set-key (kbd "<f6> u") 'start-utrm)
 	;;(global-set-key (kbd "<f6> u") 'start-utrm-closed)
-	(global-set-key (kbd "<f6> o") 'start-orca)
-	(global-set-key (kbd "<f6> c") 'start-cambridge)
 	(global-set-key (kbd "<f6> r") 'start-orca-sync-replica)
 	(global-set-key (kbd "<f6> d") 'start-orca-sync-dev)
 	(global-set-key (kbd "<f6> w") 'start-wml)
@@ -98,6 +99,27 @@
 	(message "Starting SWAF [image tag: SWAF]")
 
 	(roos-set-sw-gis-alias-tag-start "swaf")
+)
+
+(defun start-closed()
+	(interactive)
+	(message "Starting CLOSED [image tag: CLOSED]")
+
+	(roos-set-sw-gis-alias-tag-start "closed")
+)
+
+(defun start-open()
+	(interactive)
+	(message "Starting OPEN [image tag: OPEN]")
+
+	(roos-set-sw-gis-alias-tag-start "open")
+)
+
+(defun start-sab()
+	(interactive)
+	(message "Starting SAB [image tag: SAB]")
+
+	(roos-set-sw-gis-alias-tag-start "sab")
 )
 
 (defun start-utrm()
