@@ -57,14 +57,10 @@
 	(interactive)
 
 	(global-set-key (kbd "<f6> s") 'start-swaf)
-	(global-set-key (kbd "<f6> c") 'start-closed)
 	(global-set-key (kbd "<f6> o") 'start-open)
-	(global-set-key (kbd "<f6> a") 'start-sab)
-	(global-set-key (kbd "<f6> u") 'start-utrm)
-	;;(global-set-key (kbd "<f6> u") 'start-utrm-closed)
-	(global-set-key (kbd "<f6> r") 'start-orca-sync-replica)
-	(global-set-key (kbd "<f6> d") 'start-orca-sync-dev)
-	(global-set-key (kbd "<f6> w") 'start-wml)
+	(global-set-key (kbd "<f6> r") 'start-runtime)
+	(global-set-key (kbd "<f6> c") 'start-core)
+	(global-set-key (kbd "<f6> l") 'start-length-analysis)
 )
 
 (defun roos-revert-emacs-shortcuts()
@@ -96,81 +92,37 @@
 
 (defun start-swaf()
 	(interactive)
-	(message "Starting SWAF [image tag: SWAF]")
+	(message "Starting swaf [image tag: swaf]")
 
 	(roos-set-sw-gis-alias-tag-start "swaf")
 )
 
-(defun start-closed()
-	(interactive)
-	(message "Starting CLOSED [image tag: CLOSED]")
-
-	(roos-set-sw-gis-alias-tag-start "closed")
-)
-
 (defun start-open()
 	(interactive)
-	(message "Starting OPEN [image tag: OPEN]")
+	(message "Starting open [image tag: open]")
 
 	(roos-set-sw-gis-alias-tag-start "open")
 )
 
-(defun start-sab()
+(defun start-runtime()
 	(interactive)
-	(message "Starting SAB [image tag: SAB]")
+	(message "Starting runtime [image tag: runtime]")
 
-	(roos-set-sw-gis-alias-tag-start "sab")
+	(roos-set-sw-gis-alias-tag-start "runtime")
 )
 
-(defun start-utrm()
+(defun start-core()
 	(interactive)
-	(message "Starting UTRM Open [image tag: Cambridge Open Trunk 4.2.0 [SW: 420] RW Development]")
+	(message "Starting core [image tag: core]")
 
-	;;(roos-set-sw-gis-alias-tag-start "utrm_open")
-	(roos-set-sw-gis-alias-tag-start "Cambridge Open Trunk 4.2.0 [SW: 420] RW Development")
+	(roos-set-sw-gis-alias-tag-start "core")
 )
 
-(defun start-utrm-closed()
+(defun start-length-analysis()
 	(interactive)
-	(message "Starting UTRM Closed [image tag: Cambridge Closed 420 RW Swaf]")
+	(message "Starting length-analysis [image tag: length_analysis]")
 
-	;;(roos-set-sw-gis-alias-tag-start "utrm_open")
-	(roos-set-sw-gis-alias-tag-start "Cambridge Closed 420 RW Swaf")
-)
-
-(defun start-orca()
-	(interactive)
-	(message "Starting ORCA [image tag: ORCA]")
-
-	(roos-set-sw-gis-alias-tag-start "ORCA")
-)
-
-(defun start-cambridge()
-	(interactive)
-	(message "Starting Cambridge [image tag: cambridge_open]")
-
-	(roos-set-sw-gis-alias-tag-start "cambridge_open")
-)
-
-(defun start-orca-sync-replica()
-	(interactive)
-	(message "Starting ORCA (SyncManager replica) [image tag: orca_custom_sync_replica_open]")
-
-	(roos-set-sw-gis-alias-tag-start "orca_custom_sync_replica_open")
-)
-
-(defun start-orca-sync-dev()
-	(interactive)
-	(message "Starting ORCA (SyncManager dev) [image tag: orca_custom_sync_dev_open]")
-
-	(roos-set-sw-gis-alias-tag-start "orca_custom_sync_dev_open")
-)
-
-(defun start-wml()
-	(interactive)
-	(message "Starting WML [image tag: WML]")
-
-	(roos-set-sw-gis-alias-tag-start "WML")
+	(roos-set-sw-gis-alias-tag-start "length_analysis")
 )
 
 ;; reload function 'roos-find-sw-gis-alias-file-for-tag', it gets corrupted somehow
