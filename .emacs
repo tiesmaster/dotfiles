@@ -1,6 +1,7 @@
 (message "Loading $HOME/.emacs")
 
 (global-set-key (kbd "<f12> l") 'start-length-analysis)
+(global-set-key (kbd "<f12> u") 'start-utrm)
 
 (defun start-length-analysis()
 	(interactive)
@@ -8,6 +9,14 @@
 
 	(find-file (getenv "GIS_ALIASES"))
 	(aliases-run-program "length_analysis")
+)
+
+(defun start-utrm()
+	(interactive)
+	(message "Starting utrm [image tag: utrm]")
+
+	(find-file (getenv "GIS_ALIASES"))
+	(aliases-run-program "utrm")
 )
 
 ;; (defun my-init ()
