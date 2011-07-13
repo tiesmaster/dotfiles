@@ -2,13 +2,13 @@
 
 (global-set-key (kbd "<f12> l") 'start-length-analysis)
 (global-set-key (kbd "<f12> u") 'start-utrm)
-(global-set-key (kbd "<f12> u") 'start-open)
+(global-set-key (kbd "<f12> o") 'start-open)
 
 (defun start-length-analysis()
 	(interactive)
 	(message "Starting length-analysis [image tag: length_analysis]")
 
-	(find-file (getenv "GIS_ALIASES"))
+	(find-file (getenv "SW_WHICH_GIS_ALIAS_FILE"))
 	(aliases-run-program "length_analysis")
 )
 
@@ -16,7 +16,7 @@
 	(interactive)
 	(message "Starting utrm [image tag: utrm]")
 
-	(find-file (getenv "GIS_ALIASES"))
+	(find-file (getenv "SW_WHICH_GIS_ALIAS_FILE"))
 	(aliases-run-program "utrm")
 )
 
@@ -24,7 +24,7 @@
 	(interactive)
 	(message "Starting open [image tag: open]")
 
-	(find-file (getenv "GIS_ALIASES"))
+	(find-file (getenv "SW_WHICH_GIS_ALIAS_FILE"))
 	(aliases-run-program "open")
 )
 
