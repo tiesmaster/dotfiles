@@ -2,6 +2,7 @@
 
 (global-set-key (kbd "<f12> l") 'start-length-analysis)
 (global-set-key (kbd "<f12> u") 'start-utrm)
+(global-set-key (kbd "<f12> u") 'start-open)
 
 (defun start-length-analysis()
 	(interactive)
@@ -17,6 +18,14 @@
 
 	(find-file (getenv "GIS_ALIASES"))
 	(aliases-run-program "utrm")
+)
+
+(defun start-open()
+	(interactive)
+	(message "Starting open [image tag: open]")
+
+	(find-file (getenv "GIS_ALIASES"))
+	(aliases-run-program "open")
 )
 
 ;; (defun my-init ()
