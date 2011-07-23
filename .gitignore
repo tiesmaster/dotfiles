@@ -196,3 +196,9 @@ backup/
 .xsession-errors
 .xsession-errors.old
 examples.desktop
+
+# new way of organizing tmp stuff
+.gitignore
+st
+tmp.host/
+tmp.local/
