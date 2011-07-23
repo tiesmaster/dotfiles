@@ -163,3 +163,9 @@ Oracle
 ntuser.pol
 AutoHotkey.ahk
 Visual Studio 2010
+
+# OSX stuff from iMac
+.keepassx/
+.nbprofiler/
+.netbeans/
+backup/
