@@ -202,3 +202,9 @@ examples.desktop
 st
 tmp.host/
 tmp.local/
+
+# new stuff on MacBook
+.gitignore
+.eclipse/
+.hgrc
+.ivy2/
