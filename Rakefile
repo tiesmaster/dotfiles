@@ -1,14 +1,20 @@
-directory ".vim/backup"
+namespace(:janus) do
 
-file "janus" do
-	system "git clone https://github.com/carlhuda/janus.git"
+	BACKUP_DIR = ".vim/backup"
+	directory BACKUP_DIR
+
+	file "janus" do
+		`git clone https://github.com/carlhuda/janus.git`
+	end
+
+	desc "Download janus"
+	task :download => "janus"
+
+	desc "Build janus"
+	task :build => :download do
+		Dir.chdir "janus"
+		system "rake"
+	end
 end
 
-file :deploy_janus => "janus"
-
-task :build_janus => :deploy_janus do
-	Dir.chdir 'janus'
-	system 'rake'
-end
-
-task :default => [".vim/backup", :build_janus]
+task :default => [BACKUP_DIR, "janus:build"]
