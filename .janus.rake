@@ -1,3 +1,6 @@
+# FIXME: don't use an exclude list to remove everything, but remove all plugins
+# except for an include list
+
 skip_vim_plugin "color-sampler"
 skip_vim_plugin "conque"
 skip_vim_plugin "git"
@@ -73,6 +76,14 @@ end
 
 override_install_task "fugitive"
 
-#require 'irb'
-#ARGV.clear
-#IRB.start
+# redefine the update docs task for Windows, we don't have here documents there
+if RUBY_PLATFORM =~ /(win|w)32$/
+
+	task :update_docs do
+		puts "Updating VIM Documentation... Fixed version on win32"
+		IO.popen("vim -e -s", "r+") do |f|
+			f.puts ":helptags ~/.vim/doc\n:quit\n"
+		end
+	end
+
+end
