@@ -15,6 +15,11 @@ namespace(:janus) do
 		Dir.chdir "janus"
 		system "rake"
 	end
+
+	desc "Clean dotfiles from the Janus installation"
+	task :clean do
+		rm_r [BACKUP_DIR, "janus", ".vim/doc", ".vim/plugin"]
+	end
 end
 
 task :default => [BACKUP_DIR, "janus:build"]
