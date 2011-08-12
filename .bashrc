@@ -23,3 +23,4 @@ export DOTFILES_RUN=true
 export PATH=/usr/local/bin:${PATH}
 
 complete -C ~/bin/rake-completion.rb -o default rake
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
