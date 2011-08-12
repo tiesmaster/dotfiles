@@ -21,3 +21,5 @@ echo "**************************************************************************
 
 export DOTFILES_RUN=true
 export PATH=/usr/local/bin:${PATH}
+
+complete -C ~/bin/rake-completion.rb -o default rake
