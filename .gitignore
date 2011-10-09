@@ -203,8 +203,12 @@ st
 tmp.host/
 tmp.local/
 
-# new stuff on MacBook
+# new stuff on MacBook/iMac
 .gitignore
 .eclipse/
 .hgrc
 .ivy2/
+.android/
+.irb-history
+.rvm/
+.rvmrc
