@@ -51,7 +51,7 @@ set statusline+=0x%-8B\                      " current char
 set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 
 nmap <f3> :sp $HOME/.vimrc <cr>
-nmap <f4> :e $HOME/Dropbox/todo.txt <cr>
+nmap <f4> :e $HOME/Dropbox/todo.txt<cr>
 
 " map Y to behave like it's counterparts (C, D, etc.), see the VIM docs for
 " more info (type :h Y)
