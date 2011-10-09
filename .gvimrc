@@ -7,3 +7,6 @@ endif
 if has("gui_win32")
 	au GUIEnter * simalt ~x
 endif
+
+" highlight the current line with clear color
+hi CursorLine guibg=darkred
