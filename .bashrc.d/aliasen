@@ -6,7 +6,7 @@ alias eb='vim -f ~/.bashrc && source ~/.bashrc'
 #TODO: get this in a conditional, perhaps check for ls --version or output of it
 #TODO: perhaps create some sort of LSOPTIONS var (but why?)
 #alias ls='ls -hF --color=auto'
-alias ls='ls -hF'
+alias ls='ls -hFG'
 alias ll='ls -l'
 #alias grep='grep --colour=auto'
 alias df='df -h'
