@@ -89,4 +89,6 @@ endif
 set number
 set ruler
 
+set cursorline
+
 " vim:filetype=vim
