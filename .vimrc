@@ -1,6 +1,7 @@
 " Custom .vimrc file of Thijs Brobbel
 
 set runtimepath+=~/.vim.local
+let mapleader = ","
 
 " Include user's local vim config
 if filereadable(expand("~/.vim/vimrc"))
