@@ -42,3 +42,16 @@ janus-shell() {
 	HOME=`pwd`
 	PS1=JANUS_PROMPT\$\ 
 }
+
+dotfiles-shell() {
+	cd ~/dotfiles
+	HOME=`pwd`
+	PS1=DOTFILES\$\ 
+}
+
+install-dotfiles-ref() {
+	mkdir ~/dotfiles
+	dotfiles-shell
+
+	curl https://raw.github.com/tiesmaster/dotfiles/master/bin/bootstrap.sh -o - | sh
+}
