@@ -1,5 +1,12 @@
 " Custom .vimrc file of Thijs Brobbel
 
+set runtimepath+=~/.vim.local
+
+" Include user's local vim config
+if filereadable(expand("~/.vim/vimrc"))
+  source ~/.vim/vimrc
+endif
+
 " fix missing the .vim dir on the runtime PATH on Windows
 if has("win32")
 	set runtimepath+=~/.vim

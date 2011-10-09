@@ -1,25 +1,23 @@
 namespace(:janus) do
+  VIMDIR = ".vim"
 
-	BACKUP_DIR = ".vim/backup"
-	directory BACKUP_DIR
-
-	file "janus" do
-		`git clone https://github.com/carlhuda/janus.git`
+	file VIMDIR do
+		system "git clone https://github.com/carlhuda/janus.git #{VIMDIR}"
 	end
 
 	desc "Download janus"
-	task :download => "janus"
+	task :download => VIMDIR
 
 	desc "Build janus"
 	task :build => :download do
-		Dir.chdir "janus"
+		Dir.chdir VIMDIR
 		system "rake"
 	end
 
 	desc "Clean dotfiles from the Janus installation"
 	task :clean do
-		rm_r [BACKUP_DIR, "janus", ".vim/doc", ".vim/plugin"]
+		rm_r VIMDIR
 	end
 end
 
-task :default => [BACKUP_DIR, "janus:build"]
+task :default => "janus:build"
