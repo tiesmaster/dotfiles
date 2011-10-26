@@ -8,8 +8,4 @@ if has("gui_win32")
 	au GUIEnter * simalt ~x
 endif
 
-" highlight the current line with clear color
-hi CursorLine guibg=darkred
-
-" make the search fall out
-hi Search guibg=yellow
+color autumn
