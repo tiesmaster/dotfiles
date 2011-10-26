@@ -98,5 +98,6 @@ set number
 set ruler
 
 set cursorline
+unlet macvim_hig_shift_movement
 
 " vim:filetype=vim
