@@ -8,4 +8,4 @@ if has("gui_win32")
 	au GUIEnter * simalt ~x
 endif
 
-color autumn
+color eclipse

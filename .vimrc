@@ -21,9 +21,6 @@ set diffopt+=iwhite
 " FIXME: make this working on win32
 if !has("win32")
 	set listchars=tab:▸·,trail:·
-	"Invisible character colors
-	highlight NonText guifg=#4a4a59
-	highlight SpecialKey guifg=#4a4a59
 else
 	set listchars=tab:\ \ 
 endif
