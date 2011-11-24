@@ -215,3 +215,5 @@ tmp.local/
 .rvmrc
 .chainsaw/
 .jswat/
+.gerritcodereview/
+.wine/
