@@ -217,3 +217,5 @@ tmp.local/
 .jswat/
 .gerritcodereview/
 .wine/
+.serverauth.30605
+.sqldeveloper/
