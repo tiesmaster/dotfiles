@@ -1,2 +1,2 @@
 --type-set=magik=.magik,.msg
---type-set=sw=.def
+--type-set=sw=.def,.txt
