@@ -219,3 +219,5 @@ tmp.local/
 .wine/
 .serverauth.30605
 .sqldeveloper/
+
+.vimgolf
