@@ -13,7 +13,7 @@ setlocal iskeyword+=!,63
 
 syn keyword magikStatement	_clone _self _super
 syn keyword magikStatement	_thisthread
-syn keyword magikStatement	_try _catch _throw _when _endcatch
+syn keyword magikStatement	_try _catch _throw _when _endcatch _endtry
 syn keyword magikStatement	_protect _protection _endprotect
 syn keyword magikStatement	_handing _with _finally
 syn keyword magikStatement	_global _local _private _constant _dynamic _optional
