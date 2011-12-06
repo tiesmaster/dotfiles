@@ -9,3 +9,17 @@ snippet method
 		${3:# code}
 	_endmethod
 	$
+
+snippet test
+	_method ${1:`Filename()`}.test_${2:name_of_test}()
+		# setup
+		${3: # code goes here}
+
+		# exercise SUT
+
+		# verify results
+
+		# tear down
+
+	_endmethod
+	$
