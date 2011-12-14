@@ -13,6 +13,8 @@ let b:did_indent = 1
 setlocal ai nosi
 setlocal noet
 
+setlocal comments+=b:##
+
 set tags+=~/tmp/rw/bag/bag.runtime/munit/tags,~/tmp/rw/smallworld/tags
 
 let b:undo_indent = "setl ai< si<"
