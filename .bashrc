@@ -27,3 +27,4 @@ complete -C ~/bin/rake-completion.rb -o default rake
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
 export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a Terminal"'
+export CDPATH=$CDPATH:~/tmp/rw/bag:~/tmp/rw
