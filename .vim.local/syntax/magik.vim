@@ -9,7 +9,7 @@ if exists("b:current_syntax")
 endif
 
 " enable ! and ? as valid identifier characters
-setlocal iskeyword+=!,63
+setlocal iskeyword+=!,63,:
 
 syn keyword magikStatement	_clone _self _super
 syn keyword magikStatement	_thisthread
