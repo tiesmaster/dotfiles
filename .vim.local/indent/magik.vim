@@ -23,8 +23,8 @@ let b:undo_indent = "setl ai< si<"
 
 iabbrev <buffer> true      _true
 iabbrev <buffer> false      _false
+iabbrev <buffer> self       _self
 " iabbrev <buffer> clone      _clone
-" iabbrev <buffer> self       _self
 " iabbrev <buffer> super      _super
 " iabbrev <buffer> thisthread _thisthread
 " iabbrev <buffer> try        _try
