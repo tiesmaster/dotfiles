@@ -6,20 +6,20 @@ snippet if
 
 snippet method
 	_method ${1:`Filename()`}.${2:method_name}()
-		${3:# code}
 	_endmethod
 	$
 
 snippet test
 	_method ${1:`Filename()`}.test_${2:name_of_test}()
 		# setup
-		${3: # code goes here}
+		${3:# code goes here}
 
 		# exercise SUT
 
 		# verify results
 
-		# tear down
-
 	_endmethod
 	$
+
+snippet pragma
+	_pragma(classify_level=${1:basic}, topic={roos,bag})
