@@ -221,3 +221,6 @@ tmp.local/
 .sqldeveloper/
 
 .vimgolf
+
+# new stuff on VM w7
+.jenkins
