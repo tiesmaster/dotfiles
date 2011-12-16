@@ -1,23 +1,23 @@
 (message "Loading $HOME/.emacs")
 
-(global-set-key (kbd "<f12> l") 'start-length-analysis)
-(global-set-key (kbd "<f12> u") 'start-utrm)
+(global-set-key (kbd "<f12> r") 'start-runtime)
+(global-set-key (kbd "<f12> b") 'start-bag)
 (global-set-key (kbd "<f12> o") 'start-open)
 
-(defun start-length-analysis()
+(defun start-runtime()
 	(interactive)
-	(message "Starting length-analysis [image tag: length_analysis]")
+	(message "Starting runtime [image tag: runtime]")
 
 	(find-file (getenv "SW_WHICH_GIS_ALIAS_FILE"))
-	(aliases-run-program "length_analysis")
+	(aliases-run-program "runtime")
 )
 
-(defun start-utrm()
+(defun start-bag()
 	(interactive)
-	(message "Starting utrm [image tag: utrm]")
+	(message "Starting bag [image tag: bag]")
 
 	(find-file (getenv "SW_WHICH_GIS_ALIAS_FILE"))
-	(aliases-run-program "utrm")
+	(aliases-run-program "bag")
 )
 
 (defun start-open()
