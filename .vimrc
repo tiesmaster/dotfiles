@@ -98,7 +98,9 @@ set number
 set ruler
 
 set cursorline
-unlet macvim_hig_shift_movement
+if exists("macvim_hig_shift_movement")
+	unlet macvim_hig_shift_movement
+endif
 
 au BufWritePost *.snippets		call ReloadAllSnippets()
 nmap <S-f3> :sp $HOME/.vim.local/snippets/magik.snippets <cr>

@@ -8,4 +8,8 @@ if has("gui_win32")
 	au GUIEnter * simalt ~x
 endif
 
-color eclipse
+try
+	color eclipse
+catch /185/
+	" ignoring absent colorscheme
+endtry
