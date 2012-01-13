@@ -1,0 +1,8 @@
+_block
+	_local bv << !current_package![:bv] << gis_program_manager.databases[:bag]
+	_if bv _is _unset _then _leave _endif
+	
+	!current_package![:bvbo] << bv.collection(:bag_verblijfsobject)
+	!current_package![:bip] << bv.collection(:bag_import_progress)
+_endblock
+$
