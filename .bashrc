@@ -26,5 +26,9 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 complete -C ~/bin/rake-completion.rb -o default rake
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
-export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a Terminal"'
+if [[ $OSTYPE == "msys" ]]; then
+	export EDITOR="gvim -f"
+else
+	export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a Terminal"'
+fi
 export CDPATH=$CDPATH:~/tmp/rw/bag:~/tmp/rw
