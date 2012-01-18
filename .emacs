@@ -3,6 +3,7 @@
 (global-set-key (kbd "<f12> r") 'start-runtime)
 (global-set-key (kbd "<f12> b") 'start-bag)
 (global-set-key (kbd "<f12> o") 'start-open)
+(global-set-key (kbd "<f11>") 'reload-bag-qa-framework)
 
 (defun start-runtime()
 	(interactive)
@@ -27,6 +28,21 @@
 	(find-file (getenv "SW_WHICH_GIS_ALIAS_FILE"))
 	(aliases-run-program "open")
 )
+
+(defun reload-bag-qa-framework()
+  (interactive)
+  (reload-module ":bag_qa_framework")
+)
+
+(defun reload-module (module)
+  "Reloads the given module."
+  (interactive "r")
+  (magik-transmit-string
+   (concatenate 'string "reload_module(" module ")")
+   "user:"
+   (lambda (f) (magik-function "load_file" f 'unset (or (buffer-file-name) 'unset)))
+   (lambda (f) (magik-function "system.unlink" f 'false 'true)))
+  )
 
 ;; (defun my-init ()
 ;; 	"Custom initialization, maximizing active frame, and so on."
