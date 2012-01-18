@@ -3,7 +3,7 @@ _block
 	_if bv _is _unset _then _leave _endif
 	
 	!current_package![:bvbo] << bv.collection(:bag_verblijfsobject)
-	!current_package![:bip] << bv.collection(:bag_import_progress)
+	!current_package![:bip] << bv.collection(:bag!import_progress)
 _endblock
 $
 
