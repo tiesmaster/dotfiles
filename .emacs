@@ -44,6 +44,18 @@
    (lambda (f) (magik-function "system.unlink" f 'false 'true)))
   )
 
+(defun iswitchb-local-keys ()
+  (mapc (lambda (K) 
+	  (let* ((key (car K)) (fun (cdr K)))
+	    (define-key iswitchb-mode-map (edmacro-parse-keys key) fun)))
+	'(("<right>" . iswitchb-next-match)
+	  ("<left>"  . iswitchb-prev-match)
+	  ("C-<tab>"  . iswitchb-next-match)
+	  ("<up>"    . ignore             )
+	  ("<down>"  . ignore             ))))
+
+(add-hook 'iswitchb-define-mode-map-hook 'iswitchb-local-keys)
+
 ;; (defun my-init ()
 ;; 	"Custom initialization, maximizing active frame, and so on."
 ;; 	(interactive)
