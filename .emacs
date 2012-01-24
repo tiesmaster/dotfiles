@@ -32,6 +32,7 @@
 (defun reload-bag-qa-framework()
   (interactive)
   (reload-module ":bag_qa_framework")
+  (reload-module ":bag_importer")
 )
 
 (defun reload-module (module)
@@ -107,13 +108,13 @@
 
 ;; /VIM's *
 
-(global-set-key [f3] 'isearch-current-symbol)
-(global-set-key [(control f3)] 'isearch-backward-current-symbol)
+(global-set-key [(control *)] 'isearch-current-symbol)
+;; (global-set-key [(control f3)] 'isearch-backward-current-symbol)
 
 ;; Subsequent hitting of the keys will increment to the next
 ;; match--duplicating `C-s' and `C-r', respectively.
-(define-key isearch-mode-map [f3] 'isearch-repeat-forward)
-(define-key isearch-mode-map [(control f3)] 'isearch-repeat-backward)
+(define-key isearch-mode-map [(control *)] 'isearch-repeat-forward)
+;; (define-key isearch-mode-map [(control f3)] 'isearch-repeat-backward)
 
 (add-hook 'iswitchb-define-mode-map-hook 'iswitchb-local-keys)
 
