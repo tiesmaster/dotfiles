@@ -3,7 +3,13 @@
 (global-set-key (kbd "<f12> r") 'start-runtime)
 (global-set-key (kbd "<f12> b") 'start-bag)
 (global-set-key (kbd "<f12> o") 'start-open)
+(global-set-key (kbd "<f12> e") 'open-dot-emacs)
 (global-set-key (kbd "<f11>") 'reload-bag-qa-framework)
+
+(defun open-dot-emacs()
+	(interactive)
+	(find-file "~/.emacs")
+)
 
 (defun start-runtime()
 	(interactive)
