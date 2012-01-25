@@ -55,6 +55,9 @@
 	  ("<up>"    . ignore             )
 	  ("<down>"  . ignore             ))))
 
+;; disable multiple split windows in frames
+(setq same-window-regexps '("."))
+
 ;; VIM's * feature
 
 (require 'etags) ;; provides `find-tag-default' in Emacs 21.
