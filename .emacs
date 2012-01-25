@@ -37,6 +37,8 @@
 
 (defun reload-bag-qa-framework()
   (interactive)
+
+  (save-some-buffers t)
   (reload-module ":bag_qa_framework")
   (reload-module ":bag_importer")
 )
