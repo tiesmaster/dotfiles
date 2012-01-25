@@ -127,7 +127,9 @@
 
 (add-hook 'iswitchb-define-mode-map-hook 'iswitchb-local-keys)
 
-(add-to-list 'iswitchb-buffer-ignore "^ ?\\*")
+(if (boundp 'add-to-list)
+	    (add-to-list 'iswitchb-buffer-ignore "^ ?\\*")
+)
 
 ;; (defun my-init ()
 ;; 	"Custom initialization, maximizing active frame, and so on."
