@@ -4,6 +4,7 @@ _block
 	
 	!current_package![:bvbo] << bv.collection(:bag_verblijfsobject)
 	!current_package![:bip] << bv.collection(:bag!import_progress)
+	!current_package![:ber] << bv.collection(:bag!error_record)
 _endblock
 $
 
