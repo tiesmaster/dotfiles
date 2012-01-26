@@ -4,7 +4,13 @@
 (global-set-key (kbd "<f12> b") 'start-bag)
 (global-set-key (kbd "<f12> o") 'start-open)
 (global-set-key (kbd "<f12> e") 'open-dot-emacs)
+(global-set-key (kbd "<f12> s") 'open-dot-startup-magik)
 (global-set-key (kbd "<f11>") 'reload-bag-qa-framework)
+
+(defun open-dot-startup-magik()
+	(interactive)
+	(find-file "~/startup.magik")
+)
 
 (defun open-dot-emacs()
 	(interactive)
