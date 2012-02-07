@@ -10,7 +10,7 @@ $
 
 _global open_oracle <<
 _proc @ open_oracle()
-	sw_database.new(:oracle, _unset, :initial_soc_name, :oracle)
+	sw_database.new(:oracle, _unset, :initial_soc_name, :|Oracle|)
 _endproc
 $
 
