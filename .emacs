@@ -5,7 +5,7 @@
 (global-set-key (kbd "<f12> o") 'start-open)
 (global-set-key (kbd "<f12> e") 'open-dot-emacs)
 (global-set-key (kbd "<f12> s") 'open-dot-startup-magik)
-(global-set-key (kbd "<f11>") 'reload-bag-qa-framework)
+(global-set-key (kbd "<f11>") 'reload-bag-importer)
 
 (defun open-dot-startup-magik()
 	(interactive)
@@ -46,6 +46,13 @@
 
   (save-some-buffers t)
   (reload-module ":bag_qa_framework")
+)
+
+(defun reload-bag-importer()
+  (interactive)
+
+  (save-some-buffers t)
+  (reload-module ":bag_importer")
 )
 
 (defun reload-module (module)
