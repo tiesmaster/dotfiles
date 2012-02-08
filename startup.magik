@@ -10,7 +10,7 @@ $
 
 _global open_oracle <<
 _proc @ open_oracle()
-	sw_database.new(:oracle, _unset, :initial_soc_name, :|Oracle|)
+	sw_database.new(:oracle, _unset, :initial_soc_name, :oracle)
 _endproc
 $
 
@@ -18,4 +18,7 @@ _global reload_module <<
 _proc @ reload_module(m)
 	sw_module_manager.load_module(m, _unset, :force_reload?, _true)
 _endproc
+$
+
+open_oracle()
 $
