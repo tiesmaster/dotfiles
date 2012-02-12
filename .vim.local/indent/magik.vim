@@ -17,7 +17,7 @@ setlocal tw=80
 
 setlocal comments+=b:##
 
-set tags+=~/tmp/rw/bag/bag.runtime/munit/tags,~/tmp/rw/smallworld/tags
+set tags+=~/tmp/rw/bag/bag.runtime/tags,~/tmp/rw/smallworld/tags
 
 let b:undo_indent = "setl ai< si<"
 
