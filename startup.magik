@@ -20,5 +20,11 @@ _proc @ reload_module(m)
 _endproc
 $
 
-open_oracle()
+_block
+	# poor man's implementation for detecting building
+	_if system.getenv("EMACSDATA") _isnt _unset
+	_then
+		# open_oracle()
+	_endif
+_endblock
 $
