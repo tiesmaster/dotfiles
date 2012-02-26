@@ -53,6 +53,7 @@
 
   (save-some-buffers t)
   (reload-module ":bag_importer")
+  (reload-module ":bag_dev")
 )
 
 (defun reload-module (module)
