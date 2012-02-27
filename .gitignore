@@ -224,3 +224,5 @@ tmp.local/
 
 # new stuff on VM w7
 .jenkins
+ProjectStore
+.emacs.d
