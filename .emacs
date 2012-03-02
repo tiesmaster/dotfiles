@@ -66,6 +66,10 @@
    (lambda (f) (magik-function "system.unlink" f 'false 'true)))
   )
 
+;; (require 'iswitchb)
+;; (iswitchb-mode 1)
+(global-set-key (kbd "C-<tab>") 'iswitchb-buffer)
+
 (defun iswitchb-local-keys ()
   (mapc (lambda (K) 
 	  (let* ((key (car K)) (fun (cdr K)))
@@ -76,8 +80,89 @@
 	  ("<up>"    . ignore             )
 	  ("<down>"  . ignore             ))))
 
+;; (add-hook 'iswitchb-define-mode-map-hook 'iswitchb-local-keys)
+
 ;; disable multiple split windows in frames
 (setq same-window-regexps '("."))
+
+;; enable list of buffers in the mini buffer
+(require 'edmacro)
+(iswitchb-mode 1)
+;; (defun iswitchb-local-keys ()
+;;  (mapc (lambda (K)
+;; (let* ((key (car K)) (fun (cdr K)))
+;;             (define-key iswitchb-mode-map (edmacro-parse-keys key) fun)))
+;;           '(("<right>" . iswitchb-next-match)
+;;             ("<left>"  . iswitchb-prev-match)
+;;             ("<up>"    . ignore             )
+;;             ("<down>"  . ignore             ))))
+
+(defun iswitchb-local-keys ()
+ (mapc (lambda (K)
+(let* ((key (car K)) (fun (cdr K)))
+            (define-key iswitchb-mode-map (edmacro-parse-keys key) fun)))
+          '(("C-f"      . iswitchb-next-match)
+            ("C-b"      . iswitchb-prev-match)
+            ("<right>"  . iswitchb-next-match)
+            ("<left>"   . iswitchb-prev-match))))
+
+
+;;add to switch
+(add-hook 'iswitchb-define-mode-map-hook 'iswitchb-local-keys)
+
+;;auto refresh of files
+(global-auto-revert-mode 1)
+
+;;some nice key mappings >>
+(global-set-key (kbd "M-s M-s") 'speedbar-get-focus)
+(global-set-key (kbd "M-z") 'shell)
+(global-set-key (kbd "M-<f2>") 'list-processes)
+
+;; prevent emacs from copying files when dragging from explorer
+(setq dired-dnd-protocol-alist nil)
+
+;; maximise emacs 
+(w32-send-sys-command 61488) 
+
+;;(tabbar-mode)
+
+;; add a shortcut to the magik F2-x buffer to unfold lines. 
+;; You can use undo to fold the lines again:
+;; Ctrl-_ (control + shift + underscore) 
+(require 'deep-print)
+(define-key deep-print-mode-map [(shift return)] 'deep-print-unfold)
+
+;; when windows keys are activated Ctrl-c no longer works on a stanza in the gis-aliases
+(require 'aliases)
+(define-key aliases-mode-map [(shift return)] 'aliases-run-program)
+
+;; add this to enable deletion of marked areas 
+(delete-selection-mode 1)
+
+
+(load "load_sw_defs")            ; Smallworld extra functionality.
+(load "sw_defaults")             ; Some default customisations.
+(electric-magik-mode)
+
+;; smallworld file to select multiple environments of smallworld
+;;(defvar gis-version-file "h:/TAS/Realworld/worksource/Pieter/config/gis_version.txt" )
+
+;; list of gis aliases to load 
+;; (setq aliases-user-file-list '( "h:/TAS/Realworld/worksource/Pieter/config/dev_gis_aliases"
+;;                                 "//enc-cap-gis-01/ASSETS/ENECO_GIS42/Config/gis_aliases"
+;; 				"h:/TAS/realworld/ontwikkel/ENECO_GIS_SWAF/config/ontw_gis_aliases"
+;; 				"h:/TAS/ENECO_GIS_SWAF/config/test_gis_aliases"
+;; 				"h:/TAS/ENECO_GIS_SWAF/config/dev_gis_aliases"
+;; 				"//enc-cap-gis-02/TAS/Eneco_gis42/Config/gis_aliases"))
+
+;; gis commands that can be executed with F2-z (use up-down arrows to select)
+(push "[] gis swaf"  gis-command-history)          
+(push "gis.exe -a t:/rw/bag/bag/config/magik_images/resources/base/data/gis_aliases bag" gis-command-history)
+;;(push "[I:/TAS42/eneco_schemas] gis -a i:/TAS42/eneco_schemas/config/gis_aliases swaf_closed" gis-command-history)
+;;(push "[I:/TAS42/eneco_schemas] gis -a i:/TAS42/eneco_schemas/config/gis_aliases swaf_schemas" gis-command-history)
+;;(push "[I:/TAS42/eneco_schemas] gis -a i:/TAS42/eneco_schemas/config/gis_aliases eneco_auth_open_tas" gis-command-history)
+;;(push "[c:/smallworld/sw420/product] sw_magik_win32 -image c:/Smallworld/sw420/cambridge_db/images/open_swaf.msf -cli" gis-command-history)
+;;(push "[c:/smallworld/sw410/product] sw_magik_win32 -image c:/Smallworld/sw410/pni410/images/pni410_open.msf -cli" gis-command-history)
 
 ;; VIM's * feature
 
