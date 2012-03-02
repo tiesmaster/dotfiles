@@ -156,8 +156,9 @@
 ;; 				"//enc-cap-gis-02/TAS/Eneco_gis42/Config/gis_aliases"))
 
 ;; gis commands that can be executed with F2-z (use up-down arrows to select)
-(push "[] gis swaf"  gis-command-history)          
-(push "gis.exe -a t:/rw/bag/bag/config/magik_images/resources/base/data/gis_aliases bag" gis-command-history)
+(push "[] gis swaf"  gis-command-history)
+(push (concatenate 'string "gis.exe -a " (getenv "SW_WHICH_GIS_ALIAS_FILE") " bag") gis-command-history)
+;;(push "gis.exe -a t:/rw/bag/bag/config/magik_images/resources/base/data/gis_aliases bag" gis-command-history)
 ;;(push "[I:/TAS42/eneco_schemas] gis -a i:/TAS42/eneco_schemas/config/gis_aliases swaf_closed" gis-command-history)
 ;;(push "[I:/TAS42/eneco_schemas] gis -a i:/TAS42/eneco_schemas/config/gis_aliases swaf_schemas" gis-command-history)
 ;;(push "[I:/TAS42/eneco_schemas] gis -a i:/TAS42/eneco_schemas/config/gis_aliases eneco_auth_open_tas" gis-command-history)
