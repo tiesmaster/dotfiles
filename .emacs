@@ -45,22 +45,21 @@
   (interactive)
 
   (save-some-buffers t)
-  (reload-module ":bag_qa_framework")
+  (reload-modules "{:bag_qa_framework}")
 )
 
 (defun reload-bag-importer()
   (interactive)
 
   (save-some-buffers t)
-  (reload-module ":bag_importer")
-  (reload-module ":bag_dev")
+  (reload-modules "{:bag_importer, :bag_dev}")
 )
 
-(defun reload-module (module)
+(defun reload-modules (modules)
   "Reloads the given module."
   (interactive "r")
   (magik-transmit-string
-   (concatenate 'string "reload_module(" module ")")
+   (concatenate 'string "reload_modules(" modules ")")
    "user:"
    (lambda (f) (magik-function "load_file" f 'unset (or (buffer-file-name) 'unset)))
    (lambda (f) (magik-function "system.unlink" f 'false 'true)))
