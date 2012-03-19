@@ -14,22 +14,27 @@ _proc @ open_oracle()
 _endproc
 $
 
+_global dummy_proc <<
+_proc @ dummy_proc()
+_endproc
+$
+
 _global reload_module <<
 _proc @ reload_module(m)
-	_handling sw_module_redefining_module _with _proc() _endproc
-	_handling sw_module_already_loaded_same_version _with _proc() _endproc
+	_handling sw_module_redefining_module _with dummy_proc
+	_handling sw_module_already_loaded_same_version _with dummy_proc
 
-	_handling patch_loading_done _with _proc() _endproc
-	_handling patch_dir_loading _with _proc() _endproc
-	_handling patch_seeking _with _proc() _endproc
+	_handling patch_loading_done _with dummy_proc
+	_handling patch_dir_loading _with dummy_proc
+	_handling patch_seeking _with dummy_proc
 
-	_handling exemplar_already_exists _with _proc() _endproc
-	_handling removing_exemplar _with _proc() _endproc
-	_handling global_changing_nature _with _proc() _endproc
-	_handling pseudo_slot_added _with _proc() _endproc
-	_handling conflict_methods _with _proc() _endproc
+	_handling exemplar_already_exists _with dummy_proc
+	_handling removing_exemplar _with dummy_proc
+	_handling global_changing_nature _with dummy_proc
+	_handling pseudo_slot_added _with dummy_proc
+	_handling conflict_methods _with dummy_proc
 
-	_handling condition_exists _with _proc() _endproc
+	_handling condition_exists _with dummy_proc
 
 	_dynamic !output! << internal_text_output_stream.new()
 	_protect
@@ -40,6 +45,7 @@ _proc @ reload_module(m)
 	_endprotect
 _endproc
 $
+
 _global reload_modules <<
 _proc @ reload_modules(mods)
 	t0 << date_time.now()
