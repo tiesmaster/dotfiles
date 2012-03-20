@@ -19,6 +19,67 @@ _proc @ dummy_proc()
 _endproc
 $
 
+def_slotted_exemplar(:ignore_newline_output_stream_decorator,
+{
+	{:inner_stream, _unset},
+	{:empty_line?, _true}
+
+}, :internal_text_output_stream)
+$
+
+_method ignore_newline_output_stream_decorator.new(inner_stream)
+	>> _clone.init(inner_stream)
+_endmethod
+$
+
+_method ignore_newline_output_stream_decorator.init(inner_stream)
+	.inner_stream << inner_stream
+	>> _self
+_endmethod
+$
+
+_method ignore_newline_output_stream_decorator.put_charvec(cv,_optional start, length)
+	_if cv <> ""
+	_then
+		.empty_line? << _false
+	_endif
+	>> .inner_stream.put_charvec(cv, start, length)
+_endmethod
+$
+
+_method ignore_newline_output_stream_decorator.newline()
+	_if _not .empty_line?
+	_then
+		.empty_line? << _true
+		_return .inner_stream.newline()
+	_endif
+_endmethod
+$
+
+_global disable_magik_rep_messages <<
+_proc @ disable_magik_rep_messages(lang)
+	# let the message_accessor populate its patch table if not done yet
+	magik_rep.message_accessor.patched_messages.at_or_new_if_absent(lang, equality_hash_table)
+
+	orig_patch_table << magik_rep.message_accessor.patched_messages[lang].copy()
+	patched << magik_rep.message_accessor.patched_messages[lang]
+
+	patched[:loading] << ""
+	patched[:loading_line] << ""
+
+	magik_rep.message_accessor.clear_cache()
+
+	>> orig_patch_table
+_endproc
+$
+
+_global reenable_magik_rep_messages <<
+_proc @ reenable_magik_rep_messages(lang, orig_patch_table)
+	magik_rep.message_accessor.patched_messages[lang] << orig_patch_table
+	magik_rep.message_accessor.clear_cache()
+_endproc
+$
+
 _global reload_module <<
 _proc @ reload_module(m)
 	_handling sw_module_redefining_module _with dummy_proc
@@ -36,11 +97,15 @@ _proc @ reload_module(m)
 
 	_handling condition_exists _with dummy_proc
 
-	_dynamic !output! << internal_text_output_stream.new()
+	_dynamic !output! << ignore_newline_output_stream_decorator.new(!output!)
 	_protect
+		lang << !current_languages!.an_element()
+		orig_patch_table << disable_magik_rep_messages(lang)
 		pragma_monitor.stop_monitor()
+
 		sw_module_manager.load_module(m, _unset, :force_reload?, _true)
 	_protection
+		reenable_magik_rep_messages(lang, orig_patch_table)
 		pragma_monitor.start_monitor()
 	_endprotect
 _endproc
@@ -49,6 +114,8 @@ $
 _global reload_modules <<
 _proc @ reload_modules(mods)
 	t0 << date_time.now()
+
+	write("======> RELOADING MODULES: ", mods.join_as_strings(", "))
 	_for m _over mods.fast_elements()
 	_loop
 		reload_module(m)
