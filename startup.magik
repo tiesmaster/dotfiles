@@ -66,6 +66,11 @@ _proc @ disable_magik_rep_messages(lang)
 
 	patched[:loading] << ""
 	patched[:loading_line] << ""
+	patched[:define_variable] << ""
+	patched[:define_method] << ""
+	patched[:redefine_method] << ""
+	patched[:running] << ""
+	patched[:compiled] << ""
 
 	magik_rep.message_accessor.clear_cache()
 
