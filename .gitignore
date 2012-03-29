@@ -226,3 +226,4 @@ tmp.local/
 .jenkins
 ProjectStore
 .emacs.d
+startup.magikc
