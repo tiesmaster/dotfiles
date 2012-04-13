@@ -8,6 +8,12 @@ _block
 _endblock
 $
 
+_global open_prd <<
+_proc @ open_prd()
+	open_database(system.getenv("SW_ACE_DB_DIR"))
+_endproc
+$
+
 _global open_oracle <<
 _proc @ open_oracle()
 	sw_database.new(:oracle, _unset, :initial_soc_name, :oracle)
@@ -18,6 +24,7 @@ _global dummy_proc <<
 _proc @ dummy_proc()
 _endproc
 $
+
 _block
 	_handling exemplar_already_exists _with _proc() _endproc
 
@@ -130,6 +137,18 @@ _proc @ reload_modules(mods)
 		reload_module(m)
 	_endloop
 	write("TIME: ", date_time.now() - t0)
+_endproc
+$
+
+_global setup_quick_import <<
+_proc @ setup_quick_import()
+	package(:bag)[:cli].xml_extract_path << "t:\rw\bag\xml_extract\"
+	package(:bag)[:cli].verify_zipfile? << _false
+	package(:bag)[:cli].disable_make_geometry_methods()
+	package(:bag)[:import_engine].unregister_post_process_task(package(:bag)[:qa_text_runner])
+	package(:bag)[:import_engine].unregister_post_process_task(package(:bag)[:generate_vbo_lokatie])
+	package(:bag)[:import_engine].unregister_post_process_task(package(:bag)[:generate_wpl_ligging_groot])
+	package(:bag)[:import_engine].unregister_post_process_task(package(:bag)[:generate_gemeente_geometry])
 _endproc
 $
 
