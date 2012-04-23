@@ -152,6 +152,17 @@ _proc @ setup_quick_import()
 _endproc
 $
 
+_global time <<
+_proc @ time(proc_to_profile)
+	_protect
+		t0 << date_time.now()
+		proc_to_profile()
+	_protection
+		write(date_time.now() - t0)
+	_endprotect
+_endproc
+$
+
 _block
 	# recompile the startup file, if it's not already present and
 	# up to date (load_file() doesn't recompile :S:S:S:S::S)
