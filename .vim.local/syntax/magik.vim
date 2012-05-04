@@ -15,8 +15,9 @@ syn keyword magikStatement	_clone _self _super
 syn keyword magikStatement	_thisthread
 syn keyword magikStatement	_try _catch _throw _when _endcatch _endtry
 syn keyword magikStatement	_protect _protection _endprotect
+syn keyword magikStatement	_lock _endlock _locking
 syn keyword magikStatement	_handling _with _finally
-syn keyword magikStatement	_global _local _private _constant _dynamic _optional
+syn keyword magikStatement	_global _local _private _abstract _constant _dynamic _optional
 syn keyword magikStatement	_scatter _gather _allresults
 syn keyword magikStatement	_method _endmethod _proc _endproc _block _endblock
 syn match   magikIdentifier	"\k*" 
