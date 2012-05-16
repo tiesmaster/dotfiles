@@ -96,6 +96,27 @@ _proc @ reenable_magik_rep_messages(lang, orig_patch_table)
 _endproc
 $
 
+_global decorate_def_slotted_exemplar <<
+_proc @ decorate_def_slotted_exemplar()
+	dse << @def_slotted_exemplar
+	_local orig_dse_proc << dse.value
+	@def_slotted_exemplar.sys!value <<
+		_proc @decorated_def_slotted_exemplar (name,slots,_optional parents)
+			_import orig_dse_proc
+
+			remex(name)
+			orig_dse_proc(name, slots, parents)
+		_endproc
+	>> orig_dse_proc
+_endproc
+$
+
+_global revert_def_slotted_exemplar <<
+_proc @ revert_def_slotted_exemplar(orig_dse_proc)
+	@def_slotted_exemplar.sys!value << orig_dse_proc
+_endproc
+$
+
 _global reload_module <<
 _proc @ reload_module(m)
 	_handling sw_module_redefining_module _with dummy_proc
@@ -117,11 +138,13 @@ _proc @ reload_module(m)
 	_protect
 		lang << !current_languages!.an_element()
 		orig_patch_table << disable_magik_rep_messages(lang)
+		orig_def_slotted_exemplar << decorate_def_slotted_exemplar()
 		pragma_monitor.stop_monitor()
 
 		sw_module_manager.load_module(m, _unset, :force_reload?, _true)
 	_protection
 		reenable_magik_rep_messages(lang, orig_patch_table)
+		revert_def_slotted_exemplar(orig_def_slotted_exemplar)
 		pragma_monitor.start_monitor()
 	_endprotect
 _endproc
