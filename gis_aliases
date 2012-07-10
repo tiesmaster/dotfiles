@@ -1,0 +1,15 @@
+closed:
+	title		= ENECO Closed TAS Image
+	image		= %ENECO_HOME%\images\eneco_closed_tas.msf
+	args		= -Mextdir %TEMP% -Mnew 512 -cli
+	directory	= %ENECO_HOME%
+	SW_PRODUCTS_PATH= %SW_PRODUCTS_PATH%;%ENECO_HOME%
+	product	= gis
+
+open:
+	title		= ENECO Authorisatie TAS Image
+	image		= %ENECO_HOME%\images\eneco_auth_open_tas.msf
+	args		= -Mextdir %TEMP% -Mold 64M -Mnew 128M -Mpage 32M -Mext 1024M -cli
+	directory	= %ENECO_HOME%
+	SW_PRODUCTS_PATH= %SW_PRODUCTS_PATH%;%ENECO_HOME%
+	product	= gis
