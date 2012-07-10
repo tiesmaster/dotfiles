@@ -20,8 +20,37 @@ _proc @ open_oracle()
 _endproc
 $
 
+_global load_richtingen_kaart_module <<
+_proc @ load_richtingen_kaart_module()
+	_if _not sw_module_manager.module_is_defined?(:ls_richtingen)
+	_then
+		smallworld_product.add_product(system.pathname_down(system.getenv("ENECO_ROOT"), "src", "richtingen_kaart"))
+	_endif
+	_if _not sw_module_manager.module(:ls_richtingen_dev).loaded?
+	_then
+		sw_module_manager.load_module(:ls_richtingen_dev, _unset, :update_image?, _false)
+	_endif
+_endproc
+$
+
+_global save_image <<
+_proc @ save_image(image_name)
+	_local images_path << system.pathname_up(system.verbatim_image_name)
+	save_image_startup(system.pathname_down(images_path, image_name + ".msf"), :join?, _false, :join, _unset)
+_endproc
+$
+
 _global dummy_proc <<
 _proc @ dummy_proc()
+_endproc
+$
+
+_global build_kaart_image <<
+_proc @ build_kaart_image()
+	# smallworld_product.application_procedures.empty()
+	smallworld_product.startup_options[:ace] << "Verzamelkaart Beheer"
+	load_richtingen_kaart_module()
+	save_image("kaart")
 _endproc
 $
 
