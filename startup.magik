@@ -141,7 +141,9 @@ _proc @ reload_module(m)
 		orig_def_slotted_exemplar << decorate_def_slotted_exemplar()
 		pragma_monitor.stop_monitor()
 
-		sw_module_manager.load_module(m, _unset, :force_reload?, _true)
+		sw_module_manager.load_module(m, _unset,
+			:force_reload?, _true,
+			:update_image?, _false)
 	_protection
 		reenable_magik_rep_messages(lang, orig_patch_table)
 		revert_def_slotted_exemplar(orig_def_slotted_exemplar)
