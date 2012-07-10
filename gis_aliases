@@ -13,3 +13,11 @@ open:
 	directory	= %ENECO_HOME%
 	SW_PRODUCTS_PATH= %SW_PRODUCTS_PATH%;%ENECO_HOME%
 	product	= gis
+
+kaart:
+	title		= Richtingen kaart
+	image		= %ENECO_HOME%\images\kaart.msf
+	args		= -Mextdir %TEMP% -Mold 64M -Mnew 128M -Mpage 32M -Mext 1024M -cli
+	directory	= %ENECO_HOME%
+	SW_PRODUCTS_PATH= %SW_PRODUCTS_PATH%;%ENECO_HOME%
+	product	= gis
