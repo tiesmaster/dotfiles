@@ -55,3 +55,13 @@ install-dotfiles-ref() {
 
 	curl https://raw.github.com/tiesmaster/dotfiles/master/bin/bootstrap.sh -o - | sh
 }
+
+remove_last_byte() {
+	if [ $# -ne 1 ]; then
+		echo "usage: remove_last_byte SOURCE"
+		return
+	fi
+	ORIG_FILE=$1
+	dd bs=1 count=$((`stat -f%z $ORIG_FILE` - 1)) if=$ORIG_FILE of=${ORIG_FILE}.new
+	mv ${ORIG_FILE}.new $ORIG_FILE
+}
