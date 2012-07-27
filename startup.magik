@@ -35,8 +35,10 @@ $
 
 _global save_image <<
 _proc @ save_image(image_name)
-	_local images_path << system.pathname_up(system.verbatim_image_name)
-	save_image_startup(system.pathname_down(images_path, image_name + ".msf"), :join?, _false, :join, _unset)
+	images_path << system.pathname_up(system.verbatim_image_name)
+	redirector_file << system.pathname_down(images_path, image_name + ".msf")
+	image_file << system.pathname_down(images_path, "main", image_name + ".msf")
+	save_image_startup(image_file, :join?, _false, :join, _unset, :redirection_file, redirector_file)
 _endproc
 $
 
