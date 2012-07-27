@@ -45,6 +45,37 @@ _proc @ dummy_proc()
 _endproc
 $
 
+_global run_if_dsfile_is_absent<<
+_proc @ run_if_file_is_absent(ds_filename, a_proc)
+	ace_db_dir << system.getenv("SW_ACE_DB_DIR")
+	dsfile << system.pathname_down(ace_db_dir, ds_filename)
+	_if _not system.file_exists?(dsfile)
+	_then
+		ds_environment.init()
+		a_proc(ace_db_dir)
+	_endif
+_endproc
+$
+
+_global open_eneco_database<<
+_proc @ open_eneco_database()
+	 ds_environment.concurrency_mode << :singleuser
+	 run_if_dsfile_is_absent("scrapbook.ds", _proc(ace_db_dir) scrapbook_view.new_database(_unset, ace_db_dir) _endproc)
+	 run_if_dsfile_is_absent("roos_ace.ds", _proc(ace_db_dir) roos_ace_view.create(ace_db_dir) _endproc)
+
+	 # this prevents annoying UI stuff
+	 smallworld_product.startup_options[:interactive?] << _false
+	 open_database()
+_endproc
+$
+
+_global build_open_image<<
+_proc @ build_open_image()
+	open_eneco_database()
+	save_image("open")
+_endproc
+$
+
 _global build_kaart_image <<
 _proc @ build_kaart_image()
 	# smallworld_product.application_procedures.empty()
