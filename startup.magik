@@ -254,9 +254,13 @@ _block
 	# recompile the startup file, if it's not already present and
 	# up to date (load_file() doesn't recompile :S:S:S:S::S)
 	# NOTE: this is keep smallworld much less verbose
-	_if _not system.file_exists?(!hack_file! + "c") _orif
+
+	# FIXME: retrieving the correct magikc file fixes recursion,
+	# but we actually don't want our %TEMP%\Tties2236q0 to get compiled...
+	_local magikc_file << magik_rep.sys!perform(:compiled_file_for_source|()|, !hack_file!)
+	_if _not system.file_exists?(magikc_file) _orif
    		    (file_status.new(!hack_file!).modify_time >
-		     file_status.new(!hack_file! + "c").modify_time)
+		     file_status.new(magikc_file).modify_time)
 
 	_then
 		compile_file(!hack_file!)
