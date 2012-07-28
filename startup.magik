@@ -251,19 +251,29 @@ _endproc
 $
 
 _block
-	# recompile the startup file, if it's not already present and
-	# up to date (load_file() doesn't recompile :S:S:S:S::S)
-	# NOTE: this is keep smallworld much less verbose
+	# NOTE: These don't end up like you expect them to be,
+	# eg. !hack_file! supposes to be the file in %TEMP%, if you use
+	# F2-b, but it becomes the file from load_file/compile_file(),
+	# if that's invoked somewhere above. !compiler_file! will
+	# always be what !hack_file! supposes to be, while
+	# !source_file! is the only one which is completely as
+	# expected: the file that's the original source file.
 
-	# FIXME: retrieving the correct magikc file fixes recursion,
-	# but we actually don't want our %TEMP%\Tties2236q0 to get compiled...
-	_local magikc_file << magik_rep.sys!perform(:compiled_file_for_source|()|, !hack_file!)
-	_if _not system.file_exists?(magikc_file) _orif
-   		    (file_status.new(!hack_file!).modify_time >
-		     file_status.new(magikc_file).modify_time)
+	# write("!source_file!, !hack_file!, and !compiler_file!:")
+	# write(%tab, "!source_file!: ", !source_file!)
+	# write(%tab, "!hack_file!: ", !hack_file!)
+	# write(%tab, "!compiler_file!: ", !compiler_file!)
 
+	# NOTE: magik_rep.load_cli_initialisation() does load_file(), instead
+	# of compile_file() :S:S
+	_if !compiler_file! = !source_file! _andif
+		(_not system.file_exists?(!source_file! + "c") _orif
+   		(file_status.new(!source_file!).modify_time >
+		 file_status.new(!source_file! + "c").modify_time))
 	_then
-		compile_file(!hack_file!)
+		write("[INFO] compiling ", !source_file!)
+		write("[INFO] this makes Smallworld's startup less verbose")
+		compile_file(!source_file!)
 	_endif
 _endblock
 $
