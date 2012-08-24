@@ -24,6 +24,7 @@ syn match   magikIdentifier	"\k*"
 syn keyword magikRepeat		_for _loop _loopbody _over _continue _leave _iter _endloop _return
 syn keyword magikConditional	_if _then _elif _else _endif
 syn keyword magikOperator	_not _is[nt] _unset _and[if] _or[if] _cf _eq
+syn keyword magikOperator	_div _mod
 syn keyword magikPreCondit	_package _import
 syn match   magikComment	"#.*$" contains=magikTodo,magikSymbol
 syn keyword magikTodo		TODO[:] FIXME[:] XXX[:] contained
