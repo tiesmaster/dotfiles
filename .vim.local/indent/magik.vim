@@ -17,7 +17,10 @@ setlocal tw=80
 
 setlocal comments+=b:##
 
-set tags+=~/tmp/rw/bag/bag.runtime/tags,~/tmp/rw/smallworld/tags
+set tags+=~/tmp/rw/bag/bag.runtime/tags
+set tags+=~/Documents/worksource/rw/stedin/src/richtingen_kaart/tags
+set tags+=~/Documents/smallworld/tags
+set tags+=~/Documents/worksource/rw/stedin/ENECO_GIS42/tags
 
 let b:undo_indent = "setl ai< si<"
 
