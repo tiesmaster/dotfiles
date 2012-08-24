@@ -31,4 +31,9 @@ if [[ $OSTYPE == "msys" ]]; then
 else
 	export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a Terminal"'
 fi
-export CDPATH=$CDPATH:~/tmp/rw/bag:~/tmp/rw
+
+CDPATH=$CDPATH:~/Documents
+CDPATH=$CDPATH:~/Documents/src/rw
+CDPATH=$CDPATH:~/Documents/worksource/rw/stedin
+CDPATH=$CDPATH:~/Documents/worksource/rw/stedin/src
+export CDPATH
