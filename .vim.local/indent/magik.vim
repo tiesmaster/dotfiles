@@ -13,7 +13,7 @@ let b:did_indent = 1
 setlocal ai nosi
 setlocal noet
 setlocal ts=4 sts=4 sw=4
-setlocal tw=80
+setlocal tw=100
 
 setlocal comments+=b:##
 
