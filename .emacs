@@ -7,6 +7,20 @@
 (global-set-key (kbd "<f12> s") 'open-dot-startup-magik)
 (global-set-key (kbd "<f11>") 'reload-kaart)
 
+;; (add-hook 'after-init-hook 'start-egis)
+(global-set-key (kbd "<f12> g") 'start-egis)
+
+(defun start-egis()
+	(interactive)
+	(message "Setting GIS version, and starting the open image")
+
+	(gis-version-selection)
+	(search-forward "420_TAS_EnecoGIS")
+	(gis-version-select)
+	(find-file (getenv "SW_WHICH_GIS_ALIAS_FILE"))
+	(aliases-run-program "kaart")
+  )
+
 (defun open-dot-startup-magik()
 	(interactive)
 	(find-file "~/startup.magik")
