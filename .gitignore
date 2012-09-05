@@ -227,3 +227,4 @@ tmp.local/
 ProjectStore
 .emacs.d
 startup.magikc
+.npm
