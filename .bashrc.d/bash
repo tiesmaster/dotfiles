@@ -1,6 +1,6 @@
 # HISTORY
 export HISTCONTROL=ignoredups
-export HISTIGNORE="&:ls:ll:mutt:[bf]g:fc:history *:exit:eb:ei"
+export HISTIGNORE="&:ls:ll:[bf]g:fc:history *:exit:eb:ei"
 export HISTSIZE=2000
 unset HISTFILESIZE
 HISTTIMEFORMAT="%d %b %R "
@@ -9,33 +9,13 @@ shopt -s histverify
 
 #####################################################################################################
 # PROMPT
-
-# Change the window title of X terminals 
-case ${TERM} in
-	xterm*|rxvt*|Eterm|aterm|kterm|gnome)
-		PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\007"'
-		;;
-	screen)
-		PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\033\\"'
-		;;
-esac
-export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+export PROMPT_COMMAND="history -a"
 
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w$(__git_ps1 " (%s)")\[\033[00m\]\$ '
 
 #####################################################################################################
 # CD
 shopt -s cdspell
-export CDPATH=".:~:/usr:/usr/portage:~/media"
-#export CDPATH=.:~:~/docs:~/src:~/src/ops/docs:/mnt:/usr/src/redhat:/usr/src/redhat/RPMS:/usr/src:/usr/lib:/usr/local:/software:/software/redhat
-
-#####################################################################################################
-# BASH COMPLETION
-[ -f /etc/profile.d/bash-completion ] && source /etc/profile.d/bash-completion
-
-#####################################################################################################
-# READLINE
-
-#[ -f ~/.inputrc ] && INPUTRC="~/.inputrc"
+export CDPATH=".:~"
 
 export PATH=${PATH}:$HOME/bin
