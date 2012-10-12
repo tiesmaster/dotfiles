@@ -1,6 +1,6 @@
 --langdef=magik
 --langmap=magik:.magik
---regex-magik=/(^|[ \t])_method[ \t]+([a-zA-Z0-9_!\?]+)\.([a-zA-Z0-9_!\?]+)/\3/d,definition/
+--regex-magik=/(^|[ \t])_method[ \t]+([a-zA-Z0-9_!\?]+)\.([a-zA-Z0-9_!\?]+)/\3/m,method/
 --regex-magik=/def_slotted_exemplar[ \t]*\([ \t]*:([a-zA-Z0-9_]+)/\1/d,definition/
 --regex-magik=/_global[ \t]*([a-zA-Z0-9_]+)/\1/d,definition/
 --regex-magik=/_global[ \t]*_constant[ \t]*([a-zA-Z0-9_]+)/\1/d,definition/
