@@ -36,6 +36,38 @@ _proc @ down_wt(v, wt_index_string)
 _endproc
 $
 
+_global compress_file <<
+_proc @ compress_file(f)
+	_if system.file_exists?(f + ".compress")
+	_then
+		write("ERROR: target file already exists")
+		_return _false
+	_endif
+	_if _not sw_module_manager.module_is_loaded?(:ds_transfer)
+	_then
+		sw_module_manager.load_module(:ds_transfer)
+	_endif
+	_if _not ds_environment.c_is_initialised?
+	_then
+		ds_environment.init()
+	_endif
+	(ds_filename, ds_file_path) << system.pathname_components(f)
+
+	!current_package![:ds_transfer].run(
+		:searchpath, {"su_file::" + ds_file_path},
+		:from_ds_file, ds_filename,
+
+		:directory, ds_file_path,
+		:to_ds_file, ds_filename + ".compress",
+
+		:target_concurrency_mode, :singleuser_nf,
+
+		:alternatives, {:only, "|"},
+		:checkpoints, {:only},
+		:pg_report?, _true)
+_endproc
+$
+
 _global open_prd <<
 _proc @ open_prd()
 	open_database(system.getenv("SW_ACE_DB_DIR"))
@@ -75,7 +107,7 @@ _proc @ dummy_proc()
 _endproc
 $
 
-_global run_if_dsfile_is_absent<<
+_global run_if_dsfile_is_absent <<
 _proc @ run_if_file_is_absent(ds_filename, a_proc)
 	ace_db_dir << system.getenv("SW_ACE_DB_DIR")
 	dsfile << system.pathname_down(ace_db_dir, ds_filename)
@@ -87,7 +119,7 @@ _proc @ run_if_file_is_absent(ds_filename, a_proc)
 _endproc
 $
 
-_global open_eneco_database<<
+_global open_eneco_database <<
 _proc @ open_eneco_database()
 	 ds_environment.concurrency_mode << :singleuser
 	 run_if_dsfile_is_absent("scrapbook.ds", _proc(ace_db_dir) scrapbook_view.new_database(_unset, ace_db_dir) _endproc)
@@ -99,7 +131,7 @@ _proc @ open_eneco_database()
 _endproc
 $
 
-_global build_open_image<<
+_global build_open_image <<
 _proc @ build_open_image()
 	open_eneco_database()
 	save_image("open")
