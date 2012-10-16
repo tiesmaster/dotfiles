@@ -5,7 +5,7 @@
 (global-set-key (kbd "<f12> o") 'start-open)
 (global-set-key (kbd "<f12> e") 'open-dot-emacs)
 (global-set-key (kbd "<f12> s") 'open-dot-startup-magik)
-(global-set-key (kbd "<f11>") 'reload-kaart)
+(global-set-key (kbd "<f11>") 'reload-engines)
 
 ;; (add-hook 'after-init-hook 'start-egis)
 (global-set-key (kbd "<f12> g") 'start-egis)
@@ -74,6 +74,13 @@
 
   (save-some-buffers t)
   (reload-modules "{:ls_richtingen, :ls_richtingen_dev}")
+)
+
+(defun reload-engines()
+  (interactive)
+
+  (save-some-buffers t)
+  (reload-modules "{:r2_lsschema_data_fix_engines}")
 )
 
 (defun reload-modules (modules)
@@ -181,6 +188,7 @@
 (push (concatenate 'string "gis.exe -a " (expand-file-name "~/gis_aliases") " closed") gis-command-history)
 (push (concatenate 'string "gis.exe -a " (expand-file-name "~/gis_aliases") " open") gis-command-history)
 (push (concatenate 'string "gis.exe -a " (expand-file-name "~/gis_aliases") " kaart") gis-command-history)
+(push (concatenate 'string "gis.exe -a " (getenv "SW_WHICH_GIS_ALIAS_FILE") " engines") gis-command-history)
 ;;(push "gis.exe -a t:/rw/bag/bag/config/magik_images/resources/base/data/gis_aliases bag" gis-command-history)
 ;;(push "[I:/TAS42/eneco_schemas] gis -a i:/TAS42/eneco_schemas/config/gis_aliases swaf_closed" gis-command-history)
 ;;(push "[I:/TAS42/eneco_schemas] gis -a i:/TAS42/eneco_schemas/config/gis_aliases swaf_schemas" gis-command-history)
