@@ -65,3 +65,10 @@ remove_last_byte() {
 	dd bs=1 count=$((`stat -f%z $ORIG_FILE` - 1)) if=$ORIG_FILE of=${ORIG_FILE}.new
 	mv ${ORIG_FILE}.new $ORIG_FILE
 }
+
+start_redmine() {
+  (
+    cd ~/tmp/redmine/
+    ruby script/rails server webrick -d -e production
+  )
+}
