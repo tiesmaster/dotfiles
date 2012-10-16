@@ -123,7 +123,7 @@ _global open_eneco_database <<
 _proc @ open_eneco_database()
 	 ds_environment.concurrency_mode << :singleuser
 	 run_if_dsfile_is_absent("scrapbook.ds", _proc(ace_db_dir) scrapbook_view.new_database(_unset, ace_db_dir) _endproc)
-	 run_if_dsfile_is_absent("roos_ace.ds", _proc(ace_db_dir) roos_ace_view.create(ace_db_dir) _endproc)
+	 run_if_dsfile_is_absent("roos_ace.ds", _proc(ace_db_dir) !current_package![:roos_ace_view].create(ace_db_dir) _endproc)
 
 	 # this prevents annoying UI stuff
 	 smallworld_product.startup_options[:interactive?] << _false
