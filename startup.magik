@@ -8,6 +8,34 @@ _block
 _endblock
 $
 
+_global create_working_top_template <<
+_proc @ create_working_top_template(v)
+	view_directory << v.searchpath.an_element()
+	_if (i << view_directory.index_of_seq("::")) _isnt _unset
+	_then
+		view_directory << view_directory.slice_to_end(i+2)
+	_endif
+	working_top_template_dir << system.pathname_down(view_directory, "working_top.template")
+	_if _not system.file_exists?(working_top_template_dir)
+	_then
+		system.mkdir(working_top_template_dir)
+		v.spawn(:wtop, _false, working_top_template_dir)
+		v.down(:wtop)
+		v.make_working_top()
+	_endif
+_endproc
+$
+
+_global down_wt <<
+_proc @ down_wt(v, wt_index_string)
+	view_directory << v.searchpath.an_element()
+	working_top_dir << system.pathname_down(view_directory, "working_top." + wt_index_string)
+	v.searchpath << v.searchpath.new_appending(working_top_dir)
+	v.down(:wtop)
+	v.switch(:write)
+_endproc
+$
+
 _global open_prd <<
 _proc @ open_prd()
 	open_database(system.getenv("SW_ACE_DB_DIR"))
