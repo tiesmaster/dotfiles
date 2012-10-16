@@ -183,18 +183,7 @@
 ;; 				"//enc-cap-gis-02/TAS/Eneco_gis42/Config/gis_aliases"))
 
 ;; gis commands that can be executed with F2-z (use up-down arrows to select)
-(push (concatenate 'string "gis.exe -a " (getenv "SW_WHICH_GIS_ALIAS_FILE") " bag") gis-command-history)
 (push "gis swaf"  gis-command-history)
-(push (concatenate 'string "gis.exe -a " (expand-file-name "~/gis_aliases") " closed") gis-command-history)
-(push (concatenate 'string "gis.exe -a " (expand-file-name "~/gis_aliases") " open") gis-command-history)
-(push (concatenate 'string "gis.exe -a " (expand-file-name "~/gis_aliases") " kaart") gis-command-history)
-(push (concatenate 'string "gis.exe -a " (getenv "SW_WHICH_GIS_ALIAS_FILE") " engines") gis-command-history)
-;;(push "gis.exe -a t:/rw/bag/bag/config/magik_images/resources/base/data/gis_aliases bag" gis-command-history)
-;;(push "[I:/TAS42/eneco_schemas] gis -a i:/TAS42/eneco_schemas/config/gis_aliases swaf_closed" gis-command-history)
-;;(push "[I:/TAS42/eneco_schemas] gis -a i:/TAS42/eneco_schemas/config/gis_aliases swaf_schemas" gis-command-history)
-;;(push "[I:/TAS42/eneco_schemas] gis -a i:/TAS42/eneco_schemas/config/gis_aliases eneco_auth_open_tas" gis-command-history)
-;;(push "[c:/smallworld/sw420/product] sw_magik_win32 -image c:/Smallworld/sw420/cambridge_db/images/open_swaf.msf -cli" gis-command-history)
-;;(push "[c:/smallworld/sw410/product] sw_magik_win32 -image c:/Smallworld/sw410/pni410/images/pni410_open.msf -cli" gis-command-history)
 
 (defvar gis-version-file "~/gis_version.txt")
 
