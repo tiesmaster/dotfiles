@@ -80,7 +80,7 @@
   (interactive)
 
   (save-some-buffers t)
-  (reload-modules "{:r2_lsschema_data_fix_engines}")
+  (reload-modules "{:ls_data_quality_r3}")
 )
 
 (defun reload-modules (modules)
