@@ -1,4 +1,4 @@
   name                version                   directory
   -----------------   ------------------------   --------------------------------
   420                 420                       c:\Smallworld\420\product
-  egis                420                       z:\worksource\rw\stedin\ENECO_GIS42
+  420_egis            420                       c:\Smallworld\GE_Smallworld42\product
