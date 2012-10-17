@@ -47,11 +47,11 @@ set statusline+=%=                           " right align
 set statusline+=0x%-8B\                      " current char
 set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 
-nmap <f3> :sp $HOME/.vimrc |cd $HOME/.vim.local <cr>
-nmap <f4> :e D:/worksource/Ties/Dropbox/todo-work.txt<cr>
-nmap <f6> :e $HOME/Dropbox/todo.txt<cr>
-nmap <f7> :e $HOME/Dropbox/todo-dating.txt<cr>
-nmap <f8> :e $HOME/Dropbox/todo-muziek.txt<cr>
+nmap <f3> :tabedit $HOME/.vimrc |cd $HOME/.vim.local <cr>
+nmap <f4> :tabedit D:/worksource/Ties/Dropbox/todo-work.txt<cr>
+nmap <f6> :tabedit $HOME/Dropbox/todo.txt<cr>
+nmap <f7> :tabedit $HOME/Dropbox/todo-dating.txt<cr>
+nmap <f8> :tabedit $HOME/Dropbox/todo-muziek.txt<cr>
 
 " map Y to behave like it's counterparts (C, D, etc.), see the VIM docs for
 " more info (type :h Y)
