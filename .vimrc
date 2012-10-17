@@ -48,10 +48,10 @@ set statusline+=0x%-8B\                      " current char
 set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 
 nmap <f3> :tabedit $HOME/.vimrc |cd $HOME/.vim.local <cr>
-nmap <f4> :tabedit D:/worksource/Ties/Dropbox/todo-work.txt<cr>
-nmap <f6> :tabedit $HOME/Dropbox/todo.txt<cr>
-nmap <f7> :tabedit $HOME/Dropbox/todo-dating.txt<cr>
-nmap <f8> :tabedit $HOME/Dropbox/todo-muziek.txt<cr>
+nmap <f5> :tabedit $HOME/Dropbox/Documents/todo/todo<cr>
+nmap <f6> :tabedit $HOME/Dropbox/Documents/todo/todo-stedin<cr>
+nmap <f7> :tabedit $HOME/Dropbox/Documents/todo/todo-work<cr>
+nmap <f8> :tabedit $HOME/Dropbox/Documents/todo/brainstorm-IT<cr>
 
 " map Y to behave like it's counterparts (C, D, etc.), see the VIM docs for
 " more info (type :h Y)
@@ -63,7 +63,7 @@ nmap <D-]> >>
 vmap <D-[> <gv
 vmap <D-]> >gv
 
-map <f5> :%!xmllint --format --recover - <cr>
+map <f4> :%!xmllint --format --recover - <cr>
 
 " clipboard shortcuts
 " F9 : cut
