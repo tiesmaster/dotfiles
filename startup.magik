@@ -257,6 +257,7 @@ _proc @ reload_module(m)
 	_handling condition_exists _with dummy_proc
 
 	_dynamic !output! << ignore_newline_output_stream_decorator.new(!output!)
+	_dynamic !global_auto_declare?! << _false
 	_protect
 		lang << !current_languages!.an_element()
 		orig_patch_table << disable_magik_rep_messages(lang)
