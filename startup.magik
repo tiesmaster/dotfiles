@@ -311,6 +311,14 @@ _proc @ time(proc_to_profile)
 _endproc
 $
 
+_global kv << gis_program_manager.databases[:kabels]
+$
+_block
+	!snapshot_traceback?! << _true
+	thread_manager.open()
+_endblock
+$
+
 _block
 	# NOTE: These don't end up like you expect them to be,
 	# eg. !hack_file! supposes to be the file in %TEMP%, if you use
