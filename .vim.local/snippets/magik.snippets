@@ -4,20 +4,22 @@ snippet if
 		${2:# code}
 	_endif
 
+snippet ifelse
+	_if ${1:cond}
+	_then
+		${2:# code}
+	_else
+		${3:# code}
+	_endif
+
+snippet for
+	_for ${2:iter} _over ${1:collection}
+	_loop
+		${3:# code}
+	_endloop
+
 snippet method
 	_method ${1:`Filename()`}.${2:method_name}()
-	_endmethod
-	$
-
-snippet test
-	_method ${1:`Filename()`}.test_${2:name_of_test}()
-		# setup
-		${3:# code goes here}
-
-		# exercise SUT
-
-		# verify results
-
 	_endmethod
 	$
 
