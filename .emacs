@@ -7,29 +7,15 @@
 (global-set-key (kbd "<f12> s") 'open-dot-startup-magik)
 (global-set-key (kbd "<f11>") 'reload-engines)
 
-;; (add-hook 'after-init-hook 'start-egis)
-(global-set-key (kbd "<f12> g") 'start-egis)
-
 (defun run-test-proc()
   "Runs the test() proc"
   (interactive)
   (magik-transmit-string
-   "test()"
-   "user:"
-   (lambda (f) (magik-function "load_file" f 'unset (or (buffer-file-name) 'unset)))
-   (lambda (f) (magik-function "system.unlink" f 'false 'true)))
-  )
-
-(defun start-egis()
-	(interactive)
-	(message "Setting GIS version, and starting the open image")
-
-	(gis-version-selection)
-	(search-forward "420_TAS_EnecoGIS")
-	(gis-version-select)
-	(find-file (getenv "SW_WHICH_GIS_ALIAS_FILE"))
-	(aliases-run-program "kaart")
-  )
+    "test()"
+    "user:"
+    (lambda (f) (magik-function "load_file" f 'unset (or (buffer-file-name) 'unset)))
+    (lambda (f) (magik-function "system.unlink" f 'false 'true)))
+)
 
 (defun open-dot-startup-magik()
 	(interactive)
