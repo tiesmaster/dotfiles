@@ -10,6 +10,16 @@
 ;; (add-hook 'after-init-hook 'start-egis)
 (global-set-key (kbd "<f12> g") 'start-egis)
 
+(defun run-test-proc()
+  "Runs the test() proc"
+  (interactive)
+  (magik-transmit-string
+   "test()"
+   "user:"
+   (lambda (f) (magik-function "load_file" f 'unset (or (buffer-file-name) 'unset)))
+   (lambda (f) (magik-function "system.unlink" f 'false 'true)))
+  )
+
 (defun start-egis()
 	(interactive)
 	(message "Setting GIS version, and starting the open image")
