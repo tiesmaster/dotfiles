@@ -45,6 +45,21 @@ _proc @ time(proc_to_profile)
 _endproc
 $
 
+magik_rep.define_method_synonym(:orig!process|()|, :process|()|)
+$
+
+_method magik_rep.process(x, _optional witter?)
+	t0 << date_time.now()
+	results << (_allresults _self.orig!process(x, witter?))
+	diff << date_time.now() - t0
+	_if diff.seconds > 30
+	_then
+		write("TIME: ", diff)
+	_endif
+	>> _scatter results
+_endmethod
+$
+
 ####################   DS UTILS   ##################################################################
 
 _method gis_ds_view.revert()
