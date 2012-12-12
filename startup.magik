@@ -20,15 +20,15 @@ $
 
 _global goto <<
 _proc @ goto(an_rwo)
-  appl().goto(an_rwo)
-  appl().main_view.roos_wait_till_refresh_finished()
+  !current_package![:appl]().goto(an_rwo)
+  !current_package![:appl]().main_view.roos_wait_till_refresh_finished()
   an_rwo.bdraw()
 _endproc
 $
 
 _global go_home <<
 _proc @ go_home()
-	appl().goto(coordinate.new(91538105, 434308419))
+	!current_package![:appl]().goto(coordinate.new(91538105, 434308419))
 _endproc
 $
 
