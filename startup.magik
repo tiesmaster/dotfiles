@@ -45,7 +45,12 @@ _proc @ time(proc_to_profile)
 _endproc
 $
 
-magik_rep.define_method_synonym(:orig!process|()|, :process|()|)
+_block
+	_if magik_rep.method(:orig!process|()|) _is _unset
+	_then
+		magik_rep.define_method_synonym(:orig!process|()|, :process|()|)
+	_endif
+_endblock
 $
 
 _method magik_rep.process(x, _optional witter?)
