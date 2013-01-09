@@ -17,5 +17,3 @@
 	update = commit -va --amend -Chead
 [interactive]
 	singlekey = true
-[push]
-	default = simple
