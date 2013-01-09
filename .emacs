@@ -5,7 +5,7 @@
 (global-set-key (kbd "<f12> o") 'start-open)
 (global-set-key (kbd "<f12> e") 'open-dot-emacs)
 (global-set-key (kbd "<f12> s") 'open-dot-startup-magik)
-(global-set-key (kbd "<f11>") 'reload-engines)
+(global-set-key (kbd "<f11>") 'reload-uitvaltool)
 
 (defun run-test-proc()
   "Runs the test() proc"
@@ -77,6 +77,13 @@
 
   (save-some-buffers t)
   (reload-modules "{:r2_lsschema_data_fix_engines}")
+)
+
+(defun reload-uitvaltool()
+  (interactive)
+
+  (save-some-buffers t)
+  (reload-modules "{:uitvaltool, :uitvaltool_dev}")
 )
 
 (defun reload-modules (modules)
