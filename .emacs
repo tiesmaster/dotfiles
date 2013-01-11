@@ -5,7 +5,7 @@
 (global-set-key (kbd "<f12> o") 'start-open)
 (global-set-key (kbd "<f12> e") 'open-dot-emacs)
 (global-set-key (kbd "<f12> s") 'open-dot-startup-magik)
-(global-set-key (kbd "<f11>") 'reload-uitvaltool)
+(global-set-key (kbd "<f11>") 'reload-rejectionlists-reviewtool)
 
 (defun run-test-proc()
   "Runs the test() proc"
@@ -79,11 +79,11 @@
   (reload-modules "{:r2_lsschema_data_fix_engines}")
 )
 
-(defun reload-uitvaltool()
+(defun reload-rejectionlists-reviewtool()
   (interactive)
 
   (save-some-buffers t)
-  (reload-modules "{:uitvaltool, :uitvaltool_dev}")
+  (reload-modules "{:rejectionlists_reviewtool, :rejectionlists_reviewtool_dev}")
 )
 
 (defun reload-modules (modules)
