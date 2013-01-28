@@ -37,3 +37,5 @@ CDPATH=$CDPATH:~/Documents/src/rw
 CDPATH=$CDPATH:~/Documents/worksource/rw/stedin
 CDPATH=$CDPATH:~/Documents/worksource/rw/stedin/src
 export CDPATH
+
+alias server='open http://localhost:8000 && python -m SimpleHTTPServer'
