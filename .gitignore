@@ -228,3 +228,5 @@ ProjectStore
 .emacs.d
 startup.magikc
 .npm
+
+.yeoman
