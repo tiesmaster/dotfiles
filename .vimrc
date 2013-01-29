@@ -49,8 +49,8 @@ set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 
 nmap <f3> :tabedit $HOME/.vimrc |cd $HOME/.vim.local <cr>
 nmap <f5> :tabedit $HOME/Dropbox/Documents/todo/todo<cr>
-nmap <f6> :tabedit $HOME/Dropbox/Documents/todo/todo-stedin<cr>
-nmap <f7> :tabedit $HOME/Dropbox/Documents/todo/todo-work<cr>
+nmap <f6> :tabedit $HOME/Dropbox/Documents/todo/todo-work<cr>
+nmap <f7> :tabedit $HOME/Dropbox/Documents/todo/todo-bag<cr>
 nmap <f8> :tabedit $HOME/Dropbox/Documents/todo/brainstorm-IT<cr>
 
 " map Y to behave like it's counterparts (C, D, etc.), see the VIM docs for
