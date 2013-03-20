@@ -23,7 +23,6 @@ export DOTFILES_RUN=true
 export PATH=/usr/local/bin:${PATH}
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
-complete -C ~/bin/rake-completion.rb -o default rake
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
 if [[ $OSTYPE == "msys" ]]; then
