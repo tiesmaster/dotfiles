@@ -102,9 +102,6 @@ if exists("macvim_hig_shift_movement")
 	unlet macvim_hig_shift_movement
 endif
 
-set wildignore+=*.magikc
-
 au BufWritePost *.snippets		call ReloadAllSnippets()
-nmap <S-f3> :sp $HOME/.vim.local/snippets/magik.snippets <cr>
 
 " vim:filetype=vim
