@@ -47,7 +47,7 @@ set statusline+=%=                           " right align
 set statusline+=0x%-8B\                      " current char
 set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 
-nmap <f3> :tabedit $HOME/.vimrc |cd $HOME/.vim.local <cr>
+nmap <f3> :tabedit $HOME/.vimrc<cr>
 nmap <f5> :tabedit $HOME/Dropbox/Documents/todo/todo<cr>
 nmap <f6> :tabedit $HOME/Dropbox/Documents/todo/todo-work<cr>
 nmap <f7> :tabedit $HOME/Dropbox/Documents/todo/todo-bag<cr>
