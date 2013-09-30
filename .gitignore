@@ -232,3 +232,8 @@ startup.magikc
 .yeoman
 .npmrc
 .ackrc
+
+Google Drive/
+.dbshell
+.mongorc.js
+.node-gyp/
