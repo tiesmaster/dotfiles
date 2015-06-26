@@ -2,6 +2,8 @@ set encoding=utf-8
 
 let g:Omnisharp_start_server = 0
 
+execute pathogen#infect()
+
 set number
 set cursorline
 set scrolloff=5
