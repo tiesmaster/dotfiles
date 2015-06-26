@@ -25,6 +25,7 @@ set splitbelow
 set directory=.,$TEMP
 
 set background=light
+colorscheme solarized
 
 nnoremap <f5> :GundoToggle<CR> 
 
