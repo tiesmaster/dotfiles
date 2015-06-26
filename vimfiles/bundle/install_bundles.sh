@@ -2,7 +2,8 @@
 
 function install_bundle() {
     BUNDLE_URL=$1
-    git clone $BUNDLE_URL
+    BUNDLE_DIR=`basename $BUNDLE_URL .git`
+    [ ! -d $BUNDLE_DIR ] && git clone $BUNDLE_URL
 }
 
 install_bundle git@github.com:tpope/vim-sensible.git
