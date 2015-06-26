@@ -1,7 +1,12 @@
 #!/bin/bash
 
-git clone git@github.com:tpope/vim-sensible.git
-git clone git@github.com:tpope/vim-unimpaired.git
+function install_bundle() {
+    BUNDLE_URL=$1
+    git clone $BUNDLE_URL
+}
+
+install_bundle git@github.com:tpope/vim-sensible.git
+install_bundle git@github.com:tpope/vim-unimpaired.git
 
 # vim-colors-solarized
 # nerdcommenter
