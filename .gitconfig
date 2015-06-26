@@ -17,6 +17,7 @@
 	;trustExitCode = true
 
 [alias]
+    la = "!git config -l | grep alias | cut -c 7-"
 	co = checkout
 	br = branch
 	ci = commit -v
@@ -28,6 +29,8 @@
 	stash-unapply = !git stash show -p | git apply -R
 	unmv = "!f() { git mv $2 $1; }; f"
 	update = commit -va --amend -Chead
+    f = "!git ls-files | grep -i"
+
 
     ;st = status -s
 
@@ -58,7 +61,6 @@
     ;lc  = "!f() { git ll "$1"^.."$1"; }; f"
     ;lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
     ;#list all aliases
-    ;la = "!git config -l | grep alias | cut -c 7-"
     ;diff = diff --word-diff
     ;d = diff --word-diff
     ;dc = diff --cached
@@ -93,9 +95,6 @@
     ;gr = grep -Ii
     ;#grep from root folder
     ;gra = "!f() { A=$(pwd) && TOPLEVEL=$(git rev-parse --show-toplevel) && cd $TOPLEVEL && git grep --full-name -In $1 | xargs -I{} echo $TOPLEVEL/{} && cd $A; }; f"
-
-    ;#grep on filename
-    ;f = "!git ls-files | grep -i"
 
     ;#rename branch tree to done-
     ;done = "!f() { git branch | grep "$1" | cut -c 3- | grep -v done | xargs -I{} git branch -m {} done-{}; }; f"
