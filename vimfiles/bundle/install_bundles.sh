@@ -9,8 +9,8 @@ function install_bundle() {
 install_bundle git@github.com:tpope/vim-sensible.git
 install_bundle git@github.com:tpope/vim-unimpaired.git
 install_bundle git@github.com:altercation/vim-colors-solarized.git
+install_bundle git@github.com:scrooloose/nerdcommenter.git
 
-# nerdcommenter
 # ctrlp.vim
 # gundo.vim
 # vim-fugitive
