@@ -12,3 +12,4 @@ Session.vim
 _viminfo
 .ssh/
 .cache
+.bash_history
