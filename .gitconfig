@@ -4,6 +4,8 @@
 [core]
 	autocrlf = true
 	editor = gvim --nofork '%*'
+[push]
+	default = simple
 [alias]
 	co = checkout
 	br = branch
