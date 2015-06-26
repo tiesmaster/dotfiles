@@ -11,3 +11,4 @@ Session.vim
 # ignore patterns of this repo
 _viminfo
 .ssh/
+.cache
