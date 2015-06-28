@@ -6,6 +6,8 @@ function install_bundle() {
     [ ! -d $BUNDLE_DIR ] && git clone $BUNDLE_URL
 }
 
+cd `dirname $0`
+
 install_bundle git@github.com:tpope/vim-sensible.git
 install_bundle git@github.com:tpope/vim-unimpaired.git
 install_bundle git@github.com:altercation/vim-colors-solarized.git
