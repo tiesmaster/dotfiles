@@ -1,6 +1,6 @@
 [user]
 	name = Thijs Brobbel
-	email = t.brobbel@coolblue.nl
+	email = thijsbrobbel@gmail.com
 [core]
 	autocrlf = true
 	editor = gvim --nofork '%*'
