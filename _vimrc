@@ -25,7 +25,11 @@ set splitbelow
 set directory=.,$TEMP
 
 set background=light
-colorscheme solarized
+try
+    colorscheme solarized
+catch E185
+    " Ignore missing color theme
+endtry
 
 nnoremap <f5> :GundoToggle<CR> 
 
