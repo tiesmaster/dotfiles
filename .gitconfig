@@ -31,7 +31,13 @@
 	update = commit -va --amend -Chead
     f = "!git ls-files | grep -i"
 
+    add-upstream = remote add upstream
+    fa = fetch --all
+    pum = pull --ff-only upstream master
+    pu = !git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
 
+    r1 = reset HEAD^
+    pr = "!f() { git fetch -fu ${2:-upstream} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
     ;st = status -s
 
     ;cl = clone
@@ -74,7 +80,6 @@
 
     ;#reset commands
     ;r = reset
-    ;r1 = reset HEAD^
     ;r2 = reset HEAD^^
     ;rh = reset --hard
     ;rh1 = reset HEAD^ --hard
@@ -129,14 +134,9 @@
     ;# interactive rebase
     ;irebase = "rebase -i"
     ;iarebase = "rebase -i --autosquash"
-	;pu = !git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
-	;fa = fetch --all
 	;mu = merge --ff-only upstream/master
-	;pum = pull --ff-only upstream master
     ;fp = fetch --prune
     ;pushf = push -f
-	;pr = "!f() { git fetch -fu ${2:-upstream} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
 	;pr-clean = "!git for-each-ref refs/heads/pr/* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
-    ;add-upstream = remote add upstream
     ;dmb = delete-merged-branches
     ;sync = !git pum && git fp && git push && git dmb
