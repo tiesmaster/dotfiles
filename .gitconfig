@@ -4,6 +4,7 @@
 [core]
 	autocrlf = true
 	editor = gvim --nofork '%*'
+    excludesfile = ~/.gitignore_global
 [push]
 	default = simple
 
