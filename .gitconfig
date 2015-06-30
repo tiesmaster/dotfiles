@@ -38,6 +38,11 @@
 
     r1 = reset HEAD^
     pr = "!f() { git fetch -fu ${2:-upstream} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+
+    sln = !start $(git f sln)
+
+    ; --------------------------------------------------------------------------------
+
     ;st = status -s
 
     ;cl = clone
