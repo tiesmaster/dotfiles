@@ -42,6 +42,8 @@
     r1 = reset HEAD^
     pr = "!f() { git fetch -fu ${2:-upstream} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
 
+    fp = fetch --prune
+
     sln = !start $(git f sln)
 
     ; --------------------------------------------------------------------------------
@@ -143,7 +145,6 @@
     ;irebase = "rebase -i"
     ;iarebase = "rebase -i --autosquash"
 	;mu = merge --ff-only upstream/master
-    ;fp = fetch --prune
     ;pushf = push -f
 	;pr-clean = "!git for-each-ref refs/heads/pr/* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
     ;dmb = delete-merged-branches
