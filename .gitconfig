@@ -41,14 +41,18 @@
 
     r1 = reset HEAD^
     pr = "!f() { git fetch -fu ${2:-upstream} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+    pr-clean = "!git for-each-ref refs/heads/pr/* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
 
     fp = fetch --prune
 
     sln = !start $(git f sln)
 
+    ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+    cp = cherry-pick
+    sts = status -s
+
     ; --------------------------------------------------------------------------------
 
-    ;st = status -s
 
     ;cl = clone
 
@@ -73,7 +77,6 @@
     ;ls1 = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
     ;ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
     ;lds = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph
-    ;ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
     ;lc  = "!f() { git ll "$1"^.."$1"; }; f"
     ;lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
     ;#list all aliases
@@ -105,7 +108,6 @@
     ;sa = stash apply
     ;ss = stash save
 
-    ;cp = cherry-pick
     ;grep = grep -Ii
     ;gr = grep -Ii
     ;#grep from root folder
@@ -146,6 +148,5 @@
     ;iarebase = "rebase -i --autosquash"
 	;mu = merge --ff-only upstream/master
     ;pushf = push -f
-	;pr-clean = "!git for-each-ref refs/heads/pr/* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
     ;dmb = delete-merged-branches
     ;sync = !git pum && git fp && git push && git dmb
