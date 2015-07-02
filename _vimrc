@@ -1,5 +1,7 @@
 set encoding=utf-8
 
+map <F6> 'T
+
 let g:Omnisharp_start_server = 0
 
 execute pathogen#infect()
