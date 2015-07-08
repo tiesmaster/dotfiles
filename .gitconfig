@@ -56,6 +56,11 @@
     rh = reset --hard
     rh1 = reset HEAD^ --hard
     pushf = push -f
+
+    sync = !git pum && git fp && git push && git branch --merged
+
+    irebase = "rebase -i"
+    iarebase = "rebase -i --autosquash"
     ; --------------------------------------------------------------------------------
 
 
@@ -147,8 +152,5 @@
     ;empty = "!git commit -am\"[empty] Initial commit\" --allow-empty"
 
     ;# interactive rebase
-    ;irebase = "rebase -i"
-    ;iarebase = "rebase -i --autosquash"
 	;mu = merge --ff-only upstream/master
     ;dmb = delete-merged-branches
-    ;sync = !git pum && git fp && git push && git dmb
