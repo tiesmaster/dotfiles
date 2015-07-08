@@ -52,6 +52,9 @@
     sts = status -s
     stsc = !git sts |cut -b4-
 
+    rh = reset --hard
+    rh1 = reset HEAD^ --hard
+    pushf = push -f
     ; --------------------------------------------------------------------------------
 
 
@@ -95,8 +98,6 @@
     ;#reset commands
     ;r = reset
     ;r2 = reset HEAD^^
-    ;rh = reset --hard
-    ;rh1 = reset HEAD^ --hard
     ;rh2 = reset HEAD^^ --hard
 
     ;#git svn
@@ -148,6 +149,5 @@
     ;irebase = "rebase -i"
     ;iarebase = "rebase -i --autosquash"
 	;mu = merge --ff-only upstream/master
-    ;pushf = push -f
     ;dmb = delete-merged-branches
     ;sync = !git pum && git fp && git push && git dmb
