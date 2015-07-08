@@ -6,3 +6,5 @@ alias ll='ls -alF'
 alias ls='ls --color=auto'
 
 eval $(ssh-pageant -r -a "/tmp/.ssh-pageant-$USERNAME")
+
+[ -f ~/z/z.sh ] && source ~/z/z.sh
