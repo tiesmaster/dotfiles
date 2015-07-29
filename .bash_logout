@@ -1,0 +1,1 @@
+ssh-pageant -k
