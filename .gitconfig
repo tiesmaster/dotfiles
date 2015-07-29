@@ -61,6 +61,8 @@
 
     irebase = "rebase -i"
     iarebase = "rebase -i --autosquash"
+
+    sl = stash list
     ; --------------------------------------------------------------------------------
 
 
@@ -112,7 +114,6 @@
     ;svnl = svn log --oneline --show-commit
 
     ;#stash
-    ;sl = stash list
     ;sa = stash apply
     ;ss = stash save
 
