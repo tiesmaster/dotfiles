@@ -1,2 +1,4 @@
 au GUIEnter * simalt ~x
 set winaltkeys=no
+
+set guifont=Lucida_Console:h11:cANSI
