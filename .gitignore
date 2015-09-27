@@ -10,6 +10,7 @@ Session.vim
 
 # ignore patterns of this repo
 _viminfo
+.viminfo
 .ssh/
 .cache
 .bash_history
