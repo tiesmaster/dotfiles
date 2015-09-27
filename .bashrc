@@ -5,6 +5,8 @@ alias la='ls -A'
 alias ll='ls -alF'
 alias ls='ls --color=auto'
 
-eval $(ssh-pageant)
+if hash ssh-pageant 2>/dev/null; then
+    $(ssh-pageant)
+fi
 
 [ -f ~/z/z.sh ] && source ~/z/z.sh
