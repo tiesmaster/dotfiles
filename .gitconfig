@@ -57,7 +57,7 @@
     rh1 = reset HEAD^ --hard
     pushf = push -f
 
-    sync = !git pum && git fp && git push && git branch --merged
+    sync = !git pum && git fp && git push && git delete-merged-branches
 
     irebase = "rebase -i"
     iarebase = "rebase -i --autosquash"
