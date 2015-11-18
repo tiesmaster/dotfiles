@@ -15,3 +15,5 @@ echo "to make sure installing the VIM bundles will work."
 
 ~/vimfiles/bundle/install_bundles.sh
 git remote set-url origin git@github.com:tiesmaster/dotfiles.git
+
+git clone git@github.com:rupa/z.git
