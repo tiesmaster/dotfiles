@@ -1,0 +1,16 @@
+[user]
+	email = thijs.brobbel@realworld-systems.com
+	name = Thijs Brobbel
+
+[alias]
+	co = checkout
+	br = branch
+	ci = commit -v
+	ca = commit -va
+	st = status
+	lol = log --pretty=oneline --abbrev-commit --graph --decorate
+	update = commit -va --amend -Chead
+[push]
+	default = matching
+[color]
+	ui = true

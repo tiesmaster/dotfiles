@@ -1,0 +1,7 @@
+https://github.com/kien/ctrlp.vim.git
+https://github.com/sjl/gundo.vim.git
+https://github.com/scrooloose/nerdcommenter.git
+https://github.com/altercation/vim-colors-solarized.git
+https://github.com/tpope/vim-sensible.git
+https://github.com/tpope/vim-surround.git
+git://github.com/tpope/vim-unimpaired.git
