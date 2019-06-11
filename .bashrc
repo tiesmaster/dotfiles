@@ -14,3 +14,5 @@ fi
 mkcd() {
 	mkdir -p "$@" && cd "$@";
 }
+
+alias tf=terraform
