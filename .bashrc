@@ -10,3 +10,7 @@ if hash ssh-pageant 2>/dev/null; then
 fi
 
 [ -f ~/z/z.sh ] && source ~/z/z.sh
+
+mkcd() {
+	mkdir -p "$@" && cd "$@";
+}
