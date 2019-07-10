@@ -1,0 +1,88 @@
+{
+  "id": "c4816bf9-0c95-4d88-a19c-224ee42f54a4",
+  "name": "My Visual Studio extensions",
+  "description": "A collection of my Visual Studio extensions",
+  "version": "1.0",
+  "extensions": [
+    {
+      "name": ".ignore",
+      "vsixId": "7ac24965-ea21-4108-9cac-6e46394aaaef"
+    },
+    {
+      "name": "Add New File",
+      "vsixId": "2E78AA18-E864-4FBB-B8C8-6186FC865DB3"
+    },
+    {
+      "name": "AsyncFixer",
+      "vsixId": "AsyncFixer.Vsix..edab5fce-e3aa-4fea-9d60-a07bc11d493b"
+    },
+    {
+      "name": "Azure Data Lake and Stream Analytics Tools",
+      "vsixId": "1e906ff5-9da8-4091-a299-5c253c55fdc9"
+    },
+    {
+      "name": "Cloud Explorer for VS 2019 Preview",
+      "vsixId": "Microsoft.VisualStudio.CloudExplorer.16.0"
+    },
+    {
+      "name": "Code Cleanup On Save",
+      "vsixId": "66985471-b701-4851-a2d7-5a8bdce1e694"
+    },
+    {
+      "name": "Editor Guidelines",
+      "vsixId": "Editor_Guidelines.Microsoft Corp..123716ef-b2ed-4fab-bbcf-1d5f84856ca3"
+    },
+    {
+      "name": "EditorConfig Language Service",
+      "vsixId": "1209461d-57f8-46a4-814a-dbe5fecef941"
+    },
+    {
+      "name": "Extension Manager 2019",
+      "vsixId": "4a196712-2c3f-4730-ad1d-e7cda4185eb2"
+    },
+    {
+      "name": "File Differ",
+      "vsixId": "ea5c68d6-cdae-4e79-bd46-2a39e95bb256"
+    },
+    {
+      "name": "File Nesting",
+      "vsixId": "6c799bc4-0d4c-4172-98bc-5d464b612dca"
+    },
+    {
+      "name": "Hot Commands",
+      "vsixId": "e8175b11-0e09-42b5-9c3c-ba7bfb53a311"
+    },
+    {
+      "name": "Live Share",
+      "vsixId": "Microsoft.VisualStudio.LiveShare"
+    },
+    {
+      "name": "Open in Visual Studio Code",
+      "vsixId": "e99dde0e-e023-410d-bc5d-3f76db71e3f0"
+    },
+    {
+      "name": "Reset Zoom",
+      "vsixId": "0a987da3-4577-4eec-aaa9-a4c2cdd5d22b"
+    },
+    {
+      "name": "Roslynator 2019",
+      "vsixId": "d42db039-5432-4399-bb62-67a9b4c3b838"
+    },
+    {
+      "name": "Trailing Whitespace Visualizer",
+      "vsixId": "4c1a78e6-e7b8-4aa9-8812-4836e051ff6d"
+    },
+    {
+      "name": "Visual Studio IntelliCode",
+      "vsixId": "IntelliCode.VSIX.598224b2-b987-401b-8509-f568d0c0b946"
+    },
+    {
+      "name": "VSColorOutput",
+      "vsixId": "CD56B219-38CB-482A-9B2D-7582DF4AAF1E"
+    },
+    {
+      "name": "xUnit Code Snippets",
+      "vsixId": "d2c46d8d-a104-444a-a1ae-bf620debd2a5"
+    }
+  ]
+}
