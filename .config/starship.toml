@@ -1,0 +1,16 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+[directory]
+use_os_path_sep = false
+
+[dotnet]
+detect_extensions = ["csproj", "fsproj", "xproj", "sln"]
+
+[shlvl]
+disabled = false
+
+
+[git_metrics]
+disabled = false
