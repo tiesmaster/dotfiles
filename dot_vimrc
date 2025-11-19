@@ -9,9 +9,6 @@ imap <f12> +
 cmap <f12> +
 vmap <f12> "+p
 
-map <f5> i[BOYSCOUT] 
-imap <f5> [BOYSCOUT] 
-
 map <f6> :set guifont=Lucida_Console:h20:cANSI:qDRAFT<cr>
 
 set ts=2
