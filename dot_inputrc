@@ -1,0 +1,32 @@
+# shellcheck disable=SC2148
+
+# all kinds of stuff with meta, not really sure what it does, and why it's needed
+set input-meta on
+set convert-meta on
+set output-meta on
+
+# completion stuff
+set completion-ignore-case on
+set show-all-if-ambiguous on
+
+# other options
+set prefer-visible-bell
+set visible-stats on
+
+# F1
+"\eOP": " --help\C-j"
+# OPTION-F1
+"\e[1;9P": "\C-aman \C-j"
+# F2
+"\eOQ": " --help | grep -- "
+# OPTION-F2
+"\e[1;9Q": " --help 2>\\&1 | grep -- "
+
+"\M-s": "sudo !! "
+"\C-\M-s": "\C-asudo \C-e\t"
+"\M-\\": "^|^ 2>\\&1 |^"
+
+# F3
+"\eOR": dump-variables
+# F4
+"\eOS": dump-functions
