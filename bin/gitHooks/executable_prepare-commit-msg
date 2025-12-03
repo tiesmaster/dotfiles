@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+COMMIT_MSG_FILE=$1
+
+branch_name=$(git branch --show-current)
+if ! [[ ${branch_name,,} =~ gd.*/ ]]; then
+    echo "Branch name not prefixed with issue number, not adding the issue key to the message via interpret-trailers"
+    exit;
+fi
+
+issue_number=$(git branch --show-current |cut -d / -f1 |tr '[:lower:]' '[:upper:]')
+git interpret-trailers --in-place --if-exists=addIfDifferent --trailer "issue:${issue_number}" "$COMMIT_MSG_FILE"

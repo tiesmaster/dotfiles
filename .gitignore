@@ -14,7 +14,6 @@ _viminfo
 .ssh/
 .cache
 .bash_history
-bin
 .gitconfig.local
 .lesshst
 z
