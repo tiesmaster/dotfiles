@@ -9,10 +9,6 @@
 
 [init]
 	defaultBranch = main
-[core]
-	# editor = gvim --nofork '%*'
-	whitespace = cr-at-eol
-	excludesfile = /Users/ties/.config/git/ignore
 [fetch]
 	prune = true
 [rebase]
@@ -20,10 +16,16 @@
 [blame]
 	markIgnoredLines = true
 	markUnblamableLines = true
-[trailer "issue"]
-	key = Issue
-[http]
-	cookiefile = /Users/ties/.gitcookies
+
+# [core]
+# 	editor = gvim --nofork '%*'
+	# TODO: Is this really needed?
+# 	whitespace = cr-at-eol
+
+# TODO: Probably not needed anymore...
+# [http]
+# 	cookiefile = /Users/ties/.gitcookies
+
 [alias]
 	la = "!git config -l | grep alias | cut -c 7-"
 	co = checkout
@@ -81,3 +83,5 @@
 	r = reset
 	r2 = reset HEAD^^
 	rh2 = reset HEAD^^ --hard
+
+
