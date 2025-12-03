@@ -7,6 +7,10 @@
 	format = ssh
 [commit]
 	gpgsign = true
+[core]
+	excludesfile = /Users/ties/.config/git/ignore
+[trailer "issue"]
+	key = Issue
 
 [include]
 	path = ~/.gitconfig-guida-encrypted
