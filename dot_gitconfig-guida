@@ -1,5 +1,5 @@
 [core]
-	hooksPath = /Users/ties/bin/gitHooks
+	hooksPath = ~/bin/gitHooks
 [user]
 	name = Thijs Brobbel
 	signingkey = ~/.ssh/id_ed25519.pub
@@ -7,10 +7,12 @@
 	format = ssh
 [commit]
 	gpgsign = true
-[core]
-	excludesfile = /Users/ties/.config/git/ignore
 [trailer "issue"]
 	key = Issue
 
 [include]
 	path = ~/.gitconfig-guida-encrypted
+
+# Not needed?
+# [core]
+# 	excludesfile = ~/.config/git/ignore

@@ -24,7 +24,7 @@
 
 # TODO: Probably not needed anymore...
 # [http]
-# 	cookiefile = /Users/ties/.gitcookies
+# 	cookiefile = ~/.gitcookies
 
 [alias]
 	# la = "!git config -l | grep alias | cut -c 7-"
