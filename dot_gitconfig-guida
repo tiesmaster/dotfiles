@@ -1,0 +1,12 @@
+[core]
+	hooksPath = /Users/ties/bin/gitHooks
+[user]
+	name = Thijs Brobbel
+	signingkey = ~/.ssh/id_ed25519.pub
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+
+[include]
+	path = ~/.gitconfig-guida-encrypted
