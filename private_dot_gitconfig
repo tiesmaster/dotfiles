@@ -17,6 +17,13 @@
 	prune = true
 [rebase]
 	updateRefs = true
+[blame]
+	markIgnoredLines = true
+	markUnblamableLines = true
+[trailer "issue"]
+	key = Issue
+[http]
+	cookiefile = /Users/ties/.gitcookies
 [alias]
 	la = "!git config -l | grep alias | cut -c 7-"
 	co = checkout
@@ -74,10 +81,3 @@
 	r = reset
 	r2 = reset HEAD^^
 	rh2 = reset HEAD^^ --hard
-[blame]
-	markIgnoredLines = true
-	markUnblamableLines = true
-[trailer "issue"]
-	key = Issue
-[http]
-	cookiefile = /Users/ties/.gitcookies
