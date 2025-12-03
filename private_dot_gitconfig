@@ -1,0 +1,83 @@
+[user]
+	name = Thijs Brobbel
+[include]
+	path = ~/.gitconfig-encrypted
+
+# [include]
+[includeIf "gitdir:~/src/guida/**"]
+	path = ~/.gitconfig-guida
+
+[init]
+	defaultBranch = main
+[core]
+	# editor = gvim --nofork '%*'
+	whitespace = cr-at-eol
+	excludesfile = /Users/ties/.config/git/ignore
+[fetch]
+	prune = true
+[rebase]
+	updateRefs = true
+[alias]
+	la = "!git config -l | grep alias | cut -c 7-"
+	co = checkout
+	br = branch
+	ci = commit -v
+	ca = commit -va
+	st = status
+	lol = log --pretty=oneline --abbrev-commit --graph --decorate
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	stash-unapply = !git stash show -p | git apply -R
+	unmv = "!f() { git mv $2 $1; }; f"
+	updates = commit -v --amend -Chead
+	updatea = commit -va --amend -Chead
+	f = "!git ls-files | grep -i"
+
+	add-upstream = remote add upstream
+	fa = fetch --all
+	pum = pull --ff-only upstream master
+	pu = !git push --set-upstream origin $(git branch --show-current)
+	puu = !git push --set-upstream upstream $(git branch --show-current)
+
+	# -o merge_request.create: https://docs.gitlab.com/ee/topics/git/commit.html#push-options-for-merge-requests
+	pmr = !git push -o merge_request.create -o merge_request.remove_source_branch -o merge_request.merge_when_pipeline_succeeds -o merge_request.assign='tiezmaster' -u origin $(git branch --show-current)
+
+	cii = !git commit -v --trailer=issue:$(git branch --show-current |cut -d / -f1 |tr '[:lower:]' '[:upper:]')
+	cii = !git commit -va --trailer=issue:$(git branch --show-current |cut -d / -f1 |tr '[:lower:]' '[:upper:]')
+
+	r1 = reset HEAD^
+	pr = "!f() { git fetch -fu ${2:-upstream} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+	pr-clean = "!git for-each-ref refs/heads/pr/* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
+
+	fp = fetch --prune --all
+
+	sln = !start $(git f sln)
+
+	ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+	cp = cherry-pick
+	sts = status -s
+	stsc = !git sts |cut -b4-
+
+	delete-merged-branches = !git br --merged | grep -v master |xargs --no-run-if-empty git br -d
+
+	rh = reset --hard
+	rh1 = reset HEAD^ --hard
+	pushf = push --force-with-lease
+
+	sync = !git co master && git pum && git fp && git push && git delete-merged-branches
+
+	irebase = "rebase -i"
+	iarebase = "rebase -i --autosquash"
+
+	sl = stash list
+
+	r = reset
+	r2 = reset HEAD^^
+	rh2 = reset HEAD^^ --hard
+[blame]
+	markIgnoredLines = true
+	markUnblamableLines = true
+[trailer "issue"]
+	key = Issue
+[http]
+	cookiefile = /Users/ties/.gitcookies
