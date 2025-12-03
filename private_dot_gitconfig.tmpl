@@ -3,9 +3,11 @@
 [include]
 	path = ~/.gitconfig-encrypted
 
+{{- if eq .chezmoi.hostname "warmachine" }}
 # [include]
 [includeIf "gitdir:~/src/guida/**"]
 	path = ~/.gitconfig-guida
+{{- end }}
 
 [init]
 	defaultBranch = main
