@@ -51,7 +51,7 @@
 	# puu = !git push --set-upstream upstream $(git branch --show-current)
 
 	# # -o merge_request.create: https://docs.gitlab.com/ee/topics/git/commit.html#push-options-for-merge-requests
-	# pmr = !git push -o merge_request.create -o merge_request.remove_source_branch -o merge_request.merge_when_pipeline_succeeds -o merge_request.assign='tiezmaster' -u origin $(git branch --show-current)
+	pmr = !git push -o merge_request.create -o merge_request.remove_source_branch -o merge_request.merge_when_pipeline_succeeds -o merge_request.assign='tiezmaster' -u origin $(git branch --show-current)
 
 	# cii = !git commit -v --trailer=issue:$(git branch --show-current |cut -d / -f1 |tr '[:lower:]' '[:upper:]')
 	# cii = !git commit -va --trailer=issue:$(git branch --show-current |cut -d / -f1 |tr '[:lower:]' '[:upper:]')
