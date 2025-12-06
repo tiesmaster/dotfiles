@@ -3,5 +3,5 @@ README.md
 # only work related stuff
 .gitconfig-guida
 .gitconfig-guida-encrypted
-.ssh/id_ed25519
+.ssh/id_ed25519*
 {{- end }}
