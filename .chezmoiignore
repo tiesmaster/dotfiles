@@ -1,1 +1,7 @@
 README.md
+{{- if eq .chezmoi.hostname "warmachine" }}
+# only work related stuff
+.gitconfig-guida
+.gitconfig-guida-encrypted
+.ssh/id_ed25519
+{{- end }}
