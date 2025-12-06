@@ -1,5 +1,5 @@
 README.md
-{{- if eq .chezmoi.hostname "warmachine" }}
+{{- if ne .chezmoi.hostname "warmachine" }}
 # only work related stuff
 .gitconfig-guida
 .gitconfig-guida-encrypted
