@@ -9,8 +9,10 @@ export LESS="-i -S"
 # aliases: chezmoi
 alias cz=chezmoi
 alias czs='chezmoi status'
-alias czd='chezmoi diff'
-alias cza='chezmoi apply'
-alias czu='chezmoi update'
+alias czd='chezmoi diff -v'
+alias cza='chezmoi apply -v'
+alias czu='chezmoi update -v'
+
+alias cze='chezmoi edit --apply -v'
 
 alias czc='chezmoi cd'
