@@ -11,4 +11,6 @@ alias cz=chezmoi
 alias czs='chezmoi status'
 alias czd='chezmoi diff'
 alias cza='chezmoi apply'
+alias czu='chezmoi update'
+
 alias czc='chezmoi cd'
