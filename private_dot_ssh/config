@@ -1,0 +1,9 @@
+Host hulk
+   HostName 192.168.1.198
+   User admin
+
+Host spiderman
+   User ties
+
+Host *
+  ForwardAgent true
