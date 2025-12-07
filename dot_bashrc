@@ -1,6 +1,9 @@
 
 [[ -f ~/.bashrc.local ]] && . ~/.bashrc.local
 
+# env vars
+export LESS="-i"
+
 # Aliases
 
 # aliases: chezmoi
