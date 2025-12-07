@@ -16,3 +16,5 @@ alias czu='chezmoi update -v'
 alias cze='chezmoi edit --apply -v'
 
 alias czc='chezmoi cd'
+
+
