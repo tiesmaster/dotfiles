@@ -9,5 +9,5 @@ Host *
   ForwardAgent true
 
 {{ if eq .chezmoi.hostname "warmachine" }}
-IncludeFile config.guida
+Include config.guida
 {{- end }}
