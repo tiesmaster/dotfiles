@@ -7,3 +7,7 @@ Host spiderman
 
 Host *
   ForwardAgent true
+
+{{- if eq .chezmoi.hostname "warmachine" }}
+IncludeFile config.guida
+{{- end }}
