@@ -2,7 +2,7 @@
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
 
 # env vars
-export LESS="-i -S"
+export LESS="FRXi"
 
 # Aliases
 
