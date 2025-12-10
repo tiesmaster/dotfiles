@@ -11,7 +11,13 @@ set visible-stats on
 # F2
 "\eOQ": " --help | grep -- "
 
-"\M-s": "sudo !! "
+# OPTION-F1
+"\e[1;3P": "\C-aman \C-j"
+
+# OPTION-F2
+"\e[1;3Q": " --help 2>\\&1 | grep -- "
+
+"\es": "sudo !! "
 
 # F3
 "\eOR": dump-variables
@@ -28,12 +34,6 @@ set visible-stats on
 # set output-meta on
 
 # Seems to be defunct
-
-# OPTION-F1
-# "\e[1;9P": "\C-aman \C-j"
-
-# OPTION-F2
-# "\e[1;9Q": " --help 2>\\&1 | grep -- "
 
 # "\C-\M-s": "\C-asudo \C-e\t"
 # "\M-\\": "^|^ 2>\\&1 |^"
