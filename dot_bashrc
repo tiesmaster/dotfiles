@@ -6,6 +6,10 @@ export LESS="FRXi"
 
 # Aliases
 
+# aliases: general aliases
+alias c='code .'
+alias t=tere
+
 # aliases: git
 alias gs='git status'
 alias gb='git branch'
