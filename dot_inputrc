@@ -24,6 +24,9 @@ set visible-stats on
 # F4
 "\eOS": dump-functions
 
+# F5
+"\e[15~": "k9s\C-j"
+
 ### OLD ###
 
 # Doesn't seems to be needed
