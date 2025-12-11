@@ -25,6 +25,10 @@ alias czu='chezmoi update -v'
 alias cze='chezmoi edit --apply -v'
 alias czc='chezmoi cd'
 
+# aliases: homebrew
+alias bs='brew search'
+alias bi='brew install'
+
 # aliases: terraform
 alias tf=terraform
 alias tff='terraform fmt'
