@@ -12,6 +12,10 @@ alias gb='git branch'
 alias ga='git ca'
 alias gd='git diff'
 
+# aliases: lazy*
+alias lzd='lazydocker'
+alias lzg='lazygit'
+
 # aliases: chezmoi
 alias cz=chezmoi
 alias czs='chezmoi status'
