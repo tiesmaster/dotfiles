@@ -49,3 +49,7 @@ alias tfd='terraform destroy'
 alias tfyolo='terraform apply -auto-approve'
 alias tfi='terraform init'
 alias tfiu='terraform init -upgrade'
+
+# aliases: golang
+alias gt='go test ./...'
+alias gf='go fmt ./...'
