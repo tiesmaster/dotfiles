@@ -6,6 +6,12 @@ export LESS="FRXi"
 
 # Aliases
 
+# aliases: git
+alias gs='git status'
+alias gb='git branch'
+alias ga='git ca'
+alias gd='git diff'
+
 # aliases: chezmoi
 alias cz=chezmoi
 alias czs='chezmoi status'
@@ -16,5 +22,3 @@ alias czu='chezmoi update -v'
 alias cze='chezmoi edit --apply -v'
 
 alias czc='chezmoi cd'
-
-
