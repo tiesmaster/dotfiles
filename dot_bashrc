@@ -29,6 +29,15 @@ alias czc='chezmoi cd'
 alias bs='brew search'
 alias bi='brew install'
 
+# aliases: tailscale
+alias ts=tailscale
+alias tss='tailscale status'
+alias tsp='tailscale ping'
+alias tsh='tailscale ssh'
+
+alias ts-enable-dns='tailscale up --accept-dns=true --accept-routes'
+alias ts-disable-dns='tailscale up --accept-dns=false --accept-routes'
+
 # aliases: terraform
 alias tf=terraform
 alias tff='terraform fmt'
