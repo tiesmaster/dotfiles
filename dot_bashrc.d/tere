@@ -1,0 +1,7 @@
+# shellcheck disable=SC2155 disable=SC2164
+tere() {
+    local result=$(command tere --gap-search-anywhere "$@")
+    [ -n "$result" ] && cd -- "$result"
+}
+
+alias t=tere

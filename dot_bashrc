@@ -1,4 +1,6 @@
 
+. ~/.bashrc.d/tere
+
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
 
 # env vars
@@ -8,7 +10,6 @@ export LESS="FRXi"
 
 # aliases: general aliases
 alias c='code .'
-alias t=tere
 
 # aliases: git
 alias gs='git status'
