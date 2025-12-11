@@ -22,7 +22,17 @@ alias czs='chezmoi status'
 alias czd='chezmoi diff -v'
 alias cza='chezmoi apply -v'
 alias czu='chezmoi update -v'
-
 alias cze='chezmoi edit --apply -v'
-
 alias czc='chezmoi cd'
+
+# aliases: terraform
+alias tf=terraform
+alias tff='terraform fmt'
+alias tfv='terraform validate'
+alias tfr='terraform refresh'
+alias tfp='terraform plan'
+alias tfa='terraform apply'
+alias tfd='terraform destroy'
+alias tfyolo='terraform apply -auto-approve'
+alias tfi='terraform init'
+alias tfiu='terraform init -upgrade'
