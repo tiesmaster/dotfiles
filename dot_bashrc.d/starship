@@ -1,0 +1,11 @@
+# init: Starship
+function set_win_title(){
+    echo -ne "\033]0; ${PWD#$HOME/} \007"
+}
+
+# shellcheck disable=SC2034
+starship_precmd_user_func="set_win_title"
+
+# bind -s 'set completion-ignore-case on'
+
+eval "$(starship init bash)"

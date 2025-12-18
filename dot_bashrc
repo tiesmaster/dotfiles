@@ -1,6 +1,7 @@
 
 . ~/.bashrc.d/homebrew
 . ~/.bashrc.d/tere
+. ~/.bashrc.d/starship
 . ~/.bashrc.d/golang
 
 # bash history configuration
