@@ -1,0 +1,4 @@
+export PATH=~/go/bin:${PATH}
+
+alias gt='go test ./...'
+alias gf='go fmt ./...'
