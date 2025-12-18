@@ -1,6 +1,9 @@
 # shellcheck disable=SC2155 disable=SC2164
+
+TERE_OPTS=--gap-search-anywhere
+
 tere() {
-    local result=$(command tere --gap-search-anywhere "$@")
+    local result=$(command tere $TERE_OPTS "$@")
     [ -n "$result" ] && cd -- "$result"
 }
 
