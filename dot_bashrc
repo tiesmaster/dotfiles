@@ -1,30 +1,25 @@
-
+. ~/.bashrc.d/bash-history
 . ~/.bashrc.d/homebrew
 . ~/.bashrc.d/tere
 . ~/.bashrc.d/starship
 . ~/.bashrc.d/golang
 
-# bash history configuration
-export HISTCONTROL=ignoreboth
-export HISTIGNORE="&:ls:ll:[bf]g:fc:history *:exit:eb:ei:cb:sb"
-export HISTSIZE=-1
-export HISTFILESIZE=-1
-# export PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
-export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
-# unset HISTFILESIZE
-HISTTIMEFORMAT="%d %b %R "
-shopt -s histappend
-shopt -s histverify
-
-# env vars
+# Set env vars
 export PATH=~/bin:~/.local/bin:~/go/bin:${PATH}
 export EDITOR=vim
 export LESS="FRXi"
+
+# Configure components
+eval "$(direnv hook bash)"
 
 # Aliases
 
 # aliases: general aliases
 alias c='code .'
+
+# aliases: meta: manage bash
+alias eb='cze ~/.bashrc'
+alias sb='. ~/.bashrc'
 
 # aliases: git
 alias gs='git status'
@@ -58,6 +53,9 @@ alias tsh='tailscale ssh'
 alias ts-enable-dns='tailscale up --accept-dns=true --accept-routes'
 alias ts-disable-dns='tailscale up --accept-dns=false --accept-routes'
 
+# 1Password
+alias ops='op signin'
+
 # aliases: terraform
 alias tf=terraform
 alias tff='terraform fmt'
@@ -69,5 +67,31 @@ alias tfd='terraform destroy'
 alias tfyolo='terraform apply -auto-approve'
 alias tfi='terraform init'
 alias tfiu='terraform init -upgrade'
+
+# aliases: minikube
+alias mk=minikube
+alias mks='minikube start'
+alias mkd='minikube delete'
+
+# aliases: personal projects
+alias backup-golink='curl -s http://go/.export >~/tmp/backup/golink_`date +%F_%H-%M-%S`.jsonl'
+
+alias ho='cd ~/src/private/homeops/'
+alias tfc='cd ~/src/private/tfcleanup/'
+
+# aliases: misc
+alias r2='vlc ~/Documents/radio2.pls >/dev/null 2>&1 &'
+
+# Functions
+
+# shellcheck disable=SC2164
+mkcd() {
+	mkdir -p "$@" && cd "$@";
+}
+
+git-tag-and-push() {
+  git tag "$1"
+  git push origin "$1"
+}
 
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
