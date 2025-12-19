@@ -1,5 +1,6 @@
 . ~/.bashrc.d/bash-history
 . ~/.bashrc.d/homebrew
+. ~/.bashrc.d/direnv
 . ~/.bashrc.d/tere
 . ~/.bashrc.d/starship
 . ~/.bashrc.d/golang
@@ -8,9 +9,6 @@
 export PATH=~/bin:~/.local/bin:~/go/bin:${PATH}
 export EDITOR=vim
 export LESS="FRXi"
-
-# Configure components
-type direnv &>/dev/null && eval "$(direnv hook bash)"
 
 # Aliases
 
