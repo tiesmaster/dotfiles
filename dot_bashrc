@@ -16,7 +16,7 @@ export LESS="FRXi"
 alias c='code .'
 
 # aliases: meta: manage bash
-alias eb='cze ~/.bashrc'
+alias eb='czew ~/.bashrc'
 alias sb='. ~/.bashrc'
 
 # aliases: git
@@ -36,6 +36,7 @@ alias czd='chezmoi diff -v'
 alias cza='chezmoi apply -v'
 alias czu='chezmoi update -v'
 alias cze='chezmoi edit --apply -v'
+alias czew='chezmoi edit --apply --watch -v'
 # alias czc='chezmoi cd'
 
 czc() {
@@ -97,4 +98,5 @@ git-tag-and-push() {
 }
 
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
+
 
