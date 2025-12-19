@@ -10,7 +10,7 @@ export EDITOR=vim
 export LESS="FRXi"
 
 # Configure components
-eval "$(direnv hook bash)"
+type direnv &>/dev/null && eval "$(direnv hook bash)"
 
 # Aliases
 

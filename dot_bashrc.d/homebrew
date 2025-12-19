@@ -1,4 +1,10 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
+FULL_BREW_PATH=/opt/homebrew/bin/brew
+if [[ ! -f $FULL_BREW_PATH ]]
+then
+  return
+fi
+
+eval "$($FULL_BREW_PATH shellenv)"
 # export HOMEBREW_NO_ENV_HINTS=1
 
 # shellcheck disable=SC1091
