@@ -1,6 +1,7 @@
 . ~/.bashrc.d/bash-history
 . ~/.bashrc.d/homebrew
 . ~/.bashrc.d/direnv
+. ~/.bashrc.d/chezmoi
 . ~/.bashrc.d/tere
 . ~/.bashrc.d/starship
 . ~/.bashrc.d/golang
@@ -28,20 +29,6 @@ alias gd='git diff'
 # aliases: lazy*
 alias lzd='lazydocker'
 alias lzg='lazygit'
-
-# aliases: chezmoi
-alias cz=chezmoi
-alias czs='chezmoi status'
-alias czd='chezmoi diff -v'
-alias cza='chezmoi apply -v'
-alias czu='chezmoi update -v'
-alias cze='chezmoi edit --apply -v'
-alias czew='chezmoi edit --apply --watch -v'
-# alias czc='chezmoi cd'
-
-czc() {
-    cd $(chezmoi source-path)
-}
 
 # aliases: homebrew
 alias bs='brew search'
@@ -98,5 +85,3 @@ git-tag-and-push() {
 }
 
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
-
-

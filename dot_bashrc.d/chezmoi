@@ -1,0 +1,14 @@
+alias cz=chezmoi
+
+alias czs='chezmoi status'
+alias czd='chezmoi diff -v'
+alias cza='chezmoi apply -v'
+alias czu='chezmoi update -v'
+alias cze='chezmoi edit --apply -v'
+alias czew='chezmoi edit --apply --watch -v'
+
+# alias czc='chezmoi cd'
+# make 'chezmoi cd' not do a subshell
+czc() {
+    cd $(chezmoi source-path)
+}
