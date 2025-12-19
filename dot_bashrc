@@ -30,10 +30,6 @@ alias gd='git diff'
 alias lzd='lazydocker'
 alias lzg='lazygit'
 
-# aliases: homebrew
-alias bs='brew search'
-alias bi='brew install'
-
 # aliases: tailscale
 alias ts=tailscale
 alias tss='tailscale status'

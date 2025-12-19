@@ -22,3 +22,7 @@ then
     done
   fi
 fi
+
+# aliases
+alias bs='brew search'
+alias bi='brew install'
