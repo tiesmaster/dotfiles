@@ -1,4 +1,9 @@
-# init: Starship
+if ! type starship &>/dev/null
+then
+  return
+fi
+
+
 function starship_set_win_title(){
     echo -ne "\033]0; ${PWD#$HOME/} \007"
 }

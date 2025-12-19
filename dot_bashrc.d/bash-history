@@ -1,11 +1,13 @@
-# bash history configuration
 export HISTCONTROL=ignoreboth
 export HISTIGNORE="&:ls:ll:[bf]g:fc:history *:exit:eb:ei:cb:sb"
 export HISTSIZE=-1
 export HISTFILESIZE=-1
+
 # export PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # unset HISTFILESIZE
+
 HISTTIMEFORMAT="%d %b %R "
+
 shopt -s histappend
 shopt -s histverify
