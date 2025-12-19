@@ -36,7 +36,11 @@ alias czd='chezmoi diff -v'
 alias cza='chezmoi apply -v'
 alias czu='chezmoi update -v'
 alias cze='chezmoi edit --apply -v'
-alias czc='chezmoi cd'
+# alias czc='chezmoi cd'
+
+czc() {
+    cd $(chezmoi source-path)
+}
 
 # aliases: homebrew
 alias bs='brew search'
