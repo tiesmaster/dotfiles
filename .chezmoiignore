@@ -1,6 +1,7 @@
 README.md
 {{- if ne .chezmoi.hostname "warmachine" }}
 # only work related stuff
+.bashrc.d/guida
 .gitconfig-guida
 .gitconfig-guida-encrypted
 .ssh/id_ed25519*

@@ -7,6 +7,9 @@ export PATH="/opt/homebrew/opt/helm@3/bin:$PATH"
 # Alias EDITOR to KUBE_EDITOR
 export KUBE_EDITOR=${EDITOR}
 
+# Load additional kubeconfigs under ~/.kube/configs
+export KUBECONFIG=~/.kube/config:$(find ~/.kube/configs -type f| tr '\n' ':')
+
 # Aliases
 
 # aliases: kubeconfig
