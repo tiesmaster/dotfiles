@@ -1,0 +1,43 @@
+# Set env vars
+export PATH=~/.krew/bin:${PATH}
+
+# Explicitly add helm3 to the path, while helm4 is not the standard yet (but is under homebrew)
+export PATH="/opt/homebrew/opt/helm@3/bin:$PATH"
+
+# Alias EDITOR to KUBE_EDITOR
+export KUBE_EDITOR=${EDITOR}
+
+# Aliases
+
+# aliases: kubeconfig
+alias ks='kubectl config current-context'
+alias kl='kubectl config get-contexts'
+alias ku='kubectl config use-context'
+#alias kud='cp ~/.kube/config-default ~/.kube/config'
+alias knss='kubectl config set-context --current --namespace'
+alias knsg="kubectl config view --minify -o jsonpath='{..namespace}'"
+
+alias kc='kubie ctx'
+alias kn='kubie ns'
+
+alias k-regenerate-kubeconfigs='KUBECONFIG=`ls ~/.kube/config.d/* |sed ":a;N;s/\n/:/;ba"` k config view --flatten >~/.kube/config'
+
+# aliases: kubernetes
+alias kubectl=kubecolor
+alias k=kubecolor
+
+alias kd='k describe'
+alias ke='k explain'
+alias kyaml='k get -o yaml'
+
+alias kaf='k apply -f'
+alias kak='k apply -k'
+
+alias kworkloads='k get nodes -L guida.io/workload'
+alias kzones='k get nodes -o wide -L topology.kubernetes.io/region,topology.kubernetes.io/zone,kubernetes.io/arch,kubernetes.io/os,node.kubernetes.io/instance-type,guida.io/workload'
+alias kpods='k get pod -L app,app.kubernetes.io/name,app.kubernetes.io/instance,app.kubernetes.io/component'
+alias kall-resources='k api-resources --verbs=list --namespaced -o name | xargs -n 1 k get --show-kind --ignore-not-found -n'
+
+# aliases: other k8s ecosystem tools
+alias f=flux
+alias h=helm
