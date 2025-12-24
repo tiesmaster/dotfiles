@@ -53,10 +53,10 @@ alias label-nodes="kubectl get nodes --no-headers   |awk '{print \$1}' | xargs -
 complete -o default -F __start_kubectl k
 complete -o default -F __start_flux f
 
-. <(helm completion bash)
+type helm &>/dev/null && . <(helm completion bash)
 complete -o default -F __start_helm h
 
-. <(velero completion bash)
+type velero &>/dev/null && . <(velero completion bash)
 complete -o default -F __start_velero v
 
 # Functions
