@@ -1,0 +1,17 @@
+apiVersion: v1
+clusters:
+- cluster:
+    server: https://jarvis.shark-egret.ts.net
+  name: jarvis.shark-egret.ts.net
+contexts:
+- context:
+    cluster: jarvis.shark-egret.ts.net
+    namespace: monitoring-system
+    user: tailscale-auth
+  name: jarvis
+current-context: jarvis.shark-egret.ts.net
+kind: Config
+users:
+- name: tailscale-auth
+  user:
+    token: unused
