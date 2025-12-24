@@ -44,3 +44,17 @@ alias kall-resources='k api-resources --verbs=list --namespaced -o name | xargs 
 # aliases: other k8s ecosystem tools
 alias f=flux
 alias h=helm
+
+# aliases: development aliases
+alias label-nodes="kubectl get nodes --no-headers   |awk '{print \$1}' | xargs -I {} -n1 kubectl label node {} topology.kubernetes.io/zone={}"
+
+# Functions
+
+start-k3d-cluster-with-3-nodes() {
+    k3d cluster create local --image rancher/k3s:v1.28.8-k3s1 --servers 3 --k3s-arg "--disable=traefik@server:*" -p "80:80@loadbalancer" -p "443:443@loadbalancer"
+    kubectl get nodes --no-headers   |awk '{print $1}' | xargs -I {} -n1 kubectl label node {} topology.kubernetes.io/zone={}
+}
+
+start-minikube-cluster-with-3-nodes-and-local-path-provisioner() {
+  minikube start -n 3 --addons storage-provisioner-rancher
+}
