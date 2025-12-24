@@ -83,5 +83,3 @@ git-tag-and-push() {
   git tag "$1"
   git push origin "$1"
 }
-
-[ -f ~/.bashrc.local ] && . ~/.bashrc.local

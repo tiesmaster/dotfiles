@@ -48,6 +48,9 @@ alias h=helm
 # aliases: development aliases
 alias label-nodes="kubectl get nodes --no-headers   |awk '{print \$1}' | xargs -I {} -n1 kubectl label node {} topology.kubernetes.io/zone={}"
 
+# Addtional completions
+complete -o default -F __start_kubectl k
+
 # Functions
 
 start-k3d-cluster-with-3-nodes() {
