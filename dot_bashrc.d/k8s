@@ -16,7 +16,7 @@ export KUBECONFIG=~/.kube/config:$(find ~/.kube/configs -type f| tr '\n' ':')
 alias ks='kubectl config current-context'
 alias kl='kubectl config get-contexts'
 alias ku='kubectl config use-context'
-#alias kud='cp ~/.kube/config-default ~/.kube/config'
+alias kud='cp ~/.kube/config-default ~/.kube/config'
 alias knss='kubectl config set-context --current --namespace'
 alias knsg="kubectl config view --minify -o jsonpath='{..namespace}'"
 

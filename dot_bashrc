@@ -83,3 +83,12 @@ git-tag-and-push() {
   git tag "$1"
   git push origin "$1"
 }
+
+if type kubie &>/dev/null
+then
+  # Spawn a new kubie subshell, so there is no mixing between pre-and post kubie shell history.
+  # There doesn't seem to be a native way to do this [1]. The con of this is that you always need to
+  # exit twice, on leaving the shell.
+  # [1] https://github.com/sbstp/kubie/issues/371
+  kubie ctx jarvis
+fi
