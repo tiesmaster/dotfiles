@@ -44,12 +44,20 @@ alias kall-resources='k api-resources --verbs=list --namespaced -o name | xargs 
 # aliases: other k8s ecosystem tools
 alias f=flux
 alias h=helm
+alias v=velero
 
 # aliases: development aliases
 alias label-nodes="kubectl get nodes --no-headers   |awk '{print \$1}' | xargs -I {} -n1 kubectl label node {} topology.kubernetes.io/zone={}"
 
 # Addtional completions
 complete -o default -F __start_kubectl k
+complete -o default -F __start_flux f
+
+. <(helm completion bash)
+complete -o default -F __start_helm h
+
+. <(velero completion bash)
+complete -o default -F __start_velero v
 
 # Functions
 
