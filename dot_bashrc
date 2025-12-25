@@ -46,6 +46,9 @@ alias ts-disable-dns='tailscale up --accept-dns=false --accept-routes'
 # 1Password
 alias ops='op signin'
 
+# aliases: docker compose
+alias dc='docker compose'
+
 # aliases: terraform
 alias tf=terraform
 alias tff='terraform fmt'
