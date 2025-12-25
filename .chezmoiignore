@@ -1,6 +1,9 @@
 README.md
+key.txt.age
+
 Dockerfile
 compose.yaml
+
 {{- if ne .chezmoi.hostname "warmachine" }}
 # only work related stuff
 .bashrc.d/guida
