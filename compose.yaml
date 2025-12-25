@@ -1,0 +1,8 @@
+services:
+  dotfiles:
+    build: .
+    volumes:
+      - home-data:/root
+
+volumes:
+  home-data:

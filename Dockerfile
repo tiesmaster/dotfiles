@@ -6,4 +6,4 @@ RUN curl -sSO https://starship.rs/install.sh && chmod +x install.sh && ./install
 
 COPY ./age.key /root/.config/chezmoi/age.key
 
-RUN chezmoi init --apply tiesmaster
+WORKDIR /root

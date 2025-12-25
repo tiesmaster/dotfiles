@@ -13,12 +13,18 @@ Build image:
 
 ```sh
 cp ../../../.config/chezmoi/age.key .
-docker build -t chezmoi-tiesmaster .
+dc build
 rm age.key
+```
+
+Install dotfiles
+
+```sh
+dc run --rm dotfiles chezmoi init --apply tiesmaster
 ```
 
 Start image:
 
 ```sh
-docker run --rm -it chezmoi-tiesmaster
+dc run --rm dotfiles
 ```
