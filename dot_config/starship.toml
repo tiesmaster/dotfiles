@@ -5,3 +5,7 @@ disabled = true
 
 [gcloud]
 disabled = true
+
+[status]
+disabled = false
+format = '[$symbol $status \($common_meaning\)]($style) '
