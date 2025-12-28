@@ -16,7 +16,9 @@ $username\
 [](fg:color_gray bg:color_gray_dark)\
 $time\
 [ ](fg:color_gray_dark)\
-$line_break$character"""
+$line_break\
+$status\
+$character"""
 
 [palettes.gruvbox_dark]
 color_foreground = '#ffffff'
