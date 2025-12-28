@@ -5,7 +5,9 @@ palette = 'gruvbox_dark'
 format = """
 [non-migrated modules:](dimmed) $all
 [](fg:color_orange)\
-$os[ ...username and hostname... ](bg:color_orange fg:color_foreground)\
+$os\
+$username\
+[ ...hostname... ](bg:color_orange fg:color_foreground)\
 [](fg:color_orange bg:color_yellow)\
 [ ...directory... ](bg:color_yellow fg:color_foreground)\
 [](fg:color_yellow bg:color_aqua)\
@@ -24,6 +26,7 @@ color_aqua = '#689d6a'
 color_blue = '#458588'
 color_gray = '#665c54'
 color_gray_dark = '#3c3836'
+color_red_dark = '#f50808'
 
 [status]
 disabled = false
@@ -42,7 +45,7 @@ threshold = 1
 disabled = false
 time_format = "%R"
 format = '[  $time ]($style)'
-# gruvbox_dark styling
+# styling: just follow the styling of the bar
 style = "fg:color_foreground bg:color_gray_dark"
 
 [kubernetes]
@@ -57,8 +60,14 @@ disabled = false
 
 [os]
 disabled = false
-# gruvbox_dark styling
+# styling: just follow the styling of the bar
 style = "fg:color_foreground bg:color_orange"
+
+[username]
+# styling: keep the active foreground, but make the background dark red, when root
+style_user = "fg:color_foreground bg:color_orange"
+style_root = "fg:color_foreground bold bg:color_red_dark"
+format = '[ [$user]($style) ](bg:color_orange)'
 
 [nodejs]
 disabled = true
