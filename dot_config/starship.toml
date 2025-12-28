@@ -8,7 +8,9 @@ disabled = true
 
 [status]
 disabled = false
-format = '[$symbol $status \($common_meaning\)]($style) '
+map_symbol = true
+pipestatus = true
+format = '[$symbol $status <$common_meaning>]($style) '
 
 [os]
 disabled = false
