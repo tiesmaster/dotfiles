@@ -5,7 +5,7 @@ palette = 'gruvbox_dark'
 format = """
 [non-migrated modules:](dimmed) $all
 [](fg:color_orange)\
-[ ...OS and username... ](bg:color_orange fg:color_foreground)\
+$os[ ...username and hostname... ](bg:color_orange fg:color_foreground)\
 [](fg:color_orange bg:color_yellow)\
 [ ...directory... ](bg:color_yellow fg:color_foreground)\
 [](fg:color_yellow bg:color_aqua)\
@@ -57,6 +57,8 @@ disabled = false
 
 [os]
 disabled = false
+# gruvbox_dark styling
+style = "fg:color_foreground bg:color_orange"
 
 [nodejs]
 disabled = true
