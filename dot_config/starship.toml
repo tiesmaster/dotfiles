@@ -17,6 +17,12 @@ threshold = 1
 disabled = false
 symbol = "⛵"
 
+[git_metrics]
+disabled = false
+
+[direnv]
+disabled = false
+
 [os]
 disabled = false
 
