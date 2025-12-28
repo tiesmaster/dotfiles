@@ -15,6 +15,7 @@ $username\
 [](fg:color_blue bg:color_gray)\
 [](fg:color_gray bg:color_gray_dark)\
 $time\
+$cmd_duration\
 [ ](fg:color_gray_dark)\
 $line_break\
 $status\
@@ -30,36 +31,6 @@ color_gray = '#665c54'
 color_gray_dark = '#3c3836'
 color_red_dark = '#f50808'
 
-[status]
-disabled = false
-map_symbol = true
-pipestatus = true
-format = '[$symbol $status <$common_meaning>]($style) '
-
-[cmd_duration]
-min_time = 5_000
-
-[shlvl]
-disabled = false
-threshold = 1
-
-[time]
-disabled = false
-time_format = "%R"
-format = '[  $time ]($style)'
-# styling: just follow the styling of the bar
-style = "fg:color_foreground bg:color_gray_dark"
-
-[kubernetes]
-disabled = false
-symbol = "⛵"
-
-[git_metrics]
-disabled = false
-
-[direnv]
-disabled = false
-
 [os]
 disabled = false
 # styling: just follow the styling of the bar
@@ -70,6 +41,40 @@ style = "fg:color_foreground bg:color_orange"
 style_user = "fg:color_foreground bg:color_orange"
 style_root = "fg:color_foreground bold bg:color_red_dark"
 format = '[ [$user]($style) ](bg:color_orange)'
+
+[time]
+disabled = false
+time_format = "%R"
+format = '[  $time ]($style)'
+# styling: just follow the styling of the bar
+style = "fg:color_foreground bg:color_gray_dark"
+
+[cmd_duration]
+min_time = 5_000
+format = "[ $duration ]($style)"
+style = "fg:color_foreground bold bg:color_gray_dark"
+
+[status]
+disabled = false
+map_symbol = true
+pipestatus = true
+format = '[$symbol $status <$common_meaning>]($style) '
+
+# Old, non-migrated modules
+
+[shlvl]
+disabled = false
+threshold = 1
+
+[kubernetes]
+disabled = false
+symbol = "⛵"
+
+[git_metrics]
+disabled = false
+
+[direnv]
+disabled = false
 
 [nodejs]
 disabled = true
