@@ -9,6 +9,7 @@ $os\
 $username\
 $hostname\
 [](fg:color_yellow bg:color_orange)\
+$directory\
 [](fg:color_orange bg:color_aqua)\
 [](fg:color_aqua bg:color_blue)\
 [](fg:color_blue bg:color_gray)\
@@ -47,6 +48,19 @@ ssh_only = false
 style = "fg:color_foreground bg:color_yellow"
 format = "[@$hostname$ssh_symbol ]($style)"
 ssh_symbol ="🌐"
+
+[directory]
+style = "fg:color_foreground bg:color_orange"
+format = "[ $path $read_only ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
 
 [time]
 disabled = false
