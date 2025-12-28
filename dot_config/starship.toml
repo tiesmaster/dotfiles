@@ -1,16 +1,17 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-[nodejs]
-disabled = true
-
-[gcloud]
-disabled = true
-
 [status]
 disabled = false
 map_symbol = true
 pipestatus = true
 format = '[$symbol $status <$common_meaning>]($style) '
+
+[cmd_duration]
+min_time = 5_000
+
+[shlvl]
+disabled = false
+threshold = 1
 
 [os]
 disabled = false
@@ -37,3 +38,9 @@ Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
 Pop = ""
+
+[nodejs]
+disabled = true
+
+[gcloud]
+disabled = true
