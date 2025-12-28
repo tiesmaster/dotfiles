@@ -13,8 +13,18 @@ min_time = 5_000
 disabled = false
 threshold = 1
 
+[kubernetes]
+disabled = false
+symbol = "⛵"
+
 [os]
 disabled = false
+
+[nodejs]
+disabled = true
+
+[gcloud]
+disabled = true
 
 [os.symbols]
 Windows = "󰍲"
@@ -38,9 +48,3 @@ Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
 Pop = ""
-
-[nodejs]
-disabled = true
-
-[gcloud]
-disabled = true
