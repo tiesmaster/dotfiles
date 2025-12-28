@@ -4,13 +4,12 @@ palette = 'gruvbox_dark'
 
 format = """
 [non-migrated modules:](dimmed) $all
-[](fg:color_orange)\
+[](fg:color_yellow)\
 $os\
 $username\
-[ ...hostname... ](bg:color_orange fg:color_foreground)\
-[](fg:color_orange bg:color_yellow)\
-[ ...directory... ](bg:color_yellow fg:color_foreground)\
-[](fg:color_yellow bg:color_aqua)\
+$hostname\
+[](fg:color_yellow bg:color_orange)\
+[](fg:color_orange bg:color_aqua)\
 [](fg:color_aqua bg:color_blue)\
 [](fg:color_blue bg:color_gray)\
 [](fg:color_gray bg:color_gray_dark)\
@@ -34,13 +33,20 @@ color_red_dark = '#f50808'
 [os]
 disabled = false
 # styling: just follow the styling of the bar
-style = "fg:color_foreground bg:color_orange"
+style = "fg:color_foreground bg:color_yellow"
+format = "[ $symbol ]($style)"
 
 [username]
-# styling: keep the active foreground, but make the background dark red, when root
-style_user = "fg:color_foreground bg:color_orange"
-style_root = "fg:color_foreground bold bg:color_red_dark"
-format = '[ [$user]($style) ](bg:color_orange)'
+# styling: override the foreground for root to dark red
+style_user = "fg:color_foreground bg:color_yellow"
+style_root = "fg:color_red_dark bold bg:color_yellow"
+format = '[$user ]($style)'
+
+[hostname]
+ssh_only = false
+style = "fg:color_foreground bg:color_yellow"
+format = "[@$hostname$ssh_symbol ]($style)"
+ssh_symbol ="🌐"
 
 [time]
 disabled = false
