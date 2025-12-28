@@ -13,6 +13,7 @@ $directory\
 [](fg:color_orange bg:color_aqua)\
 [](fg:color_aqua bg:color_blue)\
 [](fg:color_blue bg:color_gray)\
+$kubernetes\
 [](fg:color_gray bg:color_gray_dark)\
 $time\
 $cmd_duration\
@@ -62,6 +63,18 @@ truncation_symbol = "…/"
 "Pictures" = " "
 "Developer" = "󰲋 "
 
+[kubernetes]
+disabled = false
+symbol = "⛵"
+format = '[ $symbol $context( \($namespace\)) ]($style)'
+style = "fg:color_foreground bg:color_gray"
+
+[[kubernetes.contexts]]
+# "bold red" style + default symbol when Kubernetes current context name equals "production" *and* the current user
+# equals "admin_user"
+context_pattern = ".*prod.*"
+style = "fg:red bold bg:color_gray"
+
 [time]
 disabled = false
 time_format = "%R"
@@ -85,10 +98,6 @@ format = '[$symbol $status <$common_meaning>]($style) '
 [shlvl]
 disabled = false
 threshold = 1
-
-[kubernetes]
-disabled = false
-symbol = "⛵"
 
 [git_metrics]
 disabled = false
