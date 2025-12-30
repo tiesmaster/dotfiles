@@ -77,6 +77,9 @@ alias tfc='cd ~/src/private/tfcleanup/'
 # aliases: misc
 alias r2='vlc ~/Documents/radio2.pls >/dev/null 2>&1 &'
 
+# Completions
+type talosctl &>/dev/null && . <(talosctl completion bash)
+
 # Functions
 
 # shellcheck disable=SC2164
