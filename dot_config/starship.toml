@@ -8,6 +8,7 @@ format = """
 $os\
 $username\
 $hostname\
+$shlvl\
 [](fg:color_yellow bg:color_orange)\
 $directory\
 [](fg:color_orange bg:color_aqua)\
@@ -50,6 +51,11 @@ ssh_only = false
 style = "fg:color_foreground bg:color_yellow"
 format = "[@$hostname$ssh_symbol ]($style)"
 ssh_symbol ="🌐"
+
+[shlvl]
+disabled = false
+style = "fg:color_foreground bg:color_yellow"
+format = '[$symbol$shlvl ]($style)'
 
 [directory]
 style = "fg:color_foreground bg:color_orange"
@@ -98,10 +104,6 @@ pipestatus = true
 format = '[$symbol $status <$common_meaning>]($style) '
 
 # Old, non-migrated modules
-
-[shlvl]
-disabled = false
-threshold = 1
 
 [git_metrics]
 disabled = false
