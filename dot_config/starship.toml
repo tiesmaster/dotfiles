@@ -65,13 +65,16 @@ truncation_symbol = "…/"
 
 [kubernetes]
 disabled = false
+# Only enable this module when we're in a "kubbie" shell, when we're not, the dummy context is
+# selected (no kubectl doesn't work), and the prompt should reflect that.
+detect_env_vars = [ "KUBIE_KUBECONFIG" ]
 symbol = "⛵"
 format = '[ $symbol $context( \($namespace\)) ]($style)'
 style = "fg:color_foreground bg:color_gray"
 
 [[kubernetes.contexts]]
-# "bold red" style + default symbol when Kubernetes current context name equals "production" *and* the current user
-# equals "admin_user"
+# styling: detect prod clusters, and mark with big red signs, and colors
+symbol = "‼️"
 context_pattern = ".*prod.*"
 style = "fg:red bold bg:color_gray"
 
