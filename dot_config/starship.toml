@@ -1,5 +1,18 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+# The way that this works is complicated: the gruvbox preset complicates things, as it set a
+# particular background color for an area. Modules expect to be on a "transparant" background, so if
+# you add a module to the statusbar, then you get intermitted black in the statusbar. So you always
+# need to set the background color of the area where the module is shown.
+
+# How to enable a module?
+# 1. put it into the format string in the spot you want (the top level format string that contains
+#    all the modules, like $username, $hostname, etc.
+# 2. set the style to the foreground/background of the area you put the module in
+# 3. copy over the format string, and adjust the colors of the specific parts of the format so it
+#    looks nice in the bar. ensure that the entire format string is embedded in the statusbar color,
+#    hence "[ ...]($style)" , where style is for example: fg:color_foreground bg:color_yellow
+
 palette = 'gruvbox_dark'
 
 format = """
