@@ -39,10 +39,11 @@ style = "fg:color_foreground bg:color_yellow"
 format = "[ $symbol ]($style)"
 
 [username]
+show_always = true
 # styling: override the foreground for root to dark red
 style_user = "fg:color_foreground bg:color_yellow"
 style_root = "fg:color_red_dark bold bg:color_yellow"
-format = '[$user ]($style)'
+format = '[$user]($style)'
 
 [hostname]
 ssh_only = false
