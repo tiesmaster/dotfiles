@@ -26,6 +26,7 @@ $shlvl\
 $directory\
 [](fg:color_orange bg:color_aqua)\
 $git_branch\
+$git_status\
 [](fg:color_aqua bg:color_blue)\
 [](fg:color_blue bg:color_gray)\
 $kubernetes\
@@ -87,6 +88,10 @@ truncation_symbol = "…/"
 [git_branch]
 style = "fg:color_foreground bg:color_aqua"
 format = "[ $symbol$branch(:$remote_branch) ]($style)"
+
+[git_status]
+style = "fg:color_foreground bold bg:color_aqua"
+format = '([\[$all_status$ahead_behind\] ]($style))'
 
 [kubernetes]
 disabled = false
