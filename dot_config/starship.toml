@@ -25,6 +25,7 @@ $shlvl\
 $directory\
 [](fg:color_orange bg:color_aqua)\
 $git_branch\
+$git_commit\
 $git_status\
 $git_metrics\
 [](fg:color_aqua bg:color_blue)\
@@ -88,6 +89,11 @@ truncation_symbol = "…/"
 [git_branch]
 style = "fg:color_foreground bg:color_aqua"
 format = "[ $symbol$branch(:$remote_branch) ]($style)"
+
+[git_commit]
+only_detached = false
+style = "fg:green bg:color_aqua"
+format = '[\($hash$tag\) ]($style)'
 
 [git_status]
 style = "fg:color_foreground bg:color_aqua"
