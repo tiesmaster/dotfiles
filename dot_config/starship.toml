@@ -25,6 +25,7 @@ $shlvl\
 [](fg:color_yellow bg:color_orange)\
 $directory\
 [](fg:color_orange bg:color_aqua)\
+$git_branch\
 [](fg:color_aqua bg:color_blue)\
 [](fg:color_blue bg:color_gray)\
 $kubernetes\
@@ -82,6 +83,10 @@ truncation_symbol = "…/"
 "Music" = "󰝚 "
 "Pictures" = " "
 "Developer" = "󰲋 "
+
+[git_branch]
+style = "fg:color_foreground bg:color_aqua"
+format = "[ $symbol$branch(:$remote_branch) ]($style)"
 
 [kubernetes]
 disabled = false
