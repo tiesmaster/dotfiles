@@ -29,6 +29,7 @@ $git_commit\
 $git_status\
 $git_metrics\
 [](fg:color_aqua bg:color_blue)\
+$terraform\
 $direnv\
 [](fg:color_blue bg:color_gray)\
 $kubernetes\
@@ -98,6 +99,10 @@ disabled = false
 added_style = "fg:green bold bg:color_aqua"
 deleted_style = "fg:red bold bg:color_aqua"
 format = '([+$added ]($added_style))([-$deleted ]($deleted_style))'
+
+[terraform]
+style = "fg:color_foreground bg:color_blue"
+format = '[ $symbol$workspace]($style)'
 
 [direnv]
 disabled = false
