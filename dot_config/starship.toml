@@ -164,6 +164,11 @@ disabled = true
 "Pictures" = " "
 "Developer" = "󰲋 "
 
+"src" = "󰅩"
+"private" = ""
+"homeops" = ""
+"guida" = "󰆋"
+
 [os.symbols]
 Windows = "󰍲"
 Ubuntu = "󰕈"
