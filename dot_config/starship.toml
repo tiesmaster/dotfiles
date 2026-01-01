@@ -15,7 +15,7 @@
 palette = 'gruvbox_dark'
 
 format = """
-[non-migrated modules:](dimmed) $all
+$all\
 [](fg:color_yellow)\
 $os\
 $username\
@@ -29,6 +29,7 @@ $git_commit\
 $git_status\
 $git_metrics\
 [](fg:color_aqua bg:color_blue)\
+$direnv\
 [](fg:color_blue bg:color_gray)\
 $kubernetes\
 [](fg:color_gray bg:color_gray_dark)\
@@ -75,16 +76,9 @@ format = '[$symbol$shlvl ]($style)'
 
 [directory]
 style = "fg:color_foreground bg:color_orange"
-format = "[ $path $read_only ]($style)"
+format = "[ $path $read_only]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
-
-[directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = "󰝚 "
-"Pictures" = " "
-"Developer" = "󰲋 "
 
 [git_branch]
 style = "fg:color_foreground bg:color_aqua"
@@ -104,6 +98,11 @@ disabled = false
 added_style = "fg:green bold bg:color_aqua"
 deleted_style = "fg:red bold bg:color_aqua"
 format = '([+$added ]($added_style))([-$deleted ]($deleted_style))'
+
+[direnv]
+disabled = false
+style = "fg:color_foreground bg:color_blue"
+format = '[ \($symbol$loaded/$allowed\) ]($style)'
 
 [kubernetes]
 disabled = false
@@ -138,16 +137,22 @@ map_symbol = true
 pipestatus = true
 format = '[$symbol $status <$common_meaning>]($style) '
 
-# Old, non-migrated modules
-
-[direnv]
-disabled = false
+# Just some modules that are enabled by default, and I want disabled
 
 [nodejs]
 disabled = true
 
 [gcloud]
 disabled = true
+
+# Icon lists
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
 
 [os.symbols]
 Windows = "󰍲"
