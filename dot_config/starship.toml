@@ -1,5 +1,4 @@
 "$schema" = 'https://starship.rs/config-schema.json'
-
 # The way that this works is complicated: the gruvbox preset complicates things, as it set a
 # particular background color for an area. Modules expect to be on a "transparant" background, so if
 # you add a module to the statusbar, then you get intermitted black in the statusbar. So you always
@@ -27,6 +26,7 @@ $directory\
 [](fg:color_orange bg:color_aqua)\
 $git_branch\
 $git_status\
+$git_metrics\
 [](fg:color_aqua bg:color_blue)\
 [](fg:color_blue bg:color_gray)\
 $kubernetes\
@@ -90,8 +90,14 @@ style = "fg:color_foreground bg:color_aqua"
 format = "[ $symbol$branch(:$remote_branch) ]($style)"
 
 [git_status]
-style = "fg:color_foreground bold bg:color_aqua"
+style = "fg:color_foreground bg:color_aqua"
 format = '([\[$all_status$ahead_behind\] ]($style))'
+
+[git_metrics]
+disabled = false
+added_style = "fg:green bold bg:color_aqua"
+deleted_style = "fg:red bold bg:color_aqua"
+format = '([+$added ]($added_style))([-$deleted ]($deleted_style))'
 
 [kubernetes]
 disabled = false
@@ -127,9 +133,6 @@ pipestatus = true
 format = '[$symbol $status <$common_meaning>]($style) '
 
 # Old, non-migrated modules
-
-[git_metrics]
-disabled = false
 
 [direnv]
 disabled = false
