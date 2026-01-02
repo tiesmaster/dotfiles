@@ -4,12 +4,13 @@ macos-option-as-alt = true
 cursor-style = "block"
 cursor-style-blink = false
 
-# shell-integration = none
-# term = xterm-256color
-
 background = "#2b2b2b"
 foreground = "#e7e7e7"
 
 macos-icon = "xray"
 
 bold-color = green
+
+# Enable the xterm-ghostty -> xterm-256color conversion, don't do the ssh-terminfo just yet
+# as I don't know how that will pan out.
+shell-integration-features = sudo,ssh-env,title
