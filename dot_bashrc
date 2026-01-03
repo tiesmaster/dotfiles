@@ -102,3 +102,17 @@ then
   # [1] https://github.com/sbstp/kubie/issues/371
   kubie ctx jarvis
 fi
+
+if [[ -n $(chezmoi status) ]]
+then
+  echo
+  echo DOTFILES: your dotfiles are NOT up to date, see below for the status
+  chezmoi status |pr -to 4
+fi
+
+if [[ -n $(git -C $(chezmoi source-path) status -s) ]]
+then
+  echo
+  echo 'DOTFILES: your dotfiles (git repo) has pending changes, see below for the status'
+  git -C $(chezmoi source-path) status -s |pr -to 4
+fi
