@@ -160,6 +160,9 @@ disabled = true
 [gcloud]
 disabled = true
 
+[package]
+disabled = true
+
 # Icon lists
 
 [directory.substitutions]
