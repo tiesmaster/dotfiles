@@ -30,6 +30,7 @@ $git_status\
 $git_metrics\
 [](fg:color_aqua bg:color_blue)\
 $golang\
+$helm\
 $terraform\
 $direnv\
 [](fg:color_blue bg:color_gray)\
@@ -104,6 +105,10 @@ format = '([+$added ]($added_style))([-$deleted ]($deleted_style))'
 [golang]
 style = "fg:color_foreground bg:color_blue"
 format = '[ $symbol($version)]($style)'
+
+[helm]
+style = "fg:color_foreground bg:color_blue"
+format = '[ $symbol($version) ]($style)'
 
 [terraform]
 style = "fg:color_foreground bg:color_blue"
