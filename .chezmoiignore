@@ -4,6 +4,8 @@ key.txt.age
 Dockerfile
 compose.yaml
 
+ref
+
 {{- if ne .chezmoi.hostname "warmachine" }}
 # only work related stuff
 .bashrc.d/guida
