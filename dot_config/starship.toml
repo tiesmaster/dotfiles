@@ -137,7 +137,7 @@ style = "fg:red bold bg:color_gray"
 
 [container]
 style = "fg:color_foreground bg:color_gray"
-format = ' [$symbol \[$name\] ]($style) '
+format = '[ $symbol \[$name\] ]($style) '
 
 [time]
 disabled = false
