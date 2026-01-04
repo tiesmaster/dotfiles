@@ -1,4 +1,0 @@
-function gi() { curl https://www.gitignore.io/api/$@ ;}
-
-build() { msbuild.exe Coolblue.Vanessa/Vanessa.sln; }
-
