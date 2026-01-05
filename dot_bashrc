@@ -14,6 +14,10 @@ export PATH=~/bin:~/.local/bin:~/go/bin:${PATH}
 export EDITOR=vim
 export LESS="--ignore-case --quit-if-one-screen --long-prompt --raw-control-chars"
 
+export CDPATH=.:~:~/src
+shopt -s cdspell
+
+# Ensure that K9s reads the config on OSX from the same place as how that works on linux
 export K9S_CONFIG_DIR=~/.config/k9s
 
 # export DOTFILES_START_KUBIE_SUBSHELL_IMMEDIATELY=1
