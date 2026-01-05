@@ -12,7 +12,7 @@
 # Set env vars
 export PATH=~/bin:~/.local/bin:~/go/bin:${PATH}
 export EDITOR=vim
-export LESS="FRXi"
+export LESS="--ignore-case --quit-if-one-screen --long-prompt --raw-control-chars"
 
 export K9S_CONFIG_DIR=~/.config/k9s
 
