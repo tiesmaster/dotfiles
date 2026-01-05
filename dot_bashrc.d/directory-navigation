@@ -1,0 +1,23 @@
+# bash cd configuration
+shopt -s cdspell
+
+# aliases: bash
+alias pd="pushd"
+alias pp="popd"
+
+export CDPATH=.:~:~/src
+
+# tere configuration
+
+# shellcheck disable=SC2155 disable=SC2164
+TERE_OPTS=--gap-search-anywhere
+
+tere() {
+    local result=$(command tere $TERE_OPTS "$@")
+    [ -n "$result" ] && cd -- "$result"
+}
+
+alias t=tere
+
+# rupa/z: z.sh loading
+. ~/bin/z.sh
