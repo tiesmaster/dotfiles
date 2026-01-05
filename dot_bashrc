@@ -23,6 +23,23 @@ export K9S_CONFIG_DIR=~/.config/k9s
 # aliases: general aliases
 alias c='code .'
 
+# aliases: bash
+alias pd="pushd"
+alias pp="popd"
+
+# aliases: linux sysadmin
+alias l='ls -CF'
+alias ls='ls -hFG --color=auto'
+alias la='ls -A'
+alias ll='ls -alF'
+
+alias grep='grep --colour=auto'
+
+alias df='df -h'
+alias du='du -h'
+alias dus='du -s'
+alias du1='du --max-depth=1'
+
 # aliases: meta: manage bash
 alias eb='czew ~/.bashrc'
 alias ek9s='czew ~/.config/k9s/hotkeys.yaml'
