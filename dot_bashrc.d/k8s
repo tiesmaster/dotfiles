@@ -49,14 +49,9 @@ alias v=velero
 # aliases: development aliases
 alias label-nodes="kubectl get nodes --no-headers   |awk '{print \$1}' | xargs -I {} -n1 kubectl label node {} topology.kubernetes.io/zone={}"
 
-# Completions
-type helm &>/dev/null && . <(helm completion bash)
+# Addtional completions for 1 letter aliases
 complete -o default -F __start_helm h
-
-type velero &>/dev/null && . <(velero completion bash)
 complete -o default -F __start_velero v
-
-# Addtional completions
 complete -o default -F __start_kubectl k
 complete -o default -F __start_flux f
 
