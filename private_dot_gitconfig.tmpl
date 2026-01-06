@@ -50,6 +50,15 @@
 	updates = commit -v --amend -Chead
 	updatea = commit -va --amend -Chead
 
+	#assume aliases
+	assume = update-index --assume-unchanged
+	unassume = update-index --no-assume-unchanged
+	#show assumed files
+	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+	#unassume all the assumed files
+	unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
+	assumeall = "!git st -s | awk {'print $2'} | xargs git assume"
+
 	r = reset
 	r1 = reset HEAD^
 	r2 = reset HEAD^^
@@ -60,7 +69,14 @@
 	irebase = "rebase -i"
 	iarebase = "rebase -i --autosquash"
 
+	# #merges
+	ours = "!f() { git co --ours $@ && git add $@; }; f"
+	theirs = "!f() { git co --theirs $@ && git add $@; }; f"
+
 	sl = stash list
+	ss = stash save
+	sa = stash apply
+	sp = stash pop
 
 	pu = !git push --set-upstream origin $(git branch --show-current)
 	pushf = push --force-with-lease
@@ -92,3 +108,22 @@
 	# Checkout PR branches, and cleanup
 	# pr = "!f() { git fetch -fu ${2:-upstream} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
 	# pr-clean = "!git for-each-ref refs/heads/pr/* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
+
+	#list commands
+	tryout-le = log --oneline --decorate
+	tryout-ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	tryout-ls1 = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	tryout-ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+	tryout-lds = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph
+	tryout-lc  = "!f() { git ll "$1"^.."$1"; }; f"
+	tryout-lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+	#list all aliases
+	tryout-diff = diff --word-diff
+	tryout-d = diff --word-diff
+	tryout-dc = diff --cached
+	#list modified files in last commit
+	tryout-dl = "!git ll -1"
+	#diff last commit
+	tryout-dlc = diff --cached HEAD^
+	tryout-dr  = "!f() { git diff -w "$1"^.."$1"; }; f"
+	tryout-diffr  = "!f() { git diff "$1"^.."$1"; }; f"
