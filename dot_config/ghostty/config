@@ -17,3 +17,5 @@ shell-integration-features = sudo,ssh-env,title
 
 # Increase scrollback limit to 100MB, instead of 10MB, as I encounter the end quite often
 scrollback-limit = 100_000_000
+
+theme = Solarized Dark Higher Contrast
