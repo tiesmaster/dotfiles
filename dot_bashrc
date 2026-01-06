@@ -17,6 +17,9 @@ export LESS="--ignore-case --quit-if-one-screen --long-prompt --raw-control-char
 # Ensure that K9s reads the config on OSX from the same place as how that works on linux
 export K9S_CONFIG_DIR=~/.config/k9s
 
+# Tell Terraform to share the provider plugins, saves 20 gigs
+export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
+
 # export DOTFILES_START_KUBIE_SUBSHELL_IMMEDIATELY=1
 
 # Aliases
