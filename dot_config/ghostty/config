@@ -14,3 +14,6 @@ bold-color = green
 # Enable the xterm-ghostty -> xterm-256color conversion, don't do the ssh-terminfo just yet
 # as I don't know how that will pan out.
 shell-integration-features = sudo,ssh-env,title
+
+# Increase scrollback limit to 100MB, instead of 10MB, as I encounter the end quite often
+scrollback-limit = 100_000_000
