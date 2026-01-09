@@ -5,7 +5,7 @@ shopt -s cdspell
 alias pd="pushd"
 alias pp="popd"
 
-export CDPATH=.:~:~/src
+export CDPATH=.:~:~/src:~/src/guida:~/src/guida/customers
 
 # tere configuration
 
