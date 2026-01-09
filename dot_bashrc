@@ -81,6 +81,9 @@ alias tfd='terraform destroy'
 alias tfyolo='terraform apply -auto-approve'
 alias tfi='terraform init'
 alias tfiu='terraform init -upgrade'
+alias tfsp='terraform state pull'
+alias tfspp='terraform state pull |less'
+alias tfspc='terraform state pull |code - '
 
 # aliases: minikube
 alias mk=minikube
