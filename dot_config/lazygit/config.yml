@@ -1,2 +1,6 @@
 ---
 notARepository: quit
+customCommands:
+  - key: '<f5>'
+    context: 'global'
+    command: 'code .'
