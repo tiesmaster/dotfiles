@@ -90,6 +90,9 @@ alias tfsp='terraform state pull'
 alias tfspp='terraform state pull |less'
 alias tfspc='terraform state pull |code - '
 
+# aliases: azure
+alias azl-set-default='az account set --subscription "$(az account list --query "[].name" --output tsv | fzf)"'
+
 # aliases: minikube
 alias mk=minikube
 alias mks='minikube start'
