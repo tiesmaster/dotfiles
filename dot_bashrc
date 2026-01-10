@@ -18,10 +18,6 @@ export LESS="--ignore-case --quit-if-one-screen --long-prompt --raw-control-char
 # TODO: Make this conditionally based on OSX
 export XDG_CONFIG_HOME=~/.config
 
-# Ensure that K9s reads the config on OSX from the same place as how that works on linux
-# TODO: Check if this can go now that we have $XDG_CONFIG_HOME set
-export K9S_CONFIG_DIR=~/.config/k9s
-
 # Tell Terraform to share the provider plugins, saves 20 gigs
 export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
 
