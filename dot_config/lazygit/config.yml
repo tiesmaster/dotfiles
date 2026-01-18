@@ -4,3 +4,15 @@ customCommands:
   - key: '<f5>'
     context: 'global'
     command: 'code .'
+  - key: '<f6>'
+    context: 'global'
+    command: 'git sync'
+    output: log
+  - key: '<f7>'
+    context: 'global'
+    command: 'git pmr'
+    output: log
+  - key: '<f8>'
+    context: 'global'
+    command: 'git pmra'
+    output: log
