@@ -19,5 +19,6 @@ tere() {
 
 alias t=tere
 
-# rupa/z: z.sh loading
-. ~/bin/z.sh
+# zoxide configuration
+eval "$(zoxide init bash)"
+export _ZO_DATA_DIR="$HOME/.config/zoxide/"
