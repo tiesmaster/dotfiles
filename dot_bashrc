@@ -2,8 +2,8 @@
 . ~/.bashrc.d/homebrew
 . ~/.bashrc.d/direnv
 . ~/.bashrc.d/chezmoi
-. ~/.bashrc.d/directory-navigation
 . ~/.bashrc.d/starship
+. ~/.bashrc.d/directory-navigation
 . ~/.bashrc.d/golang
 
 . ~/.bashrc.d/k8s
