@@ -22,7 +22,7 @@ customCommands:
     description: blame file at tree
     output: terminal
   - key: b
-    command: tig blame {{.SelectedSubCommit.Sha}} -- {{.SelectedCommitFile.Name}}
+    command: tig blame {{.SelectedCommit.Sha}} -- {{.SelectedCommitFile.Name}}
     context: commitFiles
     description: blame file at revision
     output: terminal
@@ -47,7 +47,7 @@ customCommands:
     description: tig branch (`t` again to browse files at revision)
     output: terminal
   - key: t
-    command: tig {{.SelectedSubCommit.Sha}} -- {{.SelectedCommitFile.Name}}
+    command: tig {{.SelectedCommit.Sha}} -- {{.SelectedCommitFile.Name}}
     context: commitFiles
     description: tig file (history of commits affecting file)
     output: terminal
