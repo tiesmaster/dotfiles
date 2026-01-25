@@ -41,6 +41,12 @@ alias du='du -h'
 alias dus='du -s'
 alias du1='du --max-depth=1'
 
+# aliases: bat pager
+# Run ripgrep via the bat pager
+alias rg='batgrep'
+# Use bat as pager
+alias man='batman'
+
 # aliases: meta: manage bash
 alias eb='czew ~/.bashrc'
 alias ek9s='czew ~/.config/k9s/hotkeys.yaml'
