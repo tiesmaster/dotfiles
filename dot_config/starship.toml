@@ -32,6 +32,8 @@ $git_metrics\
 $golang\
 $helm\
 $terraform\
+$python\
+$ruby\
 $direnv\
 [](fg:color_blue bg:color_gray)\
 $kubernetes\
@@ -114,6 +116,14 @@ format = '[ $symbol($version) ]($style)'
 [terraform]
 style = "fg:color_foreground bg:color_blue"
 format = '[ $symbol$workspace]($style)'
+
+[python]
+style = "fg:color_foreground bg:color_blue"
+format = '[ ${symbol}${pyenv_prefix}(${version} )(\($virtualenv\))]($style)'
+
+[ruby]
+style = "fg:color_foreground bg:color_blue"
+format = '[ $symbol($version) ]($style)'
 
 [direnv]
 disabled = false
