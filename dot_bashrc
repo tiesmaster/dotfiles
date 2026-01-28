@@ -77,20 +77,25 @@ alias ops='op signin'
 # aliases: docker compose
 alias dc='docker compose'
 
-# aliases: terraform
-alias tf=terraform
-alias tff='terraform fmt'
-alias tfv='terraform validate'
-alias tfr='terraform refresh'
-alias tfp='terraform plan'
-alias tfa='terraform apply'
-alias tfd='terraform destroy'
-alias tfyolo='terraform apply -auto-approve'
-alias tfi='terraform init'
-alias tfiu='terraform init -upgrade'
-alias tfsp='terraform state pull'
-alias tfspp='terraform state pull |less'
-alias tfspc='terraform state pull |code - '
+# aliases: terraform/opentofu
+alias tf=tofu
+
+# tfl => go to legacy terraform; tft => go to TF tofu
+alias tfl='alias tf=terraform'
+alias tft='alias tf=tofu'
+
+alias tff='tf fmt'
+alias tfv='tf validate'
+alias tfr='tf refresh'
+alias tfp='tf plan'
+alias tfa='tf apply'
+alias tfd='tf destroy'
+alias tfyolo='tf apply -auto-approve'
+alias tfi='tf init'
+alias tfiu='tf init -upgrade'
+alias tfsp='tf state pull'
+alias tfspp='tf state pull |less'
+alias tfspc='tf state pull |code - '
 
 # aliases: azure
 alias azl-set-default='az account set --subscription "$(az account list --query "[].name" --output tsv | fzf)"'
