@@ -43,7 +43,8 @@ alias du1='du --max-depth=1'
 
 # aliases: bat pager
 # Run ripgrep via the bat pager
-alias rg='batgrep'
+# Seems to not work the same as ripgrep natively (keeps hanging). Check out why
+# alias rg='batgrep'
 # Use bat as pager
 alias man='batman'
 
