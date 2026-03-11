@@ -19,3 +19,6 @@ shell-integration-features = sudo,ssh-env,title
 scrollback-limit = 100_000_000
 
 theme = Solarized Dark Patched
+
+# Enable Quake style terminal via ctrl-`
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
