@@ -37,5 +37,5 @@ hotKeys:
 
   shift-0:
     shortCut: Shift-0
-    description: Viewing NetworkPolicies
-    command: np
+    description: Switch context
+    command: ctx
