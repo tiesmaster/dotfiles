@@ -156,4 +156,5 @@ then
   git -C $(chezmoi source-path) status -s |pr -to 4
 fi
 
-builtin source "${GHOSTTY_RESOURCES_DIR}/shell-integration/bash/ghostty.bash"
+[[ -n "$GHOSTTY_RESOURCES_DIR" && -f "${GHOSTTY_RESOURCES_DIR}/shell-integration/bash/ghostty.bash" ]] && \
+    builtin source "${GHOSTTY_RESOURCES_DIR}/shell-integration/bash/ghostty.bash"
