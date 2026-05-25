@@ -5,8 +5,8 @@ vmap <f9> "+x
 vmap <f11> "+y
 
 nmap <f12> "+gP
-imap <f12> +
-cmap <f12> +
+imap <f12> <C-r>+
+cmap <f12> <C-r>+
 vmap <f12> "+p
 
 map <f6> :set guifont=Lucida_Console:h20:cANSI:qDRAFT<cr>
@@ -15,3 +15,4 @@ set ts=2
 set sw=2
 set sts=2
 set et
+
