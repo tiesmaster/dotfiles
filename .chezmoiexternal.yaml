@@ -1,0 +1,4 @@
+.vim/pack/plugins/start/nerdcommenter:
+  type: git-repo
+  url: https://github.com/preservim/nerdcommenter.git
+  refreshPeriod: 168h
