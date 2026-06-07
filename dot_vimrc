@@ -18,6 +18,11 @@ vmap <f12> "+p
 
 map <f6> :set guifont=Lucida_Console:h20:cANSI:qDRAFT<cr>
 
+" Load some useful packages
+packadd nohlsearch
+packadd hlyank
+packadd osc52
+
 " ================================================================================
 " Legacy options, need to migrate these
 set ts=2
