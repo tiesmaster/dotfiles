@@ -11,6 +11,9 @@ if has('persistent_undo')
   set undofile	" keep an undo file (undo changes after closing)
 endif
 
+set background=dark
+colorscheme ron
+
 " clipboard shortcuts
 vmap <f9> "+x
 vmap <f11> "+y
