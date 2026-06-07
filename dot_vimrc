@@ -12,7 +12,7 @@ if has('persistent_undo')
 endif
 
 set background=dark
-colorscheme ron
+colorscheme sorbet
 
 " clipboard shortcuts
 vmap <f9> "+x
