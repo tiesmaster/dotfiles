@@ -1,4 +1,11 @@
-source $VIMRUNTIME/vimrc_example.vim
+source $VIMRUNTIME/defaults.vim
+
+set hlsearch
+
+set backup		" keep a backup file (restore to previous version)
+if has('persistent_undo')
+  set undofile	" keep an undo file (undo changes after closing)
+endif
 
 " clipboard shortcuts
 vmap <f9> "+x
@@ -11,8 +18,30 @@ vmap <f12> "+p
 
 map <f6> :set guifont=Lucida_Console:h20:cANSI:qDRAFT<cr>
 
+" ================================================================================
+" Legacy options, need to migrate these
 set ts=2
 set sw=2
 set sts=2
 set et
 
+" ================================================================================
+" Things from the example VIMRC file, need to check if I want to keep these
+
+" Put these in an autocmd group, so that we can delete them easily.
+augroup vimrcEx
+  au!
+
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
+augroup END
+
+" Add optional packages.
+"
+" The matchit plugin makes the % command work better, but it is not backwards
+" compatible.
+" The ! means the package won't be loaded right away but when plugins are
+" loaded during initialization.
+if has('syntax') && has('eval')
+  packadd! matchit
+endif
