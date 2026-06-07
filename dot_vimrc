@@ -1,7 +1,6 @@
 source $VIMRUNTIME/defaults.vim
 
 set hlsearch
-set ruler
 
 set backup		" keep a backup file (restore to previous version)
 if has('persistent_undo')
