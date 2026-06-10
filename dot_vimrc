@@ -49,6 +49,14 @@ packadd nohlsearch
 packadd hlyank
 packadd osc52
 
+" PLUGIN SETTINGS
+
+" PLUGIN: NERDCommenter
+" Align the comment characters in a single line, instead of as "arrow pattern"
+let g:NERDDefaultAlign = 'left'
+
+map <a-/> <plug>NERDCommenterToggle<cr>
+
 " ================================================================================
 " Legacy options, need to migrate these
 set ts=2
