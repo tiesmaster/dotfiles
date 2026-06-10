@@ -159,3 +159,5 @@ fi
 if [[ -n "$GHOSTTY_RESOURCES_DIR" && -f "${GHOSTTY_RESOURCES_DIR}/shell-integration/bash/ghostty.bash" ]]; then
     builtin source "${GHOSTTY_RESOURCES_DIR}/shell-integration/bash/ghostty.bash"
 fi
+
+# vim:ft=sh
