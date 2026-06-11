@@ -12,9 +12,3 @@ let mapleader = ","
 
 " how can this be integrated into chezmoi?
 nmap <f3> :tabedit $HOME/.vimrc<cr>
-
-" how can this directory be created up front by chezmoi?
-" Directories for swp files
-if isdirectory(expand("~/.vim/backup"))
-	set backupdir=~/.vim/backup
-endif
