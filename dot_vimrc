@@ -16,6 +16,9 @@ if has('persistent_undo')
   set undofile	" keep an undo file (undo changes after closing)
 endif
 
+" Directories for swp files (chezmoi ensure this directory exists)
+set backupdir=~/.vim/backup
+
 " nice statusbar
 set laststatus=2
 
