@@ -1,7 +1,3 @@
-" Do I want to use this as leader? And why?
-" What do other people do on this regard?
-let mapleader = ","
-
 " Indeed, do this
 
 " these has been disabled to facilitate moving them to the appropriate filetype plugins

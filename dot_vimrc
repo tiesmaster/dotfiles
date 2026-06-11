@@ -1,5 +1,7 @@
 source $VIMRUNTIME/defaults.vim
 
+let mapleader = "<space>"
+
 set ignorecase
 set diffopt+=iwhiteeol
 set hlsearch
