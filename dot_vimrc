@@ -1,7 +1,7 @@
 source $VIMRUNTIME/defaults.vim
 
 set ignorecase
-set diffopt+=iwhite
+set diffopt+=iwhiteeol
 set hlsearch
 set number
 set relativenumber
@@ -49,6 +49,7 @@ packadd nohlsearch
 packadd hlyank
 packadd osc52
 
+" ================================================================================
 " PLUGIN SETTINGS
 
 " PLUGIN: NERDCommenter
