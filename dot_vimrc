@@ -8,6 +8,8 @@ set relativenumber
 set list
 set listchars=tab:▸·,trail:·
 
+set shortmes+=I " don't show the welcome intro screen
+
 set backup		" keep a backup file (restore to previous version)
 if has('persistent_undo')
   set undofile	" keep an undo file (undo changes after closing)
