@@ -5,6 +5,7 @@ set diffopt+=iwhiteeol
 set hlsearch
 set number
 set relativenumber
+set cursorline
 set list
 set listchars=tab:▸·,trail:·
 
@@ -35,6 +36,26 @@ set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 set background=dark
 colorscheme sorbet
 
+" Load some useful packages
+packadd nohlsearch
+packadd hlyank
+packadd osc52
+
+" ================================================================================
+" MAPPINGS
+" general mappings
+map <f2> :h quickref<cr>
+
+" map Y to behave like it's counterparts (C, D, etc.), see the VIM docs for
+" more info (type :h Y)
+map Y y$
+
+" TextMate simulated keystroke's for shifting width with a single keystroke
+nmap <a-[> <<
+nmap <a-]> >>
+vmap <s-tab> <gv
+vmap <tab> >gv
+
 " clipboard shortcuts
 vmap <f9> "+x
 vmap <f11> "+y
@@ -45,11 +66,6 @@ cmap <f12> <C-r>+
 vmap <f12> "+p
 
 map <f6> :set guifont=Lucida_Console:h20:cANSI:qDRAFT<cr>
-
-" Load some useful packages
-packadd nohlsearch
-packadd hlyank
-packadd osc52
 
 " ================================================================================
 " PLUGIN SETTINGS
