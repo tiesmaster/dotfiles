@@ -1,6 +1,6 @@
 source $VIMRUNTIME/defaults.vim
 
-let mapleader = "<space>"
+let mapleader = " "
 
 set ignorecase
 set diffopt+=iwhiteeol
