@@ -18,7 +18,7 @@ if has('persistent_undo')
   set undofile	" keep an undo file (undo changes after closing)
 endif
 
-" Directories for swp files (chezmoi ensure this directory exists)
+" Directories for swp files (chezmoi ensures this directory exists)
 set backupdir=~/.vim/backup
 
 " nice statusbar
@@ -41,6 +41,11 @@ set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 set background=dark
 colorscheme sorbet
 
+" ================================================================================
+" TOOLING
+" Load some useful plugins
+runtime! ftplugin/man.vim
+
 " Load some useful packages
 packadd nohlsearch
 packadd hlyank
@@ -50,6 +55,7 @@ packadd osc52
 " MAPPINGS
 " general mappings
 map <f2> :h quickref<cr>
+nmap <f3> :sp ~/.vimrc<cr>
 
 " map Y to behave like it's counterparts (C, D, etc.), see the VIM docs for
 " more info (type :h Y)
