@@ -5,6 +5,3 @@
 "set textwidth=120
 "set tabstop=4
 "set shiftwidth=4
-
-" how can this be integrated into chezmoi?
-nmap <f3> :tabedit $HOME/.vimrc<cr>
