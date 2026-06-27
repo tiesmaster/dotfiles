@@ -55,7 +55,8 @@ packadd osc52
 " MAPPINGS
 " general mappings
 map <f2> :h quickref<cr>
-nmap <f3> :sp ~/.vimrc<cr>
+nmap <f3> :execute 'sp ' . system('chezmoi source-path ~/.vimrc \| tr -d "\n"')<cr>
+nmap <s-f3> :sp ~/.vimrc<cr>
 
 " map Y to behave like it's counterparts (C, D, etc.), see the VIM docs for
 " more info (type :h Y)
