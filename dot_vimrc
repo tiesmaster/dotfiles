@@ -82,9 +82,13 @@ map <f6> :set guifont=Lucida_Console:h20:cANSI:qDRAFT<cr>
 " ================================================================================
 " AUTOCMDs
 
+" apply the dot_vimrc changes back to ~/.vimrc, when editing via F3/S-F3, and
+" reload
 augroup chezmoi
   autocmd!
   autocmd BufWritePost dot_vimrc silent! !chezmoi apply
+  autocmd BufWritePost dot_vimrc source ~/.vimrc
+  autocmd BufWritePost ~/.vimrc source ~/.vimrc
 augroup END
 
 " ================================================================================
