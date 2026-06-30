@@ -63,8 +63,8 @@ nmap <s-f3> :sp ~/.vimrc<cr>
 map Y y$
 
 " TextMate simulated keystroke's for shifting width with a single keystroke
-nmap <a-[> <<
-nmap <a-]> >>
+nmap <s-tab> <<
+nmap <tab> >>
 vmap <s-tab> <gv
 vmap <tab> >gv
 
