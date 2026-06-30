@@ -70,7 +70,7 @@ vmap <tab> >gv
 
 " clipboard shortcuts
 vmap <f9> "+x
-vmap <f11> "+y
+vmap <f10> "+y
 
 nmap <f12> "+gP
 imap <f12> <C-r>+
