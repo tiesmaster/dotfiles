@@ -12,3 +12,8 @@
     type = "git-repo"
     url = "https://github.com/ctrlpvim/ctrlp.vim.git"
     refreshPeriod = "168h"
+
+[".vim/pack/plugins/start/vim-unimpaired"]
+    type = "git-repo"
+    url = "https://github.com/tpope/vim-unimpaired.git"
+    refreshPeriod = "168h"
