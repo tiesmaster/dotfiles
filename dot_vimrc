@@ -64,6 +64,7 @@ packadd osc52
 " ================================================================================
 " MAPPINGS
 " general mappings
+nmap <s-f1> :helptags ALL<cr>
 map <f2> :h quickref<cr>
 nmap <f3> :execute 'sp ' . system('chezmoi source-path ~/.vimrc \| tr -d "\n"')<cr>
 nmap <s-f3> :sp ~/.vimrc<cr>
