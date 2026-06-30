@@ -2,6 +2,8 @@ source $VIMRUNTIME/defaults.vim
 
 let mapleader = " "
 
+" ================================================================================
+" OPTIONS
 set ignorecase
 set diffopt+=iwhiteeol
 set hlsearch
@@ -40,6 +42,14 @@ set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 
 set background=dark
 colorscheme sorbet
+
+" Allow copy/pasting from remote linux systems via OSC52. The force is needed
+" as tmux blocks DA1 auto-detection queries, and the clipmethod isn't
+" enabled.
+let g:osc52_force_avail = 1
+
+packadd osc52
+set clipmethod+=osc52
 
 " ================================================================================
 " TOOLING
