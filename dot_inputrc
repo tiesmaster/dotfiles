@@ -27,6 +27,9 @@ set visible-stats on
 # F5
 "\e[15~": "k9s\C-j"
 
+# F12
+"\e[24~": "tmux a\C-j"
+
 ### OLD ###
 
 # Doesn't seems to be needed
