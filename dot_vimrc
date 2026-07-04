@@ -7,11 +7,13 @@ let mapleader = " "
 set ignorecase
 set diffopt+=iwhiteeol
 set hlsearch
+set showmatch
 set number
 set relativenumber
 set cursorline
 set list
 set listchars=tab:▸·,trail:·
+
 
 set shortmess+=I " don't show the welcome intro screen
 
