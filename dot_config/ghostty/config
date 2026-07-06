@@ -1,6 +1,8 @@
 font-size = 16
 macos-option-as-alt = true
 
+clipboard-read = allow
+
 cursor-style = "block"
 cursor-style-blink = false
 
