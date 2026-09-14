@@ -14,5 +14,5 @@ Host !10.0.0.10 10.*.*.* 192.168.*.* 172.16.*.* 172.17.*.* 172.18.*.* 172.19.*.*
     StrictHostKeyChecking no
 
 {{ if eq .chezmoi.hostname "warmachine" }}
-Include config.guida
+Include ~/src/guida/playground/cli-scripts/ssh_config/generated_ssh_config.conf
 {{- end }}
