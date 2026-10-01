@@ -1,0 +1,17 @@
+{
+  "theme": "dark",
+  "permissions": {
+    "deny": [
+      "Read(~/.kube/**)",
+      "Read(~/.talos/**)",
+      "Read(~/.ssh/id_*)",
+      "Read(~/.config/chezmoi/key.txt)",
+      "Bash(chezmoi diff:*)",
+      "Bash(chezmoi cat:*)",
+      "Bash(chezmoi apply -v:*)",
+      "Bash(chezmoi update -v:*)",
+      "Bash(chezmoi decrypt:*)",
+      "Bash(age -d:*)"
+    ]
+  }
+}
