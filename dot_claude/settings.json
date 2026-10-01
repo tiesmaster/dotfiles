@@ -13,5 +13,9 @@
       "Bash(chezmoi decrypt:*)",
       "Bash(age -d:*)"
     ]
+  },
+  "attribution": {
+    "commit": "",
+    "pr": ""
   }
 }
