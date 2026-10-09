@@ -1,5 +1,8 @@
 {
-  "theme": "dark",
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "permissions": {
     "deny": [
       "Read(~/.kube/**)",
@@ -14,8 +17,8 @@
       "Bash(age -d:*)"
     ]
   },
-  "attribution": {
-    "commit": "",
-    "pr": ""
-  }
+  "theme": "dark",
+  "switchModelsOnFlag": true,
+  "agentPushNotifEnabled": true,
+  "model": "claude-sonnet-5"
 }
