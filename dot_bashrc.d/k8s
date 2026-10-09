@@ -53,6 +53,11 @@ alias v=velero
 alias label-nodes="kubectl get nodes --no-headers   |awk '{print \$1}' | xargs -I {} -n1 kubectl label node {} topology.kubernetes.io/zone={}"
 
 # Addtional completions for 1 letter aliases
+# Load completions upfront: bash-completion lazy-loads per command name, which never triggers for aliases
+for cmd in kubectl helm velero flux; do
+  type "$cmd" &>/dev/null || continue
+  type "__start_$cmd" &>/dev/null || . <("$cmd" completion bash)
+done
 complete -o default -F __start_helm h
 complete -o default -F __start_velero v
 complete -o default -F __start_kubectl k
