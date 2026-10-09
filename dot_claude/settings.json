@@ -17,8 +17,8 @@
       "Bash(age -d:*)"
     ]
   },
+  "model": "opus",
   "theme": "dark",
   "switchModelsOnFlag": true,
-  "agentPushNotifEnabled": true,
-  "model": "claude-sonnet-5"
+  "agentPushNotifEnabled": true
 }
