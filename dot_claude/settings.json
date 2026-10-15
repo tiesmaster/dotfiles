@@ -20,5 +20,6 @@
   "model": "opus",
   "theme": "dark",
   "switchModelsOnFlag": true,
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "tui": "fullscreen"
 }
