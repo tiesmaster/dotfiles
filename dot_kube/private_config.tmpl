@@ -1,0 +1,17 @@
+{{- if eq .chezmoi.hostname "warmachine" -}}
+---
+apiVersion: v1
+clusters: []
+contexts: []
+current-context: dummy
+kind: Config
+preferences: {}
+users: []
+{{- else -}}
+apiVersion: v1
+clusters: null
+contexts: null
+current-context: jarvis
+kind: Config
+users: null
+{{- end }}
