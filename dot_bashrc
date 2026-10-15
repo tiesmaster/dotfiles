@@ -5,6 +5,7 @@
 . ~/.bashrc.d/starship
 . ~/.bashrc.d/directory-navigation
 . ~/.bashrc.d/golang
+. ~/.bashrc.d/tmux
 
 . ~/.bashrc.d/k8s
 [[ -f ~/.bashrc.d/guida ]] && . ~/.bashrc.d/guida
