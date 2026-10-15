@@ -42,7 +42,17 @@ alias kak='k apply -k'
 alias kworkloads='k get nodes -L guida.io/workload'
 alias kzones='k get nodes -o wide -L topology.kubernetes.io/region,topology.kubernetes.io/zone,kubernetes.io/arch,kubernetes.io/os,node.kubernetes.io/instance-type,guida.io/workload'
 alias kpods='k get pod -L app,app.kubernetes.io/name,app.kubernetes.io/instance,app.kubernetes.io/component'
+alias kcheckpods="kubectl get pods -A -o wide --no-headers |egrep -v \"Running|Completed\""
+alias klset="kubectl get lset -A -o custom-columns=\
+  'NAMESPACE:.metadata.namespace,NAME:.metadata.name,GATEWAY_NAMESPACE:.spec.parentRef.namespace,HOSTNAMES:.spec.listeners[*].hostname,PORTS:.spec.listeners[*].port'"
 alias kall-resources='k api-resources --verbs=list --namespaced -o name | xargs -n 1 k get --show-kind --ignore-not-found -n'
+
+# aliases: flux
+alias fhr="flux get helmrelease"
+alias fks="flux get ks"
+alias fsuk="flux suspend ks"
+alias frek="flux resume ks"
+alias fsyn="flux reconcile source git flux-system"
 
 # aliases: other k8s ecosystem tools
 alias f=flux
