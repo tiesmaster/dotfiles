@@ -1,0 +1,7 @@
+vpn-in-tmux() {
+  [ -n "$TMUX" ] || { echo "Not inside tmux" >&2; return 1; }
+  local pane
+  pane=$(tmux new-window -d -P -F '#{pane_id}' "$*")
+  tmux set -p -t "$pane" remain-on-exit on      # keep output visible if it dies
+  tmux set -w -t "$pane" monitor-activity on    # alert on output while you're away
+}
