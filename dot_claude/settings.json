@@ -18,8 +18,8 @@
     ]
   },
   "model": "opus",
+  "tui": "fullscreen",
   "theme": "dark",
   "switchModelsOnFlag": true,
-  "agentPushNotifEnabled": true,
-  "tui": "fullscreen"
+  "agentPushNotifEnabled": true
 }
