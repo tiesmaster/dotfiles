@@ -1,8 +1,31 @@
+# Run a VPN in a small pane at the bottom of the current window, and watch its output with
+# tmux-vpn-watch, which shows its state in the status bar, and a message when it changes.
+# Only one VPN at a time is supported.
+#
+# usage: vpn-in-tmux <name> <command...>
 vpn-in-tmux() {
   [ -n "$TMUX" ] || { echo "Not inside tmux" >&2; return 1; }
+  [ $# -ge 2 ] || { echo "usage: vpn-in-tmux <name> <command...>" >&2; return 1; }
   local name=$1; shift
+
+  local watcher
+  watcher=$(command -v tmux-vpn-watch) || { echo "tmux-vpn-watch not found" >&2; return 1; }
+
+  local running running_pane
+  running=$(tmux show -gv @vpn 2>/dev/null)
+  running_pane=$(tmux show -gv @vpn_pane 2>/dev/null)
+  if [ -n "$running" ] && [ "$(tmux display -p -t "$running_pane" '#{pane_dead}' 2>/dev/null)" = 0 ]; then
+    echo "VPN $running is already running (pane $running_pane), not starting $name" >&2
+    return 1
+  fi
+
+  # The command waits for the watcher to be attached, so no output is missed.
+  local channel="vpn-in-tmux-$$-$RANDOM"
   local pane
-  pane=$(tmux new-window -d -n "vpn-$name" -P -F '#{pane_id}' "$*")
+  pane=$(tmux split-window -d -v -l 10 -P -F '#{pane_id}' "tmux wait-for $channel; $(printf '%q ' "$@")") || return
   tmux set -p -t "$pane" remain-on-exit on
-  tmux set -w -t "$pane" monitor-activity on
+  tmux set -g @vpn "$name"
+  tmux set -g @vpn_pane "$pane"
+  tmux pipe-pane -O -t "$pane" "exec $(printf '%q ' "$watcher" "$name" "$pane" "${TMUX%%,*}")"
+  tmux wait-for -S "$channel"
 }

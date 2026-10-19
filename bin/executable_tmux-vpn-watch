@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+# Watches the output of a VPN pane, and reflects its state in tmux.
+#
+# Attached by vpn-in-tmux (~/.bashrc.d/tmux) via `tmux pipe-pane -O`, so it gets the pane output
+# on stdin. Keeps the state in the global tmux user options @vpn_state (connecting, up, down), and
+# shows a message (and a desktop notification when available) when that state changes. Clears the
+# VPN options when the pane output ends, i.e. when the VPN command exits or the pane is killed.
+#
+# usage: tmux-vpn-watch <name> <pane-id> <tmux-socket>
+
+# Patterns are bash regexes, matched case-insensitively against each output line.
+UP_PATTERNS=(
+  'Initialization Sequence Completed'
+)
+DOWN_PATTERNS=(
+  'connection lost'
+  'Connection reset'
+  'Inactivity timeout'
+  'restarting'
+  'SIGTERM'
+)
+
+name=$1
+pane=$2
+socket=$3
+
+t() {
+  tmux -S "$socket" "$@" 2>/dev/null
+}
+
+notify() {
+  t display-message -d 5000 "$1"
+  if command -v notify-send >/dev/null 2>&1; then
+    notify-send "tmux VPN" "$1" 2>/dev/null
+  elif command -v osascript >/dev/null 2>&1; then
+    osascript -e "display notification \"$1\" with title \"tmux VPN\"" 2>/dev/null
+  fi
+}
+
+matches() {
+  local line=$1 pattern
+  shift
+  for pattern in "$@"; do
+    [[ $line =~ $pattern ]] && return 0
+  done
+  return 1
+}
+
+state=connecting
+t set -g @vpn_state "$state"
+
+shopt -s nocasematch
+while IFS= read -r line || [[ -n $line ]]; do
+  line=${line%$'\r'}
+  if matches "$line" "${UP_PATTERNS[@]}"; then
+    new=up
+  elif matches "$line" "${DOWN_PATTERNS[@]}"; then
+    new=down
+  else
+    continue
+  fi
+  [[ $new == "$state" ]] && continue
+  state=$new
+  t set -g @vpn_state "$state"
+  case $state in
+    up) notify "VPN $name connected" ;;
+    down) notify "⚠ VPN $name DROPPED" ;;
+  esac
+done
+shopt -u nocasematch
+
+# Only clean up if no other VPN took over in the meantime.
+if [[ $(t show -gv @vpn_pane) == "$pane" ]]; then
+  t set -gu @vpn
+  t set -gu @vpn_state
+  t set -gu @vpn_pane
+fi
+notify "VPN $name stopped"
