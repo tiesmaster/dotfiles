@@ -77,6 +77,10 @@ ssh_symbol ="🌐"
 
 [shlvl]
 disabled = false
+{{- if ne .chezmoi.hostname "warmachine" }}
+# only show the shell level from 3 on
+threshold = 3
+{{- end }}
 style = "fg:color_foreground bg:color_yellow"
 format = '[$symbol$shlvl ]($style)'
 
@@ -132,9 +136,11 @@ format = '[ \($symbol$loaded/$allowed\) ]($style)'
 
 [kubernetes]
 disabled = false
+{{- if eq .chezmoi.hostname "warmachine" }}
 # Only enable this module when we're in a "kubbie" shell, when we're not, the dummy context is
 # selected (no kubectl doesn't work), and the prompt should reflect that.
 detect_env_vars = [ "KUBIE_KUBECONFIG" ]
+{{- end }}
 symbol = "⛵"
 format = '[ $symbol $context( \($namespace\)) ]($style)'
 style = "fg:color_foreground bg:color_gray"
