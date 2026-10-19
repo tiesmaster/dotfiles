@@ -1,11 +1,20 @@
+vpn-in-tmux() {
+  [ -n "$TMUX" ] || { echo "Not inside tmux" >&2; return 1; }
+  local name=$1; shift
+  local pane
+  pane=$(tmux new-window -d -n "vpn-$name" -P -F '#{pane_id}' "$*")
+  tmux set -p -t "$pane" remain-on-exit on
+  tmux set -w -t "$pane" monitor-activity on
+}
+
 # Run a VPN in a small pane at the bottom of the current window, and watch its output with
 # tmux-vpn-watch, which shows its state in the status bar, and a message when it changes.
 # Only one VPN at a time is supported.
 #
-# usage: vpn-in-tmux <name> <command...>
-vpn-in-tmux() {
+# usage: vpn-in-tmux-advanced <name> <command...>
+vpn-in-tmux-advanced() {
   [ -n "$TMUX" ] || { echo "Not inside tmux" >&2; return 1; }
-  [ $# -ge 2 ] || { echo "usage: vpn-in-tmux <name> <command...>" >&2; return 1; }
+  [ $# -ge 2 ] || { echo "usage: vpn-in-tmux-advanced <name> <command...>" >&2; return 1; }
   local name=$1; shift
 
   local watcher

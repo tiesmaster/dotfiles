@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Watches the output of a VPN pane, and reflects its state in tmux.
 #
-# Attached by vpn-in-tmux (~/.bashrc.d/tmux) via `tmux pipe-pane -O`, so it gets the pane output
+# Attached by vpn-in-tmux-advanced (~/.bashrc.d/tmux) via `tmux pipe-pane -O`, so it gets the pane output
 # on stdin. Keeps the state in the global tmux user options @vpn_state (connecting, up, down), and
 # shows a message (and a desktop notification when available) when that state changes. Clears the
 # VPN options when the pane output ends, i.e. when the VPN command exits or the pane is killed.
