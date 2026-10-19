@@ -24,11 +24,11 @@ set visible-stats on
 # F4
 "\eOS": dump-functions
 
-# F8
-"\e[19~": "k9s\C-j"
-
 # F9
-"\e[20~": "claude\C-j"
+"\e[20~": "k9s\C-j"
+
+# F10
+"\e[21~": "claude\C-j"
 
 # F12
 "\e[24~": "tmux a\C-j"

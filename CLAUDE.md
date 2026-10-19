@@ -20,7 +20,7 @@ The shell aliases in `dot_bashrc.d/chezmoi` (`cza`, `czd`, `cze`, `czc`, ...) wr
 - **Encryption** uses age (`.chezmoi.toml.tmpl`). The age identity is itself stored passphrase-encrypted as `key.txt.age` and decrypted to `~/.config/chezmoi/key.txt` by `bin/run_onchange_before_decrypt-private-key.sh.tmpl`. `encrypted_*.age` files can't be read or grepped as plain text; use `chezmoi edit` / `chezmoi decrypt`.
 - **Externals** (`.chezmoiexternal.toml`): `bin/z.sh` and the vim plugins under `.vim/pack/plugins/start/` are downloaded by chezmoi and aren't in the repo.
 - **Bash**: `dot_bashrc` sources the modules in `dot_bashrc.d/` one by one by explicit name, so a new module must be added there (`guida` is sourced only if it exists). On startup the shell warns when `chezmoi status` or the source repo's git status isn't clean.
-- **Function-key bindings are split across tools**: `dot_tmux.conf` binds F2–F7 (with `-n`), `dot_inputrc` binds F1–F4, F8, F9 and F12 for readline. A key bound in tmux never reaches bash, so check both files before assigning a key.
+- **Function-key bindings are split across tools**: `dot_tmux.conf` binds F1–F8 (with `-n`), `dot_inputrc` binds F1–F4, F9, F10 and F12 for readline. A key bound in tmux never reaches bash, so check both files before assigning a key.
 - `dot_config/starship.toml.tmpl` uses the gruvbox preset with powerline segments: every module's `style`/`format` must set the background colour of the segment it sits in (see the comment at the top of that file).
 - `ref/` holds old reference configs and is ignored by chezmoi.
 
