@@ -18,6 +18,10 @@
 [blame]
 	markIgnoredLines = true
 	markUnblamableLines = true
+# Config-based hook (git 2.54+): runs alongside each repo's own hooks, unlike core.hooksPath
+[hook "strip-ai-attribution"]
+	event = commit-msg
+	command = ~/bin/gitHooks/strip-ai-attribution
 
 # [core]
 # 	editor = gvim --nofork '%*'

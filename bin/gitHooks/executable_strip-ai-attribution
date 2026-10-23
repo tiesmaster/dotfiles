@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# commit-msg hook (registered via hook.strip-ai-attribution in ~/.gitconfig):
+# drop AI attribution that agents add on their own, e.g.
+# "Co-Authored-By: Claude ... <noreply@anthropic.com>" and "Generated with [Claude Code]".
+
+COMMIT_MSG_FILE=$1
+
+pattern='^(co-authored-by:.*(claude|anthropic)|.*generated with \[?claude code)'
+grep -qiE "$pattern" "$COMMIT_MSG_FILE" || exit 0
+
+echo "strip-ai-attribution: removing AI attribution from the commit message" >&2
+grep -viE "$pattern" "$COMMIT_MSG_FILE" | git stripspace > "$COMMIT_MSG_FILE.tmp" &&
+    mv "$COMMIT_MSG_FILE.tmp" "$COMMIT_MSG_FILE"
