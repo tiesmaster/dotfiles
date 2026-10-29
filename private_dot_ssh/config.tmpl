@@ -1,12 +1,13 @@
 Host hulk
-   HostName 192.168.1.198
-   User admin
+    HostName 192.168.1.198
+    User admin
+    WarnWeakCrypto no-pq-kex
 
 Host mj
-   User ties
+    User ties
 
 Host *
-  ForwardAgent true
+    ForwardAgent true
 
 # Do not keep HostKeys for internal networks.
 Host !10.0.0.10 10.*.*.* 192.168.*.* 172.16.*.* 172.17.*.* 172.18.*.* 172.19.*.* 172.2?.*.* 172.30.*.* 172.31.*.*
