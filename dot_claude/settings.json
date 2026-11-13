@@ -4,6 +4,14 @@
     "pr": ""
   },
   "permissions": {
+    "allow": [
+      "WebFetch(domain:grafana.github.io)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:release-assets.githubusercontent.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:get.helm.sh)",
+      "WebFetch(domain:hub.docker.com)"
+    ],
     "deny": [
       "Read(~/.kube/**)",
       "Read(~/.talos/**)",
@@ -18,11 +26,11 @@
     ]
   },
   "model": "opus",
+  "skillOverrides": {
+    "summarize-changes": "off"
+  },
   "tui": "fullscreen",
   "theme": "dark",
   "switchModelsOnFlag": true,
-  "agentPushNotifEnabled": true,
-  "skillOverrides": {
-    "summarize-changes": "off"
-  }
+  "agentPushNotifEnabled": true
 }
