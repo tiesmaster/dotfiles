@@ -11,7 +11,8 @@
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebFetch(domain:get.helm.sh)",
       "WebFetch(domain:hub.docker.com)",
-      "WebFetch(domain:api.github.com)"
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:dns.google)"
     ],
     "deny": [
       "Read(~/.kube/**)",
