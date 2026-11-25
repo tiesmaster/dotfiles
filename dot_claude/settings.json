@@ -13,7 +13,8 @@
       "WebFetch(domain:hub.docker.com)",
       "WebFetch(domain:api.github.com)",
       "WebFetch(domain:dns.google)",
-      "WebFetch(domain:kubereboot.github.io)"
+      "WebFetch(domain:kubereboot.github.io)",
+      "WebFetch(domain:proxy.golang.org)"
     ],
     "deny": [
       "Read(~/.kube/**)",
@@ -31,6 +32,9 @@
   "model": "opus",
   "skillOverrides": {
     "summarize-changes": "off"
+  },
+  "enabledPlugins": {
+    "gopls-lsp@claude-plugins-official": true
   },
   "tui": "fullscreen",
   "theme": "dark",
