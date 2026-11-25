@@ -11,7 +11,7 @@
 	key = Issue
 
 [include]
-	path = ~/.gitconfig-guida-encrypted
+	path = ~/.gitconfig-guida-identity
 
 # Not needed?
 # [core]

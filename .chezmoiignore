@@ -11,7 +11,7 @@ ref
 # only work related stuff
 .bashrc.d/guida
 .gitconfig-guida
-.gitconfig-guida-encrypted
+.gitconfig-guida-identity
 .ssh/id_ed25519*
 ssh/config.guida
 .kube/configs
