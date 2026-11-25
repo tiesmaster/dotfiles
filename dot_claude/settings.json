@@ -29,6 +29,15 @@
       "Bash(age -d:*)"
     ]
   },
+  "sandbox": {
+    "filesystem": {
+      "allowRead": [
+        "/Users/ties/.gitconfig-identity",
+        "/Users/ties/.gitconfig-guida",
+        "/Users/ties/.gitconfig-guida-identity"
+      ]
+    }
+  },
   "model": "opus",
   "skillOverrides": {
     "summarize-changes": "off"
