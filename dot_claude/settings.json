@@ -34,7 +34,8 @@
       "allowRead": [
         "/Users/ties/.gitconfig-identity",
         "/Users/ties/.gitconfig-guida",
-        "/Users/ties/.gitconfig-guida-identity"
+        "/Users/ties/.gitconfig-guida-identity",
+        "/Users/ties/.config/glab-cli/config.yml"
       ]
     }
   },
